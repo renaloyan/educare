@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         Thread splash = new Thread() {
             public void run() {
                 try {
-                    sleep(3*1000);
+                    sleep(2*1000);
                     startActivity(new Intent(MainActivity.this, Login.class));
                     finish();
                 }catch (Exception e){
