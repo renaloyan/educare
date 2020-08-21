@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "188736761684",
+    "firebase_url": "https://educare-bbe15.firebaseio.com",
+    "project_id": "educare-bbe15",
+    "storage_bucket": "educare-bbe15.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:188736761684:android:5a58adfd5c969bd9d0e2c1",
+        "android_client_info": {
+          "package_name": "com.algobty.educare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "188736761684-6bapkj69erbl2rd59qatm4t8j2sjvf0s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.algobty.educare",
+            "certificate_hash": "e44ea100e313a04fab37c117d16e1f4a0a3127d1"
+          }
+        },
+        {
+          "client_id": "188736761684-tbfjsee1sf8koveid88vs6kt23aq178p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAm4lTI1EJXU6N8hxNnARwoi_k6Qhkpqm4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "188736761684-tbfjsee1sf8koveid88vs6kt23aq178p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
