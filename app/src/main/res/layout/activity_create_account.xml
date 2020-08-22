@@ -1,9 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CreateAccount">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-80dp"
+        android:src="@drawable/slogan" />
+
+    <EditText
+        android:id="@+id/create_name_input"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Username"
+        android:textColor="@color/colorAccent"
+        android:textSize="16sp"
+        android:ems="10"
+        android:textColorHint="@color/colorAccent"
+        android:inputType="text"
+        android:background="@drawable/input"
+        android:drawableStart="@drawable/custom_account"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="45dp"
+        android:drawablePadding="12dp"
+        android:layout_marginRight="45dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"/>
+
+    <EditText
+        android:id="@+id/create_email_input"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Email"
+        android:textColor="@color/colorAccent"
+        android:textSize="16sp"
+        android:ems="10"
+        android:textColorHint="@color/colorAccent"
+        android:inputType="text"
+        android:layout_below="@+id/create_name_input"
+        android:background="@drawable/input"
+        android:drawableStart="@drawable/custom_email"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="45dp"
+        android:drawablePadding="12dp"
+        android:layout_marginRight="45dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"/>
+
+    <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
+        android:id="@+id/create_password_input"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Password"
+        android:textColor="@color/colorAccent"
+        android:textSize="16sp"
+        android:drawableStart="@drawable/custom_lock"
+        android:background="@drawable/input"
+        android:ems="10"
+        android:layout_below="@+id/create_email_input"
+        android:textColorHint="@color/colorAccent"
+        android:inputType="textPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="45dp"
+        android:drawablePadding="12dp"
+        android:layout_marginRight="45dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp" />
+
+    <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
+        android:id="@+id/confirm_password_input"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Confirm Password"
+        android:textColor="@color/colorAccent"
+        android:textSize="16sp"
+        android:drawableStart="@drawable/custom_lock"
+        android:background="@drawable/input"
+        android:ems="10"
+        android:layout_below="@+id/create_password_input"
+        android:textColorHint="@color/colorAccent"
+        android:inputType="textPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="45dp"
+        android:drawablePadding="12dp"
+        android:layout_marginRight="45dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp" />
+
+
+    <Button
+        android:id="@+id/create_account_button"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/confirm_password_input"
+        android:layout_marginTop="20dp"
+        android:textSize="16sp"
+        android:ems="10"
+        android:text="Create Account"
+        android:layout_marginRight="45dp"
+        android:layout_marginLeft="45dp"
+        android:background="@drawable/custom_button"/>
+
+    <TextView
+        android:id="@+id/login_text"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:ems="10"
+        android:text="Already a member? Login"
+        android:textColor="@android:color/black"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/create_account_button"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="15dp" />
+
+    <RelativeLayout
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:layout_centerInParent="true"
+        android:elevation="8dp"
+        android:background="@drawable/custom_progressbar"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

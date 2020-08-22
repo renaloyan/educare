@@ -7,7 +7,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
+
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,5 +30,17 @@ public class MainActivity extends AppCompatActivity {
         };
         splash.start();
 
+        auth = FirebaseAuth.getInstance();
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (auth.getCurrentUser() != null){
+            //if user logged in directly intent to home activity
+            startActivity(new Intent(MainActivity.this, Home.class));
+            finish();
+        }
     }
 }

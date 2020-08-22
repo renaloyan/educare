@@ -1,36 +1,35 @@
 package com.algobty.educare;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.text.method.HideReturnsTransformationMethod;
-import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-
-import org.w3c.dom.Text;
+import com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText;
 
 public class Login extends AppCompatActivity {
 
+    //instance
     private Button loginButton;
-    private EditText emailInput, passwordInput;
+    private EditText emailInput;
     private TextView createAccount;
     private ProgressBar progressBar;
+
+    private ShowHidePasswordEditText passwordInput;
 
     private FirebaseAuth auth;
 
@@ -39,13 +38,14 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        //instance
+        //connect to view components
         loginButton = findViewById(R.id.login_button);
         emailInput = findViewById(R.id.email_input);
         passwordInput = findViewById(R.id.password_input);
         createAccount = findViewById(R.id.create_account_text);
         progressBar = findViewById(R.id.progressBar);
 
+        //get the instance of firebase auth
         auth = FirebaseAuth.getInstance();
 
         createAccount.setOnClickListener(new View.OnClickListener() {
@@ -82,14 +82,26 @@ public class Login extends AppCompatActivity {
         String email, password;
 
         //Convert to string
-        email = emailInput.getText().toString();
-        password = passwordInput.getText().toString();
+        email = emailInput.getText().toString().trim();
+        password = passwordInput.getText().toString().trim();
 
         if (TextUtils.isEmpty(email)){
+            //hide progressbar
+            progressBar.setVisibility(View.GONE);
+
+            //touchable
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+
             //Toast or Alert the user
             Toast.makeText(this, "Please enter your email", Toast.LENGTH_SHORT).show();
         }
         else if (TextUtils.isEmpty(password)){
+            //hide progressbar
+            progressBar.setVisibility(View.GONE);
+
+            //touchable
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+
             //Toast or alert the user
             Toast.makeText(this, "Please enter your password", Toast.LENGTH_SHORT).show();
         }
@@ -128,21 +140,4 @@ public class Login extends AppCompatActivity {
 
     }
 
-    public void ShowHidePass(View view){
-
-        if(view.getId()==R.id.show_pass_btn){
-            if (passwordInput.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())){
-                ((ImageView)(view)).setImageResource(R.drawable.hide_pass);
-
-                //show pass
-                passwordInput.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-            }
-        }
-        else {
-            ((ImageView)(view)).setImageResource(R.drawable.show_pass);
-
-            //hide pass
-            passwordInput.setTransformationMethod(PasswordTransformationMethod.getInstance());
-        }
-    }
 }
