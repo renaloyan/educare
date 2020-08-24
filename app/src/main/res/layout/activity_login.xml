@@ -54,12 +54,25 @@
         android:paddingEnd="12dp"
         />
 
+    <TextView
+        android:id="@+id/forgot_pass_text"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:ems="10"
+        android:text="Forgot Password?"
+        android:textColor="@android:color/black"
+        android:layout_below="@id/password_input"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="15dp"
+        android:layout_alignEnd="@id/password_input"/>
+
     <Button
         android:id="@+id/login_button"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_below="@+id/password_input"
-        android:layout_marginTop="20dp"
+        android:layout_below="@+id/forgot_pass_text"
+        android:layout_marginTop="15dp"
         android:textSize="16sp"
         android:ems="10"
         android:text="Login"
@@ -69,7 +82,7 @@
 
     <TextView
         android:id="@+id/create_account_text"
-        android:layout_width="210dp"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:textSize="14sp"
         android:ems="10"
@@ -106,21 +119,12 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="40dp" /> -->
 
-    <RelativeLayout
-        android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="20dp"
+    <ProgressBar
+        android:id="@+id/login_progressBar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_centerInParent="true"
-        android:elevation="8dp"
-        android:background="@drawable/custom_progressbar"
-        android:visibility="gone">
-
-        <ProgressBar
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_centerInParent="true" />
-
-    </RelativeLayout>
+        android:visibility="gone"
+        android:elevation="8dp" />
 
 </RelativeLayout>

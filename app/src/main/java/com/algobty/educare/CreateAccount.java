@@ -47,7 +47,7 @@ public class CreateAccount extends AppCompatActivity {
         emailInput = findViewById(R.id.create_email_input);
         usernameInput = findViewById(R.id.create_name_input);
         loginText = findViewById(R.id.login_text);
-        progressBar = findViewById(R.id.progressBar);
+        progressBar = findViewById(R.id.create_progressBar);
         passwordInput = findViewById(R.id.create_password_input);
         confirmPasswordInput = findViewById(R.id.confirm_password_input);
 
@@ -88,7 +88,7 @@ public class CreateAccount extends AppCompatActivity {
         final String username, email, password, confirmPassword;
 
         //Convert to string
-        username = usernameInput.getText().toString();
+        username = usernameInput.getText().toString().trim();
         email = emailInput.getText().toString().trim();
         password = passwordInput.getText().toString().trim();
         confirmPassword = confirmPasswordInput.getText().toString().trim();
@@ -113,6 +113,26 @@ public class CreateAccount extends AppCompatActivity {
             //Toast or alert the user
             Toast.makeText(this, "Please enter your email", Toast.LENGTH_SHORT).show();
         }
+        else if (password.length() < 6){
+            //hide progressbar
+            progressBar.setVisibility(View.GONE);
+
+            //touchable
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+
+            //Toast or alert the user
+            Toast.makeText(this, "Password length at least 6 characters", Toast.LENGTH_SHORT).show();
+        }
+        else if (confirmPassword.length() < 6){
+            //hide progressbar
+            progressBar.setVisibility(View.GONE);
+
+            //touchable
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+
+            //Toast or alert the user
+            Toast.makeText(this, "Password length at least 6 characters", Toast.LENGTH_SHORT).show();
+        }
         else if (TextUtils.isEmpty(password)){
             //hide progressbar
             progressBar.setVisibility(View.GONE);
@@ -133,7 +153,7 @@ public class CreateAccount extends AppCompatActivity {
             //Toast or alert the user
             Toast.makeText(this, "Please confirm your password", Toast.LENGTH_SHORT).show();
         }
-        else if (password != confirmPassword){
+        else if (!password.equals(confirmPassword)){
             //hide progressbar
             progressBar.setVisibility(View.GONE);
 
@@ -144,7 +164,7 @@ public class CreateAccount extends AppCompatActivity {
             Toast.makeText(this, "Password and Confirm Password does not match", Toast.LENGTH_SHORT).show();
         }
         else {
-            auth.createUserWithEmailAndPassword(username, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     //if task successful intent to home activity

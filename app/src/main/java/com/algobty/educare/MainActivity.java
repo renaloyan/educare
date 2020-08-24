@@ -17,12 +17,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //get instance of firebase auth
+        auth = FirebaseAuth.getInstance();
         Thread splash = new Thread() {
             public void run() {
                 try {
-                    sleep(2*1000);
-                    startActivity(new Intent(MainActivity.this, Login.class));
-                    finish();
+                    if (auth.getCurrentUser() != null){
+                        //if user logged in intent to home activity
+                        sleep(2 * 1000);
+                        startActivity(new Intent(MainActivity.this, Home.class));
+                        finish();
+                    }
+                    else {
+                        //if user is not logged in intent to login activity
+                        sleep(2 * 1000);
+                        startActivity(new Intent(MainActivity.this, Login.class));
+                        finish();
+                    }
                 }catch (Exception e){
 
                 }
@@ -30,17 +42,5 @@ public class MainActivity extends AppCompatActivity {
         };
         splash.start();
 
-        auth = FirebaseAuth.getInstance();
-
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        if (auth.getCurrentUser() != null){
-            //if user logged in directly intent to home activity
-            startActivity(new Intent(MainActivity.this, Home.class));
-            finish();
-        }
     }
 }
