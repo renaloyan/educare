@@ -9,9 +9,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Current Task"
+        android:text="You don't have a task"
         android:layout_centerInParent="true"
-        android:textSize="48sp"
+        android:textSize="28sp"
         android:textColor="@android:color/darker_gray" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:itemBackground="@color/colorPrimary"
+        app:itemBackground="@drawable/background"
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
         app:menu="@menu/menu_nav" />

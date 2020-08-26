@@ -19,7 +19,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:itemBackground="@color/colorPrimary"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        app:itemBackground="@drawable/background"
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
         app:menu="@menu/menu_nav" />
