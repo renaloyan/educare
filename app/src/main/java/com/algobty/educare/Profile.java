@@ -16,9 +16,11 @@ public class Profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+
+        //bottom nav
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        bottomNavigationView.setSelectedItemId(R.id.dashboard);
+        bottomNavigationView.setSelectedItemId(R.id.profile);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -26,12 +28,12 @@ public class Profile extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.dashboard:
                         startActivity(new Intent(getApplicationContext(), Home.class));
-                        overridePendingTransition(0, 0);
+                        overridePendingTransition(1, 1);
                         finish();
                         return true;
                     case R.id.current_task:
                         startActivity(new Intent(getApplicationContext(), CurrentTask.class));
-                        overridePendingTransition(0, 0);
+                        overridePendingTransition(1, 1);
                         finish();
                         return true;
                     case R.id.profile:

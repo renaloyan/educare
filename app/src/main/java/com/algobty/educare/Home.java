@@ -16,6 +16,8 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+
+        //bottom nav
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         bottomNavigationView.setSelectedItemId(R.id.dashboard);
@@ -28,12 +30,12 @@ public class Home extends AppCompatActivity {
                         return true;
                     case R.id.current_task:
                         startActivity(new Intent(getApplicationContext(), CurrentTask.class));
-                        overridePendingTransition(0, 0);
+                        overridePendingTransition(1, 1);
                         finish();
                         return true;
                     case R.id.profile:
                         startActivity(new Intent(getApplicationContext(), Profile.class));
-                        overridePendingTransition(0, 0);
+                        overridePendingTransition(1, 1);
                         finish();
                         return true;
                 }
