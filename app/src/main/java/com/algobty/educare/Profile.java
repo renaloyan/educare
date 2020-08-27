@@ -52,15 +52,17 @@ public class Profile extends AppCompatActivity {
 
         //get the instance of firebase database
         database = FirebaseDatabase.getInstance();
-        databaseReference = database.getReference("Users").child(auth.getCurrentUser().getUid());
+        databaseReference = database.getReference("Users");
 
-        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+        Query checkUser = databaseReference.orderByChild(auth.getCurrentUser().getUid()).equalTo(auth.getCurrentUser().getUid());
+
+        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 if (snapshot.exists()){
 
-                    usernameFromDb = snapshot.child("username").getValue(String.class);
+                    usernameFromDb = snapshot.child(auth.getCurrentUser().getUid()).child("username").getValue(String.class);
                 }
             }
 
@@ -102,6 +104,9 @@ public class Profile extends AppCompatActivity {
         logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //intent to about activity
+                startActivity(new Intent(Profile.this, Login.class));
+                finish();
                 //logout user
                 auth.signOut();
             }

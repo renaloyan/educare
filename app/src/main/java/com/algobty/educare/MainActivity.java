@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     if (auth.getCurrentUser() != null){
                         //if user logged in intent to home activity
-                        sleep(2 * 1000);
+                        sleep(1 * 1000);
                         startActivity(new Intent(MainActivity.this, Home.class));
                         finish();
                     }
