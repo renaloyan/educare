@@ -17,6 +17,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
+    <Button
+        android:id="@+id/skip_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Skip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="10dp"
+        android:background="#00000000"
+        android:textColor="@android:color/black"
+        android:drawableEnd="@drawable/ic_skip"/>
+
     <RelativeLayout
         android:id="@+id/relative_layout"
         android:layout_width="match_parent"
@@ -31,8 +43,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Let's get started"
+            android:onClick="skip"
             android:background="@color/colorPrimary"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/black"
+            android:visibility="invisible"/>
 
         <LinearLayout
             android:id="@+id/dots"
@@ -49,6 +63,7 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:paddingBottom="30dp"
+            android:onClick="next"
             android:background="#00000000"
             android:drawableRight="@drawable/ic_arrow_forward"/>
 
