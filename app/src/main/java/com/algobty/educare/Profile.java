@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textview.MaterialTextView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,7 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Profile extends AppCompatActivity {
 
-    private TextView username;
+    private TextView username, emailText;
     private ImageView settingsBtn;
     private RelativeLayout leaderboardBtn, aboutBtn, logoutBtn, exitBtn;
 
@@ -45,6 +46,7 @@ public class Profile extends AppCompatActivity {
         aboutBtn = findViewById(R.id.about_button);
         logoutBtn = findViewById(R.id.logout_button);
         exitBtn = findViewById(R.id.exit_button);
+        emailText = findViewById(R.id.email_text);
 
         //get the instance of firebase auth
         auth = FirebaseAuth.getInstance();
@@ -53,13 +55,20 @@ public class Profile extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         databaseReference = database.getReference("Users");
 
+        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if(user != null){
+            String email = user.getEmail();
+            emailText.setText(email);
+        }
+
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 if (snapshot.exists()){
 
-                     String usernameFromDb = snapshot.child(auth.getCurrentUser().getUid()).child("username").getValue(String.class);
+                     String usernameFromDb = snapshot.child(user.getUid()).child("username").getValue(String.class);
                     username.setText(usernameFromDb);
                 }
             }
