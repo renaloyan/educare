@@ -186,7 +186,7 @@ public class CreateAccount extends AppCompatActivity {
                         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
                         //intent to home activity
-                        startActivity(new Intent(CreateAccount.this, Home.class));
+                        startActivity(new Intent(CreateAccount.this, OnBoarding.class));
                         finish();
                     }
                 }
