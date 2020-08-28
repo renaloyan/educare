@@ -8,8 +8,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,6 +32,7 @@ public class Profile extends AppCompatActivity {
     private TextView username, emailText;
     private ImageView settingsBtn;
     private RelativeLayout leaderboardBtn, aboutBtn, logoutBtn, exitBtn;
+    private ProgressBar progressBar;
 
     private FirebaseAuth auth;
     private FirebaseDatabase database;
@@ -47,6 +50,7 @@ public class Profile extends AppCompatActivity {
         logoutBtn = findViewById(R.id.logout_button);
         exitBtn = findViewById(R.id.exit_button);
         emailText = findViewById(R.id.email_text);
+        progressBar = findViewById(R.id.profile_progressBar);
 
         //get the instance of firebase auth
         auth = FirebaseAuth.getInstance();
@@ -56,6 +60,13 @@ public class Profile extends AppCompatActivity {
         databaseReference = database.getReference("Users");
 
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        //shown progressbar
+        progressBar.setVisibility(View.VISIBLE);
+
+        //not touchable
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
         if(user != null){
             String email = user.getEmail();
@@ -70,12 +81,24 @@ public class Profile extends AppCompatActivity {
 
                      String usernameFromDb = snapshot.child(user.getUid()).child("username").getValue(String.class);
                     username.setText(usernameFromDb);
+
+                    //hide progressbar
+                    progressBar.setVisibility(View.GONE);
+
+                    //touchable
+                    getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
+                //hide progressbar
+                progressBar.setVisibility(View.GONE);
 
+                //touchable
+                getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+
+                Toast.makeText(Profile.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 

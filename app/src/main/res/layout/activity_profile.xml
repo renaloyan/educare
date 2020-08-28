@@ -363,4 +363,12 @@
         app:itemTextColor="@drawable/selector"
         app:menu="@menu/menu_nav" />
 
+    <ProgressBar
+        android:id="@+id/profile_progressBar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:elevation="8dp" />
+
 </RelativeLayout>
