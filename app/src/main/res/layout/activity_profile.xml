@@ -23,14 +23,14 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-black"
                 android:includeFontPadding="false"
-                android:text="Profile Info"
+                android:text="Profile"
                 android:textColor="@android:color/black"
                 android:textSize="32sp" />
 
             <ImageView
                 android:id="@+id/settings_button"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:src="@drawable/ic_baseline_settings_24"
                 android:layout_alignParentEnd="true" />
 
@@ -86,7 +86,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/rank_text"
+                        android:layout_below="@id/rank_text"
                         android:layout_centerInParent="true"
                         android:includeFontPadding="false"
                         android:text="Ranking"
@@ -114,8 +114,7 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_centerHorizontal="true"
-                        android:contentDescription="TODO"
-                        android:src="@drawable/ic_rank" />
+                        android:src="@drawable/ic_average" />
 
                     <TextView
                         android:id="@+id/average_text"
@@ -131,7 +130,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/average_text"
+                        android:layout_below="@id/average_text"
                         android:layout_centerInParent="true"
                         android:includeFontPadding="false"
                         android:text="Average"
@@ -150,48 +149,152 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <Button
-                android:id="@+id/ranking_button"
+            <RelativeLayout
+                android:id="@+id/leaderboard_button"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/custom_button"
-                android:elevation="5dp"
-                android:fontFamily="sans-serif-black"
-                android:text="Ranking"
-                android:textSize="16sp" />
+                android:layout_height="wrap_content">
 
-            <Button
+                <ImageView
+                    android:id="@+id/icon_rank"
+                    android:src="@drawable/ic_rank"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toRightOf="@id/icon_rank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/black"
+                    android:text="Leaderboard" />
+
+                <ImageView
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_arrow_forward"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000000" />
+
+            <RelativeLayout
                 android:id="@+id/about_button"
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/custom_button"
-                android:elevation="5dp"
-                android:fontFamily="sans-serif-black"
-                android:text="About"
-                android:textSize="16sp" />
+                android:layout_height="wrap_content">
 
-            <Button
+                <ImageView
+                    android:id="@+id/icon_about"
+                    android:src="@drawable/ic_about"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toRightOf="@id/icon_about"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/black"
+                    android:text="About" />
+
+                <ImageView
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_arrow_forward"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000000" />
+
+            <RelativeLayout
                 android:id="@+id/logout_button"
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/custom_button"
-                android:elevation="5dp"
-                android:fontFamily="sans-serif-black"
-                android:text="Logout"
-                android:textSize="16sp" />
+                android:layout_height="wrap_content">
 
-            <Button
-                android:id="@+id/exit_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                <ImageView
+                    android:id="@+id/icon_logout"
+                    android:src="@drawable/ic_arrow_back"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toRightOf="@id/icon_logout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/black"
+                    android:text="Logout" />
+
+                <ImageView
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_arrow_forward"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+
+            </RelativeLayout>
+
+            <View
                 android:layout_marginTop="10dp"
-                android:background="@drawable/custom_button"
-                android:elevation="5dp"
-                android:fontFamily="sans-serif-black"
-                android:text="Exit"
-                android:textSize="16sp" />
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000000" />
+
+            <RelativeLayout
+                android:id="@+id/exit_button"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/icon_exit"
+                    android:src="@drawable/ic_exit"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toRightOf="@id/icon_exit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/black"
+                    android:text="Exit" />
+
+                <ImageView
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_arrow_forward"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000000" />
 
         </LinearLayout>
 

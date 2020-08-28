@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,14 +27,12 @@ import com.google.firebase.database.ValueEventListener;
 public class Profile extends AppCompatActivity {
 
     private TextView username;
-    private Button rankingBtn, aboutBtn, logoutBtn, exitBtn;
     private ImageView settingsBtn;
+    private RelativeLayout leaderboardBtn, aboutBtn, logoutBtn, exitBtn;
 
     private FirebaseAuth auth;
     private FirebaseDatabase database;
     private DatabaseReference databaseReference;
-
-    private String usernameFromDb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +40,7 @@ public class Profile extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         username = findViewById(R.id.username_text);
-        rankingBtn = findViewById(R.id.ranking_button);
+        leaderboardBtn = findViewById(R.id.leaderboard_button);
         settingsBtn = findViewById(R.id.settings_button);
         aboutBtn = findViewById(R.id.about_button);
         logoutBtn = findViewById(R.id.logout_button);
@@ -54,15 +53,14 @@ public class Profile extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         databaseReference = database.getReference("Users");
 
-        Query checkUser = databaseReference.orderByChild(auth.getCurrentUser().getUid()).equalTo(auth.getCurrentUser().getUid());
-
-        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 if (snapshot.exists()){
 
-                    usernameFromDb = snapshot.child(auth.getCurrentUser().getUid()).child("username").getValue(String.class);
+                     String usernameFromDb = snapshot.child(auth.getCurrentUser().getUid()).child("username").getValue(String.class);
+                    username.setText(usernameFromDb);
                 }
             }
 
@@ -72,9 +70,8 @@ public class Profile extends AppCompatActivity {
             }
         });
 
-        username.setText(usernameFromDb);
 
-        rankingBtn.setOnClickListener(new View.OnClickListener() {
+        leaderboardBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //intent to ranking activity
