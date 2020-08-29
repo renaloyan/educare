@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else {
                         //if user is not logged in intent to login activity
-                        sleep(2 * 1000);
+                        sleep(1 * 1000);
                         startActivity(new Intent(MainActivity.this, Login.class));
                         finish();
                     }

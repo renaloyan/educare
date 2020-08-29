@@ -73,7 +73,7 @@ public class SliderAdapter extends PagerAdapter {
 
         imageView.setImageResource(images[position]);
         heading.setText(headings[position]);
-        desc.setText(headings[position]);
+        desc.setText(descriptions[position]);
 
         container.addView(view);
 
