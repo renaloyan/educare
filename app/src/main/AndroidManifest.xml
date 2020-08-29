@@ -12,7 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".OnBoarding"></activity>
-        <activity android:name=".Ranking" />
         <activity android:name=".About" />
         <activity android:name=".Settings" />
         <activity android:name=".Profile" />

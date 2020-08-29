@@ -4,14 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class Settings extends AppCompatActivity {
+
+    private ImageView backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+
+        backBtn = findViewById(R.id.settings_backBtn);
     }
 
     //double backpressed

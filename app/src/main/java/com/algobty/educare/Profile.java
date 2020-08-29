@@ -31,7 +31,7 @@ public class Profile extends AppCompatActivity {
 
     private TextView username, emailText;
     private ImageView settingsBtn;
-    private RelativeLayout leaderboardBtn, aboutBtn, logoutBtn, exitBtn;
+    private RelativeLayout shareBtn, aboutBtn, logoutBtn, exitBtn;
     private ProgressBar progressBar;
 
     private FirebaseAuth auth;
@@ -44,7 +44,7 @@ public class Profile extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         username = findViewById(R.id.username_text);
-        leaderboardBtn = findViewById(R.id.leaderboard_button);
+        shareBtn = findViewById(R.id.share_button);
         settingsBtn = findViewById(R.id.settings_button);
         aboutBtn = findViewById(R.id.about_button);
         logoutBtn = findViewById(R.id.logout_button);
@@ -103,12 +103,10 @@ public class Profile extends AppCompatActivity {
         });
 
 
-        leaderboardBtn.setOnClickListener(new View.OnClickListener() {
+        shareBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //intent to ranking activity
-                startActivity(new Intent(Profile.this, Ranking.class));
-                finish();
+
             }
         });
 

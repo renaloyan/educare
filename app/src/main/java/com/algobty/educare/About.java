@@ -22,7 +22,7 @@ public class About<user> extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
-        backBtn = findViewById(R.id.back_btn);
+        backBtn = findViewById(R.id.about_backBtn);
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override

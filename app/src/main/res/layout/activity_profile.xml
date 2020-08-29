@@ -121,7 +121,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="sans-serif-black"
                         android:includeFontPadding="false"
-                        android:text="No rank yet"
+                        android:text="None"
                         android:textColor="@android:color/black"
                         android:textSize="20sp" />
 
@@ -131,7 +131,7 @@
                         android:layout_below="@id/rank_text"
                         android:layout_centerInParent="true"
                         android:includeFontPadding="false"
-                        android:text="Ranking"
+                        android:text="Highest Score"
                         android:textColor="@android:color/black"
                         android:textSize="14sp" />
 
@@ -165,7 +165,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="sans-serif-black"
                         android:includeFontPadding="false"
-                        android:text="No average yet"
+                        android:text="None"
                         android:textColor="@android:color/black"
                         android:textSize="20sp" />
 
@@ -192,44 +192,7 @@
             android:padding="20dp">
 
             <RelativeLayout
-                android:id="@+id/leaderboard_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/icon_rank"
-                    android:src="@drawable/ic_rank"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"/>
-
-                <TextView
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="16dp"
-                    android:layout_toRightOf="@id/icon_rank"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-black"
-                    android:textSize="20sp"
-                    android:textColor="@android:color/black"
-                    android:text="Leaderboard" />
-
-                <ImageView
-                    android:layout_alignParentEnd="true"
-                    android:src="@drawable/ic_arrow_forward"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"/>
-
-            </RelativeLayout>
-
-            <View
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#000000" />
-
-            <RelativeLayout
                 android:id="@+id/about_button"
-                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -249,6 +212,43 @@
                     android:textSize="20sp"
                     android:textColor="@android:color/black"
                     android:text="About" />
+
+                <ImageView
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_arrow_forward"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000000" />
+
+            <RelativeLayout
+                android:id="@+id/share_button"
+                android:layout_width="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/icon_share"
+                    android:src="@drawable/ic_share"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toRightOf="@id/icon_share"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/black"
+                    android:text="Share" />
 
                 <ImageView
                     android:layout_alignParentEnd="true"

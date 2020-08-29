@@ -7,10 +7,12 @@
     <string name="contributor_header">Contributor</string>
 
     <!--ViewPager Description-->
-    <string name="wel_user_desc">We are happy to welcome you, and now you are now part of our family!</string>
-    <string name="donate_desc">This app was built for fundraising and for your education as a student. Help the teachers now
-    using our app through ads monetization and in-app purchase</string>
-    <string name="science">With the help of the students of Bantayan Science High School. We made a reviewer from grade 7 to grade 12.</string>
-    <string name="algobty">With the help of ALGOBTY members they made this app in to a reality.</string>
+    <string name="wel_user_desc">Welcome to Educare where learning is much easier.</string>
+    <string name="donate_desc">If you\'re enjoying and gaining numerous knowledge in Educare a few spare coins in your pockets
+    can help a lot by watching a few ads and subscribing to our premium account. You can help the school in giving their students
+    the best experience to learn in this pandemic.</string>
+    <string name="science">We would like to express our profound gratitude to the following contributors: Bantayan Science High School,
+        and Banscie Supreme Student Government.</string>
+    <string name="algobty">We would like to express our profound gratitude to the following contributors: Algobty Team</string>
 
 </resources>
