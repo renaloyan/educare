@@ -1,11 +1,17 @@
 package com.algobty.educare;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Application;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
@@ -26,6 +32,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+
+import java.io.File;
 
 public class Profile extends AppCompatActivity {
 
@@ -107,6 +115,13 @@ public class Profile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                ApplicationInfo api = getApplicationContext().getApplicationInfo();
+                String apkPath = api.sourceDir;
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("application/vnd.android.package-archive");
+                intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(apkPath)));
+                startActivity(Intent.createChooser(intent, "ShareVia"));
+
             }
         });
 
@@ -114,7 +129,7 @@ public class Profile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //intent to settings activity
-                startActivity(new Intent(Profile.this, Settings.class));
+                startActivity(new Intent(getApplicationContext(), Settings.class));
                 finish();
             }
         });
@@ -123,7 +138,7 @@ public class Profile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //intent to about activity
-                startActivity(new Intent(Profile.this, About.class));
+                startActivity(new Intent(getApplicationContext(), About.class));
                 finish();
             }
         });
@@ -131,20 +146,14 @@ public class Profile extends AppCompatActivity {
         logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //intent to about activity
-                startActivity(new Intent(Profile.this, Login.class));
-                finish();
-                //logout user
-                auth.signOut();
+                logout();
             }
         });
 
         exitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //exit
-                finish();
-                System.exit(0);
+                exit();
             }
         });
 
@@ -180,6 +189,64 @@ public class Profile extends AppCompatActivity {
             finish();
         }
 
+    }
+
+    private void logout() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setMessage("Are you sure you want to Logout?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        //intent to about activity
+                        startActivity(new Intent(Profile.this, Login.class));
+                        finish();
+                        //logout user
+                        auth.signOut();
+
+                    }
+                }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                //cancel
+                dialog.cancel();
+
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    private void exit() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setMessage("Are you sure you want to Exit?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        //exit
+                        finish();
+                        System.exit(0);
+
+                    }
+                }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                //cancel
+                dialog.cancel();
+
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 
     //double backpressed
