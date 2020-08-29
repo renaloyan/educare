@@ -10,6 +10,8 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class CurrentTask extends AppCompatActivity {
 
@@ -45,6 +47,12 @@ public class CurrentTask extends AppCompatActivity {
                 return false;
             }
         });
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user == null){
+            startActivity(new Intent(getApplicationContext(), Login.class));
+            finish();
+        }
     }
 
     //double backpressed

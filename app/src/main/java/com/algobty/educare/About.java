@@ -2,16 +2,42 @@ package com.algobty.educare;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
-public class About extends AppCompatActivity {
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+public class About<user> extends AppCompatActivity {
+
+    private ImageView backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
+
+        backBtn = findViewById(R.id.back_btn);
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Profile.class));
+                finish();
+            }
+        });
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user == null){
+            startActivity(new Intent(getApplicationContext(), Login.class));
+            finish();
+        }
+
     }
 
     //double backpressed
@@ -34,4 +60,5 @@ public class About extends AppCompatActivity {
             }
         }, 2000);
     }
+
 }

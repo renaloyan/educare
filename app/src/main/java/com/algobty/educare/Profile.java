@@ -176,6 +176,12 @@ public class Profile extends AppCompatActivity {
                 return false;
             }
         });
+
+        if (user == null){
+            startActivity(new Intent(getApplicationContext(), Login.class));
+            finish();
+        }
+
     }
 
     //double backpressed
