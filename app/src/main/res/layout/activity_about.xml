@@ -15,11 +15,37 @@
         android:src="@drawable/ic_arrow_back" />
 
     <TextView
+        android:id="@+id/about"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
         android:textSize="36dp"
         android:text="About"
+        android:textColor="@android:color/black"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/what_educare"
+        android:layout_below="@id/about"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:textSize="26dp"
+        android:text="What is Educare?"
+        android:textColor="@android:color/black"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/what_ans"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/what_educare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:textSize="20dp"
+        android:text="@string/about"
         android:textColor="@android:color/black"
         android:layout_centerHorizontal="true"
         android:gravity="center"/>

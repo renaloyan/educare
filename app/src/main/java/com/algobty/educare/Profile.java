@@ -5,9 +5,12 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Application;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -115,13 +118,6 @@ public class Profile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                ApplicationInfo api = getApplicationContext().getApplicationInfo();
-                String apkPath = api.sourceDir;
-                Intent intent = new Intent(Intent.ACTION_SEND);
-                intent.setType("application/vnd.android.package-archive");
-                intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(apkPath)));
-                startActivity(Intent.createChooser(intent, "ShareVia"));
-
             }
         });
 
@@ -187,6 +183,23 @@ public class Profile extends AppCompatActivity {
         if (user == null){
             startActivity(new Intent(getApplicationContext(), Login.class));
             finish();
+        }
+
+        if(!isConnected()){
+
+            new AlertDialog.Builder(this)
+                    .setIcon(R.drawable.ic_internet_connection)
+                    .setTitle("No Internet Connection")
+                    .setMessage("Please Check your Internet Connection")
+                    .setCancelable(false)
+                    .setPositiveButton("Close", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                            System.exit(0);
+                        }
+                    }).show();
+
         }
 
     }
@@ -268,6 +281,16 @@ public class Profile extends AppCompatActivity {
                 doubleBackToExitPressedOnce=false;
             }
         }, 2000);
+    }
+
+    private boolean isConnected() {
+
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+
+        return  networkInfo != null && networkInfo.isConnected();
+
     }
 
 }
