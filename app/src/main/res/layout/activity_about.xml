@@ -12,6 +12,7 @@
         android:id="@+id/about_backBtn"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:background="@drawable/background_ripple"
         android:src="@drawable/ic_arrow_back" />
 
     <TextView

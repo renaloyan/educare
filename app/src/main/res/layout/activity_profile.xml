@@ -30,6 +30,7 @@
             <ImageView
                 android:id="@+id/settings_button"
                 android:layout_width="30dp"
+                android:background="@drawable/background_ripple"
                 android:layout_height="30dp"
                 android:src="@drawable/ic_baseline_settings_24"
                 android:layout_alignParentEnd="true" />
@@ -193,6 +194,7 @@
 
             <RelativeLayout
                 android:id="@+id/about_button"
+                android:background="@drawable/background_ripple"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -229,6 +231,7 @@
 
             <RelativeLayout
                 android:id="@+id/share_button"
+                android:background="@drawable/background_ripple"
                 android:layout_width="match_parent"
                 android:layout_marginTop="20dp"
                 android:layout_height="wrap_content">
@@ -267,6 +270,7 @@
             <RelativeLayout
                 android:id="@+id/logout_button"
                 android:layout_marginTop="20dp"
+                android:background="@drawable/background_ripple"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -304,6 +308,7 @@
             <RelativeLayout
                 android:id="@+id/exit_button"
                 android:layout_marginTop="20dp"
+                android:background="@drawable/background_ripple"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -353,12 +358,17 @@
         android:layout_marginBottom="70dp"
         android:textSize="18sp" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@id/bottom_navigation"
+        android:background="@android:color/darker_gray" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:itemBackground="@drawable/background"
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
         app:menu="@menu/menu_nav" />
