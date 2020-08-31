@@ -15,18 +15,13 @@
         android:textSize="48sp"
         android:textColor="@android:color/darker_gray" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_above="@id/bottom_navigation"
-        android:background="@android:color/darker_gray" />
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         app:itemIconTint="@drawable/selector"
+        android:elevation="10dp"
         app:itemTextColor="@drawable/selector"
         app:menu="@menu/menu_nav" />
 

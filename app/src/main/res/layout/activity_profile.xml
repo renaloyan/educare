@@ -194,8 +194,9 @@
 
             <RelativeLayout
                 android:id="@+id/about_button"
-                android:background="@drawable/background_ripple"
+                android:background="?android:attr/selectableItemBackground"
                 android:layout_width="match_parent"
+                android:clickable="true"
                 android:layout_height="wrap_content">
 
                 <ImageView
@@ -231,8 +232,9 @@
 
             <RelativeLayout
                 android:id="@+id/share_button"
-                android:background="@drawable/background_ripple"
+                android:background="?android:attr/selectableItemBackground"
                 android:layout_width="match_parent"
+                android:clickable="true"
                 android:layout_marginTop="20dp"
                 android:layout_height="wrap_content">
 
@@ -270,7 +272,8 @@
             <RelativeLayout
                 android:id="@+id/logout_button"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/background_ripple"
+                android:clickable="true"
+                android:background="?android:attr/selectableItemBackground"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -308,7 +311,8 @@
             <RelativeLayout
                 android:id="@+id/exit_button"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/background_ripple"
+                android:clickable="true"
+                android:background="?android:attr/selectableItemBackground"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -358,18 +362,13 @@
         android:layout_marginBottom="70dp"
         android:textSize="18sp" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_above="@id/bottom_navigation"
-        android:background="@android:color/darker_gray" />
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         app:itemIconTint="@drawable/selector"
+        android:elevation="10dp"
         app:itemTextColor="@drawable/selector"
         app:menu="@menu/menu_nav" />
 
