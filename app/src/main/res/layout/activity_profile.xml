@@ -346,7 +346,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:includeFontPadding="false"
-        android:text="Version: 1.0"
+        android:text="Version: 1.9.15"
         android:textColor="@android:color/darker_gray"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
