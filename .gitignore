@@ -12,3 +12,7 @@
 /captures
 .externalNativeBuild
 .cxx
+/build.gradle
+/gradle/wrapper/gradle-wrapper.properties
+/gradle/wrapper/gradle-wrapper.jar
+.idea/vcs.xml

@@ -14,7 +14,7 @@ public class Ranking extends AppCompatActivity {
         setContentView(R.layout.activity_ranking);
     }
 
-    //double backpressed
+    //double back pressed
     boolean doubleBackToExitPressedOnce = false;
 
     @Override
