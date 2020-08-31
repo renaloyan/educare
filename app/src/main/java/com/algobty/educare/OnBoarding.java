@@ -69,6 +69,7 @@ public class OnBoarding extends AppCompatActivity {
 
     public void skip(View view){
         startActivity(new Intent(getApplicationContext(), Home.class));
+        overridePendingTransition(R.anim.anim_up_in, R.anim.slide_up_out);
         finish();
     }
 

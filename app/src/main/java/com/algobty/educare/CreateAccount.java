@@ -85,6 +85,7 @@ public class CreateAccount extends AppCompatActivity {
             public void onClick(View v) {
                 //intent to Login Activity
                 startActivity(new Intent(CreateAccount.this, Login.class));
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                 finish();
             }
         });
@@ -207,8 +208,9 @@ public class CreateAccount extends AppCompatActivity {
                         //touchable
                         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
-                        //intent to home activity
+                        //intent to onboarding activity
                         startActivity(new Intent(CreateAccount.this, OnBoarding.class));
+                        overridePendingTransition(R.anim.anim_up_in, R.anim.slide_up_out);
                         finish();
                     }
                 }

@@ -126,6 +126,7 @@ public class Profile extends AppCompatActivity {
             public void onClick(View v) {
                 //intent to settings activity
                 startActivity(new Intent(getApplicationContext(), Settings.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
             }
         });
@@ -135,6 +136,7 @@ public class Profile extends AppCompatActivity {
             public void onClick(View v) {
                 //intent to about activity
                 startActivity(new Intent(getApplicationContext(), About.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
             }
         });
@@ -215,6 +217,7 @@ public class Profile extends AppCompatActivity {
 
                         //intent to about activity
                         startActivity(new Intent(Profile.this, Login.class));
+                        overridePendingTransition(R.anim.anim_up_in, R.anim.slide_up_out);
                         finish();
                         //logout user
                         auth.signOut();

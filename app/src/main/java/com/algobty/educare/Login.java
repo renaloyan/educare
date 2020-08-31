@@ -78,8 +78,11 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
 
                 //intent to CreateAccount Activity
-                startActivity(new Intent(Login.this, CreateAccount.class));
+                startActivity(new Intent(getApplicationContext(), CreateAccount.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
+
+
             }
         });
 
@@ -239,6 +242,7 @@ public class Login extends AppCompatActivity {
 
                         //intent to home activity
                         startActivity(new Intent(Login.this, Home.class));
+                        overridePendingTransition(R.anim.anim_up_in, R.anim.slide_up_out);
                         finish();
                     }
 

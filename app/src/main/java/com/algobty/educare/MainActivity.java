@@ -48,13 +48,15 @@ public class MainActivity extends AppCompatActivity {
                     if (auth.getCurrentUser() != null){
                         //if user logged in intent to home activity
                         sleep(1 * 1000);
-                        startActivity(new Intent(getApplicationContext(), OnBoarding.class));
+                        startActivity(new Intent(getApplicationContext(), Home.class));
+                        overridePendingTransition(R.anim.anim_up_in, R.anim.slide_up_out);
                         finish();
                     }
                     else {
                         //if user is not logged in intent to login activity
                         sleep(1 * 1000);
                         startActivity(new Intent(getApplicationContext(), Login.class));
+                        overridePendingTransition(R.anim.anim_up_in, R.anim.slide_up_out);
                         finish();
                     }
                 }catch (Exception e){
