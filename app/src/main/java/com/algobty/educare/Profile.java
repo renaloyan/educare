@@ -1,11 +1,20 @@
 package com.algobty.educare;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Application;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
@@ -27,11 +36,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.File;
+
 public class Profile extends AppCompatActivity {
 
     private TextView username, emailText;
     private ImageView settingsBtn;
-    private RelativeLayout leaderboardBtn, aboutBtn, logoutBtn, exitBtn;
+    private RelativeLayout shareBtn, aboutBtn, logoutBtn, exitBtn;
     private ProgressBar progressBar;
 
     private FirebaseAuth auth;
@@ -44,7 +55,7 @@ public class Profile extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         username = findViewById(R.id.username_text);
-        leaderboardBtn = findViewById(R.id.leaderboard_button);
+        shareBtn = findViewById(R.id.share_button);
         settingsBtn = findViewById(R.id.settings_button);
         aboutBtn = findViewById(R.id.about_button);
         logoutBtn = findViewById(R.id.logout_button);
@@ -103,12 +114,10 @@ public class Profile extends AppCompatActivity {
         });
 
 
-        leaderboardBtn.setOnClickListener(new View.OnClickListener() {
+        shareBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //intent to ranking activity
-                startActivity(new Intent(Profile.this, Ranking.class));
-                finish();
+
             }
         });
 
@@ -116,7 +125,8 @@ public class Profile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //intent to settings activity
-                startActivity(new Intent(Profile.this, Settings.class));
+                startActivity(new Intent(getApplicationContext(), Settings.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
             }
         });
@@ -125,7 +135,8 @@ public class Profile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //intent to about activity
-                startActivity(new Intent(Profile.this, About.class));
+                startActivity(new Intent(getApplicationContext(), About.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
             }
         });
@@ -133,20 +144,14 @@ public class Profile extends AppCompatActivity {
         logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //intent to about activity
-                startActivity(new Intent(Profile.this, Login.class));
-                finish();
-                //logout user
-                auth.signOut();
+                logout();
             }
         });
 
         exitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //exit
-                finish();
-                System.exit(0);
+                exit();
             }
         });
 
@@ -176,6 +181,88 @@ public class Profile extends AppCompatActivity {
                 return false;
             }
         });
+
+        if (user == null){
+            startActivity(new Intent(getApplicationContext(), Login.class));
+            finish();
+        }
+
+        if(!isConnected()){
+
+            new AlertDialog.Builder(this)
+                    .setIcon(R.drawable.ic_internet_connection)
+                    .setTitle("No Internet Connection")
+                    .setMessage("Please Check your Internet Connection")
+                    .setCancelable(false)
+                    .setPositiveButton("Close", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                            System.exit(0);
+                        }
+                    }).show();
+
+        }
+
+    }
+
+    private void logout() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setMessage("Are you sure you want to Logout?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        //intent to about activity
+                        startActivity(new Intent(Profile.this, Login.class));
+                        overridePendingTransition(R.anim.anim_up_in, R.anim.slide_up_out);
+                        finish();
+                        //logout user
+                        auth.signOut();
+
+                    }
+                }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                //cancel
+                dialog.cancel();
+
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    private void exit() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setMessage("Are you sure you want to Exit?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        //exit
+                        finish();
+                        System.exit(0);
+
+                    }
+                }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                //cancel
+                dialog.cancel();
+
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 
     //double backpressed
@@ -197,6 +284,16 @@ public class Profile extends AppCompatActivity {
                 doubleBackToExitPressedOnce=false;
             }
         }, 2000);
+    }
+
+    private boolean isConnected() {
+
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+
+        return  networkInfo != null && networkInfo.isConnected();
+
     }
 
 }

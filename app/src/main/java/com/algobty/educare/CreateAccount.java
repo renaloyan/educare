@@ -1,9 +1,14 @@
 package com.algobty.educare;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
@@ -58,11 +63,29 @@ public class CreateAccount extends AppCompatActivity {
         //get the instance of firebase database
         database = FirebaseDatabase.getInstance();
 
+        if(!isConnected()){
+
+            new AlertDialog.Builder(this)
+                    .setIcon(R.drawable.ic_internet_connection)
+                    .setTitle("No Internet Connection")
+                    .setMessage("Please Check your Internet Connection")
+                    .setCancelable(false)
+                    .setPositiveButton("Close", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                            System.exit(0);
+                        }
+                    }).show();
+
+        }
+
         loginText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //intent to Login Activity
                 startActivity(new Intent(CreateAccount.this, Login.class));
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                 finish();
             }
         });
@@ -185,8 +208,9 @@ public class CreateAccount extends AppCompatActivity {
                         //touchable
                         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
-                        //intent to home activity
-                        startActivity(new Intent(CreateAccount.this, Home.class));
+                        //intent to onboarding activity
+                        startActivity(new Intent(CreateAccount.this, OnBoarding.class));
+                        overridePendingTransition(R.anim.anim_up_in, R.anim.slide_up_out);
                         finish();
                     }
                 }
@@ -227,4 +251,13 @@ public class CreateAccount extends AppCompatActivity {
         }, 2000);
     }
 
+    private boolean isConnected() {
+
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+
+        return  networkInfo != null && networkInfo.isConnected();
+
+    }
 }

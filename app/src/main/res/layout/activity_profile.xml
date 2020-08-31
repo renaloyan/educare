@@ -7,38 +7,98 @@
     android:orientation="vertical"
     tools:context=".Profile">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:background="@drawable/background_gradient"
-            android:padding="20dp">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:includeFontPadding="false"
-                android:text="Profile"
-                android:textColor="@android:color/black"
-                android:textSize="32sp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@drawable/background_gradient"
+                android:padding="20dp">
 
-            <ImageView
-                android:id="@+id/settings_button"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/ic_baseline_settings_24"
-                android:layout_alignParentEnd="true" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:includeFontPadding="false"
+                    android:text="Profile"
+                    android:textColor="@android:color/black"
+                    android:textSize="32sp" />
+
+                <ImageView
+                    android:id="@+id/settings_button"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/background_ripple"
+                    android:src="@drawable/ic_baseline_settings_24" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/settings_button"
+                    android:layout_marginTop="20dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="125dp"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="#fece2f"
+                        app:cardElevation="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/ic_account_black" />
+
+                            <TextView
+                                android:id="@+id/username_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="sans-serif-black"
+                                android:includeFontPadding="false"
+                                android:text="Username"
+                                android:textColor="@android:color/black"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/email_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/username_text"
+                                android:layout_centerInParent="true"
+                                android:includeFontPadding="false"
+                                android:text="Email"
+                                android:textColor="@android:color/black"
+                                android:textSize="14sp" />
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_below="@id/settings_button">
+                android:layout_marginTop="-110dp"
+                android:padding="20dp">
 
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="0dp"
@@ -57,27 +117,70 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_centerHorizontal="true"
-                            android:src="@drawable/ic_account_black" />
+                            android:src="@drawable/ic_rank" />
 
                         <TextView
-                            android:id="@+id/username_text"
+                            android:id="@+id/rank_text"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
                             android:fontFamily="sans-serif-black"
                             android:includeFontPadding="false"
-                            android:text="Username"
+                            android:text="None"
                             android:textColor="@android:color/black"
                             android:textSize="20sp" />
 
                         <TextView
-                            android:id="@+id/email_text"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@id/username_text"
+                            android:layout_below="@id/rank_text"
                             android:layout_centerInParent="true"
                             android:includeFontPadding="false"
-                            android:text="Email"
+                            android:text="Highest Score"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="125dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#fece2f"
+                    app:cardElevation="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_average" />
+
+                        <TextView
+                            android:id="@+id/average_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="sans-serif-black"
+                            android:includeFontPadding="false"
+                            android:text="None"
+                            android:textColor="@android:color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/average_text"
+                            android:layout_centerInParent="true"
+                            android:includeFontPadding="false"
+                            android:text="Average"
                             android:textColor="@android:color/black"
                             android:textSize="14sp" />
 
@@ -87,278 +190,192 @@
 
             </LinearLayout>
 
-        </RelativeLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="-110dp"
-            android:padding="20dp">
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_height="125dp"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                app:cardBackgroundColor="#fece2f"
-                app:cardElevation="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
 
                 <RelativeLayout
+                    android:id="@+id/about_button"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="5dp">
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true">
+
+                    <ImageView
+                        android:id="@+id/icon_about"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:foregroundGravity="center"
+                        android:src="@drawable/ic_about" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="16dp"
+                        android:layout_toRightOf="@id/icon_about"
+                        android:fontFamily="sans-serif-black"
+                        android:text="About"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp" />
 
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/ic_rank" />
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_arrow_forward" />
 
-                    <TextView
-                        android:id="@+id/rank_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:fontFamily="sans-serif-black"
-                        android:includeFontPadding="false"
-                        android:text="No rank yet"
-                        android:textColor="@android:color/black"
-                        android:textSize="20sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/rank_text"
-                        android:layout_centerInParent="true"
-                        android:includeFontPadding="false"
-                        android:text="Ranking"
-                        android:textColor="@android:color/black"
-                        android:textSize="14sp" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/icon_about"
+                        android:layout_marginTop="20dp"
+                        android:background="#000000" />
 
                 </RelativeLayout>
 
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_height="125dp"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                app:cardBackgroundColor="#fece2f"
-                app:cardElevation="10dp">
-
                 <RelativeLayout
+                    android:id="@+id/share_button"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="5dp">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true">
+
+                    <ImageView
+                        android:id="@+id/icon_share"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_share" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="16dp"
+                        android:layout_toRightOf="@id/icon_share"
+                        android:fontFamily="sans-serif-black"
+                        android:text="Share"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp" />
 
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/ic_average" />
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_arrow_forward" />
 
-                    <TextView
-                        android:id="@+id/average_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:fontFamily="sans-serif-black"
-                        android:includeFontPadding="false"
-                        android:text="No average yet"
-                        android:textColor="@android:color/black"
-                        android:textSize="20sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/average_text"
-                        android:layout_centerInParent="true"
-                        android:includeFontPadding="false"
-                        android:text="Average"
-                        android:textColor="@android:color/black"
-                        android:textSize="14sp" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/icon_share"
+                        android:layout_marginTop="20dp"
+                        android:background="#000000" />
 
                 </RelativeLayout>
 
-            </com.google.android.material.card.MaterialCardView>
+                <RelativeLayout
+                    android:id="@+id/logout_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true">
+
+                    <ImageView
+                        android:id="@+id/icon_logout"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_arrow_back" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="16dp"
+                        android:layout_toRightOf="@id/icon_logout"
+                        android:fontFamily="sans-serif-black"
+                        android:text="Logout"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_arrow_forward" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/icon_logout"
+                        android:layout_marginTop="20dp"
+                        android:background="#000000" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/exit_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true">
+
+                    <ImageView
+                        android:id="@+id/icon_exit"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_exit" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="16dp"
+                        android:layout_toRightOf="@id/icon_exit"
+                        android:fontFamily="sans-serif-black"
+                        android:text="Exit"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_arrow_forward" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/icon_exit"
+                        android:layout_marginTop="20dp"
+                        android:background="#000000" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="20dp">
-
-            <RelativeLayout
-                android:id="@+id/leaderboard_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/icon_rank"
-                    android:src="@drawable/ic_rank"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"/>
-
-                <TextView
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="16dp"
-                    android:layout_toRightOf="@id/icon_rank"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-black"
-                    android:textSize="20sp"
-                    android:textColor="@android:color/black"
-                    android:text="Leaderboard" />
-
-                <ImageView
-                    android:layout_alignParentEnd="true"
-                    android:src="@drawable/ic_arrow_forward"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"/>
-
-            </RelativeLayout>
-
-            <View
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#000000" />
-
-            <RelativeLayout
-                android:id="@+id/about_button"
-                android:layout_marginTop="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/icon_about"
-                    android:src="@drawable/ic_about"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"/>
-
-                <TextView
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="16dp"
-                    android:layout_toRightOf="@id/icon_about"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-black"
-                    android:textSize="20sp"
-                    android:textColor="@android:color/black"
-                    android:text="About" />
-
-                <ImageView
-                    android:layout_alignParentEnd="true"
-                    android:src="@drawable/ic_arrow_forward"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"/>
-
-            </RelativeLayout>
-
-            <View
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#000000" />
-
-            <RelativeLayout
-                android:id="@+id/logout_button"
-                android:layout_marginTop="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/icon_logout"
-                    android:src="@drawable/ic_arrow_back"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"/>
-
-                <TextView
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="16dp"
-                    android:layout_toRightOf="@id/icon_logout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-black"
-                    android:textSize="20sp"
-                    android:textColor="@android:color/black"
-                    android:text="Logout" />
-
-                <ImageView
-                    android:layout_alignParentEnd="true"
-                    android:src="@drawable/ic_arrow_forward"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"/>
-
-            </RelativeLayout>
-
-            <View
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#000000" />
-
-            <RelativeLayout
-                android:id="@+id/exit_button"
-                android:layout_marginTop="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/icon_exit"
-                    android:src="@drawable/ic_exit"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"/>
-
-                <TextView
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="16dp"
-                    android:layout_toRightOf="@id/icon_exit"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-black"
-                    android:textSize="20sp"
-                    android:textColor="@android:color/black"
-                    android:text="Exit" />
-
-                <ImageView
-                    android:layout_alignParentEnd="true"
-                    android:src="@drawable/ic_arrow_forward"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"/>
-
-            </RelativeLayout>
-
-            <View
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#000000" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:includeFontPadding="false"
-        android:text="Version: 1.0"
-        android:textColor="@android:color/darker_gray"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="70dp"
-        android:textSize="18sp" />
+    </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:itemBackground="@drawable/background"
+        android:elevation="10dp"
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
         app:menu="@menu/menu_nav" />
@@ -368,7 +385,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_centerInParent="true"
-        android:visibility="gone"
-        android:elevation="8dp" />
+        android:elevation="8dp"
+        android:visibility="gone" />
 
 </RelativeLayout>

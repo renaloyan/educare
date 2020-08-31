@@ -1,6 +1,14 @@
 package com.algobty.educare;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
@@ -13,6 +21,8 @@ import com.algobty.educare.recyclerviews.SpacingItemDecorator;
 import com.algobty.educare.recyclerviews.gradecard.GradeCardAdapter;
 import com.algobty.educare.recyclerviews.gradecard.GradeCardModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 
@@ -59,6 +69,30 @@ public class Home extends AppCompatActivity {
                 return false;
             }
         });
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user == null){
+            startActivity(new Intent(getApplicationContext(), Login.class));
+            finish();
+        }
+
+        if(!isConnected()){
+
+            new AlertDialog.Builder(this)
+                    .setIcon(R.drawable.ic_internet_connection)
+                    .setTitle("No Internet Connection")
+                    .setMessage("Please Check your Internet Connection")
+                    .setCancelable(false)
+                    .setPositiveButton("Close", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                            System.exit(0);
+                        }
+                    }).show();
+
+        }
+
     }
 
     //double backpressed
@@ -80,6 +114,16 @@ public class Home extends AppCompatActivity {
                 doubleBackToExitPressedOnce = false;
             }
         }, 2000);
+    }
+
+    private boolean isConnected() {
+
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+
+        return  networkInfo != null && networkInfo.isConnected();
+
     }
 
     //set items on grade card recycler view

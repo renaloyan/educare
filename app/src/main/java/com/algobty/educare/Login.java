@@ -1,7 +1,10 @@
 package com.algobty.educare;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.InputType;
@@ -53,14 +56,33 @@ public class Login extends AppCompatActivity {
 
         //get the instance of firebase auth
         auth = FirebaseAuth.getInstance();
+        if(!isConnected()){
+
+            new AlertDialog.Builder(this)
+                    .setIcon(R.drawable.ic_internet_connection)
+                    .setTitle("No Internet Connection")
+                    .setMessage("Please Check your Internet Connection")
+                    .setCancelable(false)
+                    .setPositiveButton("Close", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                            System.exit(0);
+                        }
+                    }).show();
+
+        }
 
         createAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 //intent to CreateAccount Activity
-                startActivity(new Intent(Login.this, CreateAccount.class));
+                startActivity(new Intent(getApplicationContext(), CreateAccount.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
+
+
             }
         });
 
@@ -220,6 +242,7 @@ public class Login extends AppCompatActivity {
 
                         //intent to home activity
                         startActivity(new Intent(Login.this, Home.class));
+                        overridePendingTransition(R.anim.anim_up_in, R.anim.slide_up_out);
                         finish();
                     }
 
@@ -260,6 +283,16 @@ public class Login extends AppCompatActivity {
                 doubleBackToExitPressedOnce=false;
             }
         }, 2000);
+    }
+
+    private boolean isConnected() {
+
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+
+        return  networkInfo != null && networkInfo.isConnected();
+
     }
 
 }

@@ -14,30 +14,4 @@
         android:src="@drawable/slogan"
         android:layout_marginTop="100dp" />
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp">
-
-    <ImageView
-        android:id="@+id/copyright"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:src="@drawable/ic_copyright" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="5dp"
-        android:textColor="@color/colorAccent"
-        android:layout_toRightOf="@id/copyright"
-        android:text="ALGOBTY"
-        android:layout_centerVertical="true"
-        android:textSize="14sp" />
-
-    </RelativeLayout>
-
 </RelativeLayout>
