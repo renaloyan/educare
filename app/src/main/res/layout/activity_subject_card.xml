@@ -5,6 +5,7 @@
     tools:context=".SubjectCardActivity"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background_gradient"
     xmlns:tools="http://schemas.android.com/tools">
 
     <com.google.android.material.card.MaterialCardView
@@ -69,8 +70,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:itemBackground="@drawable/background"
         app:itemIconTint="@drawable/selector"
+        android:elevation="10dp"
         app:itemTextColor="@drawable/selector"
         app:menu="@menu/menu_nav"/>
 
