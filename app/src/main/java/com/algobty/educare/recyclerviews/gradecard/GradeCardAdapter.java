@@ -1,12 +1,13 @@
 package com.algobty.educare.recyclerviews.gradecard;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -19,17 +20,22 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class GradeCardAdapter extends RecyclerView.Adapter<GradeCardAdapter.GradeCardViewHolder> {
 
+    Activity mActivity;
     Context context;
     ArrayList<GradeCardModel> gradeCardModels;
     static Map<Integer, Drawable> background = new HashMap<>();
+    List<Integer> images;
 
-    public GradeCardAdapter(Context context, ArrayList<GradeCardModel> gradeCardModels) {
+    public GradeCardAdapter(Context context, ArrayList<GradeCardModel> gradeCardModels, List<Integer> images,Activity mActivity) {
         this.context = context;
         this.gradeCardModels = gradeCardModels;
+        this.images = images;
+        this.mActivity = mActivity;
     }
 
     @NonNull
@@ -43,7 +49,7 @@ public class GradeCardAdapter extends RecyclerView.Adapter<GradeCardAdapter.Grad
         background.put(11, ResourcesCompat.getDrawable(context.getResources(), R.drawable.research_card_background, null));
         background.put(12, ResourcesCompat.getDrawable(context.getResources(), R.drawable.ap_card_background, null));
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_card, null);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.grade_card, null);
         return new GradeCardViewHolder(view);
     }
 
@@ -51,6 +57,7 @@ public class GradeCardAdapter extends RecyclerView.Adapter<GradeCardAdapter.Grad
     public void onBindViewHolder(@NonNull @NotNull GradeCardViewHolder holder, int position) {
         holder.gradeCardLayout.setBackground(background.get(gradeCardModels.get(position).getGradeLevel()));
         holder.gradeLevel.setText("Grade " + gradeCardModels.get(position).getGradeLevel());
+        holder.gridIcon.setImageResource(images.get(position));
     }
 
     @Override
@@ -61,13 +68,15 @@ public class GradeCardAdapter extends RecyclerView.Adapter<GradeCardAdapter.Grad
         CardView gradeCardView;
         ConstraintLayout gradeCardLayout;
         TextView gradeLevel;
+        ImageView gridIcon;
 
         public GradeCardViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
             context = itemView.getContext();
-            this.gradeCardView = itemView.findViewById(R.id.card_view);
-            this.gradeCardLayout = itemView.findViewById(R.id.card_layout);
-            this.gradeLevel = itemView.findViewById(R.id.display_text);
+            this.gradeCardView = itemView.findViewById(R.id.grade_view);
+            this.gradeCardLayout = itemView.findViewById(R.id.grade_layout);
+            this.gradeLevel = itemView.findViewById(R.id.grade_text);
+            this.gridIcon = itemView.findViewById(R.id.grade_image);
             itemView.setClickable(true);
             itemView.setOnClickListener(this);
         }
@@ -104,6 +113,8 @@ public class GradeCardAdapter extends RecyclerView.Adapter<GradeCardAdapter.Grad
                     throw new IllegalStateException("Unexpected value: " + getAdapterPosition());
             }
             context.startActivity(intent);
+            mActivity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            mActivity.finish();
         }
     }
 }

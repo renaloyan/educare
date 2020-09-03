@@ -1,11 +1,11 @@
 package com.algobty.educare.recyclerviews.subjectcard;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -17,6 +17,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class SubjectCardAdapter extends RecyclerView.Adapter<SubjectCardAdapter.SubjectCardViewHolder> {
@@ -24,10 +25,12 @@ public class SubjectCardAdapter extends RecyclerView.Adapter<SubjectCardAdapter.
     Context context;
     ArrayList<SubjectCardModel> subjectCardModels;
     Map<String, Drawable> background = new HashMap<>();
+    List<Integer> images;
 
-    public SubjectCardAdapter(Context context, ArrayList<SubjectCardModel> subjectCardModels) {
+    public SubjectCardAdapter(Context context, ArrayList<SubjectCardModel> subjectCardModels, List<Integer> images) {
         this.context = context;
         this.subjectCardModels = subjectCardModels;
+        this.images = images;
     }
 
     @NonNull
@@ -44,7 +47,7 @@ public class SubjectCardAdapter extends RecyclerView.Adapter<SubjectCardAdapter.
         background.put("research", ResourcesCompat.getDrawable(context.getResources(), R.drawable.research_card_background, null));
         background.put("science", ResourcesCompat.getDrawable(context.getResources(), R.drawable.science_card_background, null));
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_card, null);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.subject_card, null);
         return new SubjectCardViewHolder(view);
     }
 
@@ -52,6 +55,7 @@ public class SubjectCardAdapter extends RecyclerView.Adapter<SubjectCardAdapter.
     public void onBindViewHolder(@NonNull @NotNull SubjectCardViewHolder holder, int position) {
         holder.subjectLayout.setBackground(background.get(subjectCardModels.get(position).getSubject().toLowerCase()));
         holder.subject.setText(subjectCardModels.get(position).getSubject());
+        holder.gridIcon.setImageResource(images.get(position));
     }
 
     @Override
@@ -64,12 +68,14 @@ public class SubjectCardAdapter extends RecyclerView.Adapter<SubjectCardAdapter.
         CardView subjectCardView;
         ConstraintLayout subjectLayout;
         TextView subject;
+        ImageView gridIcon;
 
         public SubjectCardViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
-            this.subjectCardView = itemView.findViewById(R.id.card_view);
-            this.subjectLayout = itemView.findViewById(R.id.card_layout);
-            this.subject = itemView.findViewById(R.id.display_text);
+            this.subjectCardView = itemView.findViewById(R.id.sub_view);
+            this.subjectLayout = itemView.findViewById(R.id.sub_layout);
+            this.subject = itemView.findViewById(R.id.sub_text);
+            this.gridIcon = itemView.findViewById(R.id.sub_image);
         }
     }
 }

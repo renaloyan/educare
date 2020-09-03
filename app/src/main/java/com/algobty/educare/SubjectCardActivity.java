@@ -6,6 +6,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.algobty.educare.recyclerviews.SpacingItemDecorator;
@@ -14,6 +16,7 @@ import com.algobty.educare.recyclerviews.subjectcard.SubjectCardModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SubjectCardActivity extends AppCompatActivity {
 
@@ -33,6 +36,20 @@ public class SubjectCardActivity extends AppCompatActivity {
         Intent intent = getIntent();
         gradeClicked = intent.getIntExtra("gradeClicked", 7);
         quarterClicked = intent.getIntExtra("quarterClicked", 1);
+
+        List<Integer> images;
+
+        images = new ArrayList<>();
+
+        images.add(R.drawable.ap);
+        images.add(R.drawable.science);
+        images.add(R.drawable.esp);
+        images.add(R.drawable.mapeh);
+        images.add(R.drawable.math);
+        images.add(R.drawable.ict);
+        images.add(R.drawable.filipino);
+        images.add(R.drawable.research);
+        images.add(R.drawable.english);
 
         //displays the chosen grade and quarter
         gradeChosen = findViewById(R.id.grade_chosen);
@@ -59,41 +76,18 @@ public class SubjectCardActivity extends AppCompatActivity {
 
         //setup recycler view
         subjectRecyclerView = findViewById(R.id.subject_card_recycler_view);
-        subjectCardAdapter = new SubjectCardAdapter(this, getSubjectCardModels());
-        subjectRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        subjectCardAdapter = new SubjectCardAdapter(this, getSubjectCardModels(), images);
+        subjectRecyclerView.setLayoutManager(new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false));
         subjectRecyclerView.setAdapter(subjectCardAdapter);
         SpacingItemDecorator spacingItemDecorator = new SpacingItemDecorator(10);
         subjectRecyclerView.addItemDecoration(spacingItemDecorator);
 
-        //bottom nav
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-
-        bottomNavigationView.setSelectedItemId(R.id.dashboard);
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.dashboard:
-                        return true;
-                    case R.id.current_task:
-                        startActivity(new Intent(getApplicationContext(), CurrentTask.class));
-                        overridePendingTransition(1, 1);
-                        finish();
-                        return true;
-                    case R.id.profile:
-                        startActivity(new Intent(getApplicationContext(), Profile.class));
-                        overridePendingTransition(1, 1);
-                        finish();
-                        return true;
-                }
-                return false;
-            }
-        });
     }
 
     @Override
     public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(), QuarterCardActivity.class));
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
         finish();
     }
 

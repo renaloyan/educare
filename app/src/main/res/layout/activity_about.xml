@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/about"
             android:layout_marginTop="30dp"
-            android:fontFamily="sans-serif"
+            android:fontFamily="serif-monospace"
             android:gravity="center"
             android:text="What is Educare?"
             android:textColor="@android:color/black"
@@ -49,7 +49,7 @@
             android:layout_below="@id/what_educare"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
-            android:fontFamily="sans-serif"
+            android:fontFamily="serif-monospace"
             android:gravity="center"
             android:text="@string/about"
             android:textColor="@android:color/black"
@@ -80,7 +80,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif"
+                android:fontFamily="serif-monospace"
                 android:gravity="center"
                 android:text="Marinil"
                 android:textColor="@android:color/black"
@@ -90,7 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
-                android:fontFamily="sans-serif"
+                android:fontFamily="serif-monospace"
                 android:gravity="center"
                 android:text="Reev"
                 android:textColor="@android:color/black"
@@ -100,7 +100,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
-                android:fontFamily="sans-serif"
+                android:fontFamily="serif-monospace"
                 android:gravity="center"
                 android:text="KJ"
                 android:textColor="@android:color/black"
@@ -120,7 +120,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif"
+                android:fontFamily="serif-monospace"
                 android:gravity="center"
                 android:text="Aaron"
                 android:textColor="@android:color/black"
@@ -130,7 +130,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
-                android:fontFamily="sans-serif"
+                android:fontFamily="serif-monospace"
                 android:gravity="center"
                 android:text="Reiner"
                 android:textColor="@android:color/black"
@@ -140,27 +140,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
-                android:fontFamily="sans-serif"
+                android:fontFamily="serif-monospace"
                 android:gravity="center"
                 android:text="Joshua"
                 android:textColor="@android:color/black"
                 android:textSize="20dp" />
 
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/license"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/line2"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:fontFamily="sans-serif-black"
-            android:gravity="center"
-            android:text="Privacy Policy"
-            android:textColor="@android:color/black"
-            android:textSize="36dp" />
-
 
     </RelativeLayout>
 

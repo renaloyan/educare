@@ -42,7 +42,7 @@ public class Profile extends AppCompatActivity {
 
     private TextView username, emailText;
     private ImageView settingsBtn;
-    private RelativeLayout shareBtn, aboutBtn, logoutBtn, exitBtn;
+    private RelativeLayout shareBtn, aboutBtn, feedbackBtn, logoutBtn, exitBtn;
     private ProgressBar progressBar;
 
     private FirebaseAuth auth;
@@ -62,6 +62,7 @@ public class Profile extends AppCompatActivity {
         exitBtn = findViewById(R.id.exit_button);
         emailText = findViewById(R.id.email_text);
         progressBar = findViewById(R.id.profile_progressBar);
+        feedbackBtn = findViewById(R.id.feedback_button);
 
         //get the instance of firebase auth
         auth = FirebaseAuth.getInstance();
@@ -113,6 +114,19 @@ public class Profile extends AppCompatActivity {
             }
         });
 
+        feedbackBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String TO_EMAIL = "algobtybantayan@gmail.com";
+
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto:" + TO_EMAIL));
+
+                startActivity(Intent.createChooser(intent, "SendVia"));
+
+            }
+        });
 
         shareBtn.setOnClickListener(new View.OnClickListener() {
             @Override

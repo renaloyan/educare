@@ -8,14 +8,23 @@ import org.jetbrains.annotations.NotNull;
 
 public class SpacingItemDecorator extends RecyclerView.ItemDecoration {
 
-    private final int verticalSpaceHeight;
+    private int space;
 
-    public SpacingItemDecorator(int verticalSpaceHeight) {
-        this.verticalSpaceHeight =verticalSpaceHeight;
+    public SpacingItemDecorator(int space) {
+        this.space = space;
     }
 
     @Override
     public void getItemOffsets(@NonNull @NotNull Rect outRect, @NonNull @NotNull View view, @NonNull @NotNull RecyclerView parent, @NonNull @NotNull RecyclerView.State state) {
-        outRect.bottom = verticalSpaceHeight;
+        outRect.left = space;
+        outRect.right = space;
+        outRect.bottom = space;
+
+        if (parent.getChildLayoutPosition(view) == 0){
+            outRect.top = space;
+        }
+        else {
+            outRect.top = 0;
+        }
     }
 }

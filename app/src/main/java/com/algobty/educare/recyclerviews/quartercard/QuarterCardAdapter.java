@@ -1,5 +1,6 @@
 package com.algobty.educare.recyclerviews.quartercard;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -23,13 +24,15 @@ import java.util.Map;
 
 public class QuarterCardAdapter extends RecyclerView.Adapter<QuarterCardAdapter.QuarterCardViewHolder> {
 
+    Activity mActivity;
     Context context;
     ArrayList<QuarterCardModel> quarterCardModels;
     static Map<Integer, Drawable> background = new HashMap<>();
 
-    public QuarterCardAdapter(Context context, ArrayList<QuarterCardModel> quarterCardModels) {
+    public QuarterCardAdapter(Context context, ArrayList<QuarterCardModel> quarterCardModels, Activity mActivity) {
         this.context = context;
         this.quarterCardModels = quarterCardModels;
+        this.mActivity = mActivity;
     }
 
     @NonNull
@@ -38,11 +41,11 @@ public class QuarterCardAdapter extends RecyclerView.Adapter<QuarterCardAdapter.
     public QuarterCardViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
 
         background.put(1, ResourcesCompat.getDrawable(context.getResources(), R.drawable.mapeh_card_background, null));
-        background.put(2, ResourcesCompat.getDrawable(context.getResources(), R.drawable.ict_card_background, null));
+        /* background.put(2, ResourcesCompat.getDrawable(context.getResources(), R.drawable.ict_card_background, null));
         background.put(3, ResourcesCompat.getDrawable(context.getResources(), R.drawable.english_card_background, null));
-        background.put(4, ResourcesCompat.getDrawable(context.getResources(), R.drawable.ap_card_background, null));
+        background.put(4, ResourcesCompat.getDrawable(context.getResources(), R.drawable.ap_card_background, null)); */
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_card, null);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.quarter_card, null);
         return new QuarterCardViewHolder(view);
     }
 
@@ -54,7 +57,7 @@ public class QuarterCardAdapter extends RecyclerView.Adapter<QuarterCardAdapter.
             case 1:
                 numberPostfix = "st";
                 break;
-            case 2:
+           /* case 2:
                 numberPostfix = "nd";
                 break;
             case 3:
@@ -62,7 +65,7 @@ public class QuarterCardAdapter extends RecyclerView.Adapter<QuarterCardAdapter.
                 break;
             case 4:
                 numberPostfix = "th";
-                break;
+                break; */
             default:
                 throw new IllegalStateException("Unexpected value: " + quarterNumber);
         }
@@ -84,9 +87,9 @@ public class QuarterCardAdapter extends RecyclerView.Adapter<QuarterCardAdapter.
         public QuarterCardViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
             context = itemView.getContext();
-            this.quarterCardView = itemView.findViewById(R.id.card_view);
-            this.quarterCardLayout = itemView.findViewById(R.id.card_layout);
-            this.quarterNumber = itemView.findViewById(R.id.display_text);
+            this.quarterCardView = itemView.findViewById(R.id.quarter_view);
+            this.quarterCardLayout = itemView.findViewById(R.id.quarter_layout);
+            this.quarterNumber = itemView.findViewById(R.id.quarter_text);
             itemView.setClickable(true);
             itemView.setOnClickListener(this);
         }
@@ -99,7 +102,7 @@ public class QuarterCardAdapter extends RecyclerView.Adapter<QuarterCardAdapter.
                     intent = new Intent(context, SubjectCardActivity.class);
                     intent.putExtra("quarterClicked", 1);
                     break;
-                case 1:
+                /* case 1:
                     intent = new Intent(context, SubjectCardActivity.class);
                     intent.putExtra("quarterClicked", 2);
                     break;
@@ -110,13 +113,15 @@ public class QuarterCardAdapter extends RecyclerView.Adapter<QuarterCardAdapter.
                 case 3:
                     intent = new Intent(context, SubjectCardActivity.class);
                     intent.putExtra("quarterClicked", 4);
-                    break;
+                    break; */
                 default:
                     throw new IllegalStateException("Unexpected value: " + getAdapterPosition());
             }
             QuarterCardActivity quarterCardActivity = new QuarterCardActivity();
             intent.putExtra("gradeClicked", quarterCardActivity.getGradeClicked());
             context.startActivity(intent);
+            mActivity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            mActivity.finish();
         }
     }
 }

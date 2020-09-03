@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.algobty.educare"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.algobty.educare">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -13,29 +13,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SubjectCardActivity">
-        </activity>
-        <activity android:name=".QuarterCardActivity">
-        </activity>
-        <activity android:name=".About"/>
-        <activity android:name=".Settings"/>
-        <activity android:name=".Profile"/>
-        <activity android:name=".CurrentTask"/>
-        <activity android:name=".CreateAccount"/>
-        <activity android:name=".Login"/>
-        <activity android:name=".OnBoarding"/>
+        <activity android:name=".Quiz"></activity>
+        <activity android:name=".SubjectCardActivity" />
+        <activity android:name=".QuarterCardActivity" />
+        <activity android:name=".About" />
+        <activity android:name=".Settings" />
+        <activity android:name=".Profile" />
+        <activity android:name=".CurrentTask" />
+        <activity android:name=".CreateAccount" />
+        <activity android:name=".Login" />
+        <activity android:name=".OnBoarding" />
         <activity android:name=".Home">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -15,6 +16,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.algobty.educare.recyclerviews.SpacingItemDecorator;
@@ -25,6 +27,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Home extends AppCompatActivity {
 
@@ -36,10 +39,22 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        List<Integer> images;
+
+        images = new ArrayList<>();
+
+        images.add(R.drawable.seven);
+        images.add(R.drawable.eight);
+        images.add(R.drawable.nine);
+        images.add(R.drawable.ten);
+        images.add(R.drawable.eleven);
+        images.add(R.drawable.twelve);
+
         //initialize grade card
         gradeCardRecyclerView = findViewById(R.id.grade_card_recycler_view);
-        gradeCardAdapter = new GradeCardAdapter(this, getGradeCardModels());
-        gradeCardRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        Activity thisActivity = (Activity) this;
+        gradeCardAdapter = new GradeCardAdapter(this, getGradeCardModels(), images,thisActivity);
+        gradeCardRecyclerView.setLayoutManager(new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false));
         gradeCardRecyclerView.setAdapter(gradeCardAdapter);
         SpacingItemDecorator itemDecorator = new SpacingItemDecorator(10);
         gradeCardRecyclerView.addItemDecoration(itemDecorator);
@@ -92,7 +107,6 @@ public class Home extends AppCompatActivity {
                     }).show();
 
         }
-
     }
 
     //double backpressed
@@ -143,5 +157,7 @@ public class Home extends AppCompatActivity {
         gradeCardModel.setGradeLevel(gradeLevel);
         return gradeCardModel;
     }
+
+
 }
 

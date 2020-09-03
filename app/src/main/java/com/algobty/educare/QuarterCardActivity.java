@@ -1,5 +1,6 @@
 package com.algobty.educare;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -44,50 +45,28 @@ public class QuarterCardActivity extends AppCompatActivity {
 
         //setup recycler view
         quarterCardRecyclerView = findViewById(R.id.quarter_card_recycler_view);
-        quarterCardAdapter = new QuarterCardAdapter(this, getQuarterCardModels());
+        Activity thisActivity = (Activity)this;
+        quarterCardAdapter = new QuarterCardAdapter(this, getQuarterCardModels(), thisActivity);
         quarterCardRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         quarterCardRecyclerView.setAdapter(quarterCardAdapter);
         SpacingItemDecorator itemDecorator = new SpacingItemDecorator(10);
         quarterCardRecyclerView.addItemDecoration(itemDecorator);
 
-        //bottom nav
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-
-        bottomNavigationView.setSelectedItemId(R.id.dashboard);
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.dashboard:
-                        return true;
-                    case R.id.current_task:
-                        startActivity(new Intent(getApplicationContext(), CurrentTask.class));
-                        overridePendingTransition(1, 1);
-                        finish();
-                        return true;
-                    case R.id.profile:
-                        startActivity(new Intent(getApplicationContext(), Profile.class));
-                        overridePendingTransition(1, 1);
-                        finish();
-                        return true;
-                }
-                return false;
-            }
-        });
     }
 
     @Override
     public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(), Home.class));
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
         finish();
     }
 
     private ArrayList<QuarterCardModel> getQuarterCardModels() {
         ArrayList<QuarterCardModel> quarterCardModels = new ArrayList<>();
         quarterCardModels.add(createQuarterCardModel(1));
-        quarterCardModels.add(createQuarterCardModel(2));
+       /* quarterCardModels.add(createQuarterCardModel(2));
         quarterCardModels.add(createQuarterCardModel(3));
-        quarterCardModels.add(createQuarterCardModel(4));
+        quarterCardModels.add(createQuarterCardModel(4)); */
         return quarterCardModels;
     }
 
