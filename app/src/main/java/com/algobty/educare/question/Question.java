@@ -2,9 +2,9 @@ package com.algobty.educare.question;
 
 public class Question {
 
-    private String grade;
-    private String quarter;
-    private String subject;
+    private int grade;
+    private int quarter;
+    private int subject;
     private String question;
     private String optionA;
     private String optionB;
@@ -14,7 +14,7 @@ public class Question {
 
     public Question() {}
 
-    public Question(String grade, String quarter, String subject, String question, String optionA, String optionB, String optionC, String optionD, int correctAns) {
+    public Question(int grade, int quarter, int subject, String question, String optionA, String optionB, String optionC, String optionD, int correctAns) {
         this.grade = grade;
         this.quarter = quarter;
         this.subject = subject;
@@ -26,27 +26,27 @@ public class Question {
         this.correctAns = correctAns;
     }
 
-    public String getGrade() {
+    public int getGrade() {
         return grade;
     }
 
-    public void setGrade(String grade) {
+    public void setGrade(int grade) {
         this.grade = grade;
     }
 
-    public String getQuarter() {
+    public int getQuarter() {
         return quarter;
     }
 
-    public void setQuarter(String quarter) {
+    public void setQuarter(int quarter) {
         this.quarter = quarter;
     }
 
-    public String getSubject() {
+    public int getSubject() {
         return subject;
     }
 
-    public void setSubject(String subject) {
+    public void setSubject(int subject) {
         this.subject = subject;
     }
 

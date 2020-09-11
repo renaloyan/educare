@@ -4,10 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -40,7 +42,7 @@ import java.io.File;
 
 public class Profile extends AppCompatActivity {
 
-    private TextView username, emailText;
+    private TextView username, emailText, highScoreTxt;
     private ImageView settingsBtn;
     private RelativeLayout shareBtn, aboutBtn, feedbackBtn, logoutBtn, exitBtn;
     private ProgressBar progressBar;
@@ -48,6 +50,9 @@ public class Profile extends AppCompatActivity {
     private FirebaseAuth auth;
     private FirebaseDatabase database;
     private DatabaseReference databaseReference;
+
+    private int highScore;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +68,7 @@ public class Profile extends AppCompatActivity {
         emailText = findViewById(R.id.email_text);
         progressBar = findViewById(R.id.profile_progressBar);
         feedbackBtn = findViewById(R.id.feedback_button);
+        highScoreTxt = findViewById(R.id.highscore_text);
 
         //get the instance of firebase auth
         auth = FirebaseAuth.getInstance();
@@ -79,6 +85,15 @@ public class Profile extends AppCompatActivity {
         //not touchable
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
                 WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+
+        loadHighScore();
+
+        SharedPreferences myPrefs = getSharedPreferences("sharedPref", MODE_PRIVATE);
+        int score = myPrefs.getInt("SCORE", 0);
+
+        if (score > highScore){
+            updateHighScore(score);
+        }
 
         if(user != null){
             String email = user.getEmail();
@@ -217,6 +232,27 @@ public class Profile extends AppCompatActivity {
                     }).show();
 
         }
+
+    }
+
+    private void loadHighScore() {
+
+        SharedPreferences prefs = getSharedPreferences("SHARED_PREFS", MODE_PRIVATE);
+        highScore = prefs.getInt("HIGHSCORE", 0);
+        highScoreTxt.setText(String.valueOf(highScore));
+
+
+    }
+
+    private void updateHighScore(int highscoreNew) {
+
+        highScore = highscoreNew;
+        highScoreTxt.setText(String.valueOf(highScore));
+
+        SharedPreferences prefs = getSharedPreferences("SHARED_PREFS", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putInt("HIGHSCORE", highScore);
+        editor.apply();
 
     }
 

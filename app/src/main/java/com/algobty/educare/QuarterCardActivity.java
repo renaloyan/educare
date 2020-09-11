@@ -45,7 +45,7 @@ public class QuarterCardActivity extends AppCompatActivity {
 
         //setup recycler view
         quarterCardRecyclerView = findViewById(R.id.quarter_card_recycler_view);
-        Activity thisActivity = (Activity)this;
+        Activity thisActivity = this;
         quarterCardAdapter = new QuarterCardAdapter(this, getQuarterCardModels(), thisActivity);
         quarterCardRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         quarterCardRecyclerView.setAdapter(quarterCardAdapter);

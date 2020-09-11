@@ -28,7 +28,6 @@ public class GradeCardAdapter extends RecyclerView.Adapter<GradeCardAdapter.Grad
     Activity mActivity;
     Context context;
     ArrayList<GradeCardModel> gradeCardModels;
-    static Map<Integer, Drawable> background = new HashMap<>();
     List<Integer> images;
 
     public GradeCardAdapter(Context context, ArrayList<GradeCardModel> gradeCardModels, List<Integer> images,Activity mActivity) {
@@ -42,20 +41,12 @@ public class GradeCardAdapter extends RecyclerView.Adapter<GradeCardAdapter.Grad
     @NotNull
     @Override
     public GradeCardViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
-        background.put(7, ResourcesCompat.getDrawable(context.getResources(), R.drawable.math_card_background, null));
-        background.put(8, ResourcesCompat.getDrawable(context.getResources(), R.drawable.esp_card_background, null));
-        background.put(9, ResourcesCompat.getDrawable(context.getResources(), R.drawable.science_card_background, null));
-        background.put(10, ResourcesCompat.getDrawable(context.getResources(), R.drawable.filipino_card_background, null));
-        background.put(11, ResourcesCompat.getDrawable(context.getResources(), R.drawable.research_card_background, null));
-        background.put(12, ResourcesCompat.getDrawable(context.getResources(), R.drawable.ap_card_background, null));
-
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.grade_card, null);
         return new GradeCardViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull @NotNull GradeCardViewHolder holder, int position) {
-        holder.gradeCardLayout.setBackground(background.get(gradeCardModels.get(position).getGradeLevel()));
         holder.gradeLevel.setText("Grade " + gradeCardModels.get(position).getGradeLevel());
         holder.gridIcon.setImageResource(images.get(position));
     }
@@ -66,7 +57,6 @@ public class GradeCardAdapter extends RecyclerView.Adapter<GradeCardAdapter.Grad
     class GradeCardViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         CardView gradeCardView;
-        ConstraintLayout gradeCardLayout;
         TextView gradeLevel;
         ImageView gridIcon;
 
@@ -74,7 +64,6 @@ public class GradeCardAdapter extends RecyclerView.Adapter<GradeCardAdapter.Grad
             super(itemView);
             context = itemView.getContext();
             this.gradeCardView = itemView.findViewById(R.id.grade_view);
-            this.gradeCardLayout = itemView.findViewById(R.id.grade_layout);
             this.gradeLevel = itemView.findViewById(R.id.grade_text);
             this.gridIcon = itemView.findViewById(R.id.grade_image);
             itemView.setClickable(true);

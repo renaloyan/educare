@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
+    android:padding="20dp"
+    tools:context=".Result">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="330dp">
+
+            <TextView
+                android:id="@+id/result_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fece2f"
+                android:fontFamily="sans-serif"
+                android:gravity="center_horizontal"
+                android:text="RESULT"
+                android:textColor="@android:color/white"
+                android:textSize="36sp"/>
+
+
+            <ImageView
+                android:id="@+id/image_result"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_below="@id/result_text"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp" />
+
+
+            <TextView
+                android:id="@+id/passed_failed_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:layout_below="@id/image_result"
+                android:textSize="26sp"
+                android:gravity="center"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:id="@+id/result_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:layout_below="@id/passed_failed_text"
+                android:textSize="22sp"
+                android:layout_marginTop="10dp" />
+
+            <Button
+                android:id="@+id/result_finish_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/result_score"
+                android:text="FINISH"
+                android:textColor="@android:color/white"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="20dp"
+                android:textSize="22sp"
+                android:elevation="10dp" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>

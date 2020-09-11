@@ -1,6 +1,8 @@
 package com.algobty.educare.recyclerviews.subjectcard;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +14,12 @@ import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.algobty.educare.QuarterCardActivity;
+import com.algobty.educare.Quiz;
 import com.algobty.educare.R;
+import com.algobty.educare.SubjectCardActivity;
+
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -22,38 +29,28 @@ import java.util.Map;
 
 public class SubjectCardAdapter extends RecyclerView.Adapter<SubjectCardAdapter.SubjectCardViewHolder> {
 
+    Activity mActivity;
     Context context;
     ArrayList<SubjectCardModel> subjectCardModels;
-    Map<String, Drawable> background = new HashMap<>();
     List<Integer> images;
 
-    public SubjectCardAdapter(Context context, ArrayList<SubjectCardModel> subjectCardModels, List<Integer> images) {
+    public SubjectCardAdapter(Context context, ArrayList<SubjectCardModel> subjectCardModels, List<Integer> images, Activity mActivity) {
         this.context = context;
         this.subjectCardModels = subjectCardModels;
         this.images = images;
+        this.mActivity = mActivity;
     }
 
     @NonNull
     @NotNull
     @Override
     public SubjectCardViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
-        background.put("ap", ResourcesCompat.getDrawable(context.getResources(), R.drawable.ap_card_background, null));
-        background.put("english", ResourcesCompat.getDrawable(context.getResources(), R.drawable.english_card_background, null));
-        background.put("esp", ResourcesCompat.getDrawable(context.getResources(), R.drawable.esp_card_background, null));
-        background.put("filipino", ResourcesCompat.getDrawable(context.getResources(), R.drawable.filipino_card_background, null));
-        background.put("ict", ResourcesCompat.getDrawable(context.getResources(), R.drawable.ict_card_background, null));
-        background.put("mapeh", ResourcesCompat.getDrawable(context.getResources(), R.drawable.mapeh_card_background, null));
-        background.put("math", ResourcesCompat.getDrawable(context.getResources(), R.drawable.math_card_background, null));
-        background.put("research", ResourcesCompat.getDrawable(context.getResources(), R.drawable.research_card_background, null));
-        background.put("science", ResourcesCompat.getDrawable(context.getResources(), R.drawable.science_card_background, null));
-
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.subject_card, null);
         return new SubjectCardViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull @NotNull SubjectCardViewHolder holder, int position) {
-        holder.subjectLayout.setBackground(background.get(subjectCardModels.get(position).getSubject().toLowerCase()));
         holder.subject.setText(subjectCardModels.get(position).getSubject());
         holder.gridIcon.setImageResource(images.get(position));
     }
@@ -63,19 +60,71 @@ public class SubjectCardAdapter extends RecyclerView.Adapter<SubjectCardAdapter.
         return subjectCardModels.size();
     }
 
-    class SubjectCardViewHolder extends RecyclerView.ViewHolder {
+    class SubjectCardViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         CardView subjectCardView;
-        ConstraintLayout subjectLayout;
         TextView subject;
         ImageView gridIcon;
 
         public SubjectCardViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
             this.subjectCardView = itemView.findViewById(R.id.sub_view);
-            this.subjectLayout = itemView.findViewById(R.id.sub_layout);
             this.subject = itemView.findViewById(R.id.sub_text);
             this.gridIcon = itemView.findViewById(R.id.sub_image);
+            itemView.setClickable(true);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            final Intent intent;
+            switch (getAdapterPosition()) {
+                case 0:
+                    intent = new Intent(context, Quiz.class);
+                    intent.putExtra("subjectClicked", 1); //ap
+                    break;
+                case 1:
+                    intent = new Intent(context, Quiz.class);
+                    intent.putExtra("subjectClicked", 2); //science
+                    break;
+                case 2:
+                    intent = new Intent(context, Quiz.class);
+                    intent.putExtra("subjectClicked", 3); //esp
+                    break;
+                case 3:
+                    intent = new Intent(context, Quiz.class);
+                    intent.putExtra("subjectClicked", 4); //mapeh
+                    break;
+                case 4:
+                    intent = new Intent(context, Quiz.class);
+                    intent.putExtra("subjectClicked", 5); //math
+                    break;
+                case 5:
+                    intent = new Intent(context, Quiz.class);
+                    intent.putExtra("subjectClicked", 6); //ict
+                    break;
+                case 6:
+                    intent = new Intent(context, Quiz.class);
+                    intent.putExtra("subjectClicked", 7); //filipino
+                    break;
+                case 7:
+                    intent = new Intent(context, Quiz.class);
+                    intent.putExtra("subjectClicked", 8); //research
+                    break;
+                case 8:
+                    intent = new Intent(context, Quiz.class);
+                    intent.putExtra("subjectClicked", 9); //english
+                    break;
+                default:
+                    throw new IllegalStateException("Unexpected value: " + getAdapterPosition());
+            }
+            SubjectCardActivity subjectCardActivity = new SubjectCardActivity();
+            intent.putExtra("gradeClicked", subjectCardActivity.getGradeClicked());
+            intent.putExtra("quarterClicked", subjectCardActivity.getQuarterClicked());
+            context.startActivity(intent);
+            mActivity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            mActivity.finish();
+
         }
     }
 }

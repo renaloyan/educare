@@ -56,7 +56,7 @@ public class Login extends AppCompatActivity {
 
         //get the instance of firebase auth
         auth = FirebaseAuth.getInstance();
-        if(!isConnected()){
+        if (!isConnected()) {
 
             new AlertDialog.Builder(this)
                     .setIcon(R.drawable.ic_internet_connection)
@@ -97,8 +97,8 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-              //call loginUser method
-              loginUser();
+                //call loginUser method
+                loginUser();
 
             }
         });
@@ -119,7 +119,7 @@ public class Login extends AppCompatActivity {
         emailEditText.setMinEms(16);
 
         linearLayout.addView(emailEditText);
-        linearLayout.setPadding(10, 10, 10 , 10);
+        linearLayout.setPadding(10, 10, 10, 10);
 
         builder.setView(linearLayout);
 
@@ -129,8 +129,12 @@ public class Login extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 //input email
                 String email = emailEditText.getText().toString().trim();
-                //call recoverEmail method
-                recoverEmail(email);
+                if (TextUtils.isEmpty(email)) {
+                    Toast.makeText(Login.this, "Please enter your email", Toast.LENGTH_SHORT).show();
+                } else {
+                    //call recoverEmail method
+                    recoverEmail(email);
+                }
             }
         });
         //buttons cancel
@@ -158,7 +162,7 @@ public class Login extends AppCompatActivity {
         auth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful()){
+                if (task.isSuccessful()) {
                     //hide progressbar
                     progressBar.setVisibility(View.GONE);
 
@@ -198,7 +202,7 @@ public class Login extends AppCompatActivity {
         email = emailInput.getText().toString().trim();
         password = passwordInput.getText().toString().trim();
 
-        if (TextUtils.isEmpty(email)){
+        if (TextUtils.isEmpty(email)) {
             //hide progressbar
             progressBar.setVisibility(View.GONE);
 
@@ -207,8 +211,7 @@ public class Login extends AppCompatActivity {
 
             //Toast or Alert the user
             Toast.makeText(this, "Please enter your email", Toast.LENGTH_SHORT).show();
-        }
-        else if (password.length() < 6){
+        } else if (password.length() < 6) {
             //hide progressbar
             progressBar.setVisibility(View.GONE);
 
@@ -217,8 +220,7 @@ public class Login extends AppCompatActivity {
 
             //Toast or alert the user
             Toast.makeText(this, "Password length at least 6 characters", Toast.LENGTH_SHORT).show();
-        }
-        else if (TextUtils.isEmpty(password)){
+        } else if (TextUtils.isEmpty(password)) {
             //hide progressbar
             progressBar.setVisibility(View.GONE);
 
@@ -227,13 +229,12 @@ public class Login extends AppCompatActivity {
 
             //Toast or alert the user
             Toast.makeText(this, "Please enter your password", Toast.LENGTH_SHORT).show();
-        }
-        else {
+        } else {
             auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     //if task successful intent to home activity
-                    if(task.isSuccessful()){
+                    if (task.isSuccessful()) {
                         //hide progressbar
                         progressBar.setVisibility(View.GONE);
 
@@ -250,7 +251,7 @@ public class Login extends AppCompatActivity {
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                   //hide progressbar
+                    //hide progressbar
                     progressBar.setVisibility(View.GONE);
 
                     //touchable
@@ -269,7 +270,7 @@ public class Login extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if(doubleBackToExitPressedOnce){
+        if (doubleBackToExitPressedOnce) {
             super.onBackPressed();
             return;
         }
@@ -280,7 +281,7 @@ public class Login extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                doubleBackToExitPressedOnce=false;
+                doubleBackToExitPressedOnce = false;
             }
         }, 2000);
     }
@@ -291,7 +292,7 @@ public class Login extends AppCompatActivity {
 
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
 
-        return  networkInfo != null && networkInfo.isConnected();
+        return networkInfo != null && networkInfo.isConnected();
 
     }
 

@@ -52,7 +52,7 @@ public class Home extends AppCompatActivity {
 
         //initialize grade card
         gradeCardRecyclerView = findViewById(R.id.grade_card_recycler_view);
-        Activity thisActivity = (Activity) this;
+        Activity thisActivity = this;
         gradeCardAdapter = new GradeCardAdapter(this, getGradeCardModels(), images,thisActivity);
         gradeCardRecyclerView.setLayoutManager(new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false));
         gradeCardRecyclerView.setAdapter(gradeCardAdapter);

@@ -27,7 +27,6 @@ public class QuarterCardAdapter extends RecyclerView.Adapter<QuarterCardAdapter.
     Activity mActivity;
     Context context;
     ArrayList<QuarterCardModel> quarterCardModels;
-    static Map<Integer, Drawable> background = new HashMap<>();
 
     public QuarterCardAdapter(Context context, ArrayList<QuarterCardModel> quarterCardModels, Activity mActivity) {
         this.context = context;
@@ -39,12 +38,6 @@ public class QuarterCardAdapter extends RecyclerView.Adapter<QuarterCardAdapter.
     @NotNull
     @Override
     public QuarterCardViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
-
-        background.put(1, ResourcesCompat.getDrawable(context.getResources(), R.drawable.mapeh_card_background, null));
-        /* background.put(2, ResourcesCompat.getDrawable(context.getResources(), R.drawable.ict_card_background, null));
-        background.put(3, ResourcesCompat.getDrawable(context.getResources(), R.drawable.english_card_background, null));
-        background.put(4, ResourcesCompat.getDrawable(context.getResources(), R.drawable.ap_card_background, null)); */
-
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.quarter_card, null);
         return new QuarterCardViewHolder(view);
     }
@@ -69,7 +62,6 @@ public class QuarterCardAdapter extends RecyclerView.Adapter<QuarterCardAdapter.
             default:
                 throw new IllegalStateException("Unexpected value: " + quarterNumber);
         }
-        holder.quarterCardLayout.setBackground(background.get(quarterNumber));
         holder.quarterNumber.setText(quarterNumber + numberPostfix + " Quarter");
     }
 

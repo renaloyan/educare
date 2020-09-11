@@ -1,154 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@drawable/background_gradient"
     android:padding="20dp"
     tools:context=".Quiz">
 
-    <LinearLayout
-        android:id="@+id/line1"
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card1"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            app:cardElevation="10dp">
+
+            <LinearLayout
+                android:id="@+id/line1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/score_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Score: 0"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp" />
+
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="170dp"
+            android:layout_height="70dp"
+            android:layout_alignParentEnd="true"
+            app:cardElevation="10dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="right"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="12dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Question:"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/no_question"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="1/20"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Time Left:"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/time_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="5:00"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card2"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@id/card1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp"
+            app:cardElevation="10dp">
+
+            <TextView
+                android:id="@+id/question_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Gwapo ako?"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card3"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Score:"
-            android:textSize="20sp"
-            android:textColor="@android:color/black" />
+            android:layout_below="@id/card2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            app:cardElevation="10dp">
 
-        <TextView
-            android:id="@+id/score_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="0"
-            android:textSize="20sp"
-            android:textColor="@android:color/black" />
+            <RadioGroup
+                android:id="@+id/radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/question_text">
 
+                <RadioButton
+                    android:id="@+id/option_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Oo"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp" />
 
-    </LinearLayout>
+                <RadioButton
+                    android:id="@+id/option_b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dili"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp" />
 
-    <LinearLayout
-        android:id="@+id/line2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/option_c"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Medyo"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Question:"
-            android:textSize="20sp"
-            android:textColor="@android:color/black" />
+                <RadioButton
+                    android:id="@+id/option_d"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="None of the Above"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp" />
+            </RadioGroup>
 
-        <TextView
-            android:id="@+id/no_question"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="1/20"
-            android:textSize="20sp"
-            android:textColor="@android:color/black" />
+        </com.google.android.material.card.MaterialCardView>
 
+        <Button
+            android:id="@+id/submit_btn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/card3"
+            android:layout_marginTop="20dp"
+            android:elevation="10dp"
+            android:text="Submit"
+            android:textSize="20sp" />
 
-    </LinearLayout>
+    </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/line3"
-        android:layout_below="@id/line2"
-        android:layout_marginTop="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Time Left:"
-            android:textSize="20sp"
-            android:textColor="@android:color/black" />
-
-        <TextView
-            android:id="@+id/time_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="5:00"
-            android:textSize="20sp"
-            android:textColor="@android:color/black" />
-
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/question_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:textSize="20sp"
-        android:layout_below="@id/line3"
-        android:padding="10dp"
-        android:text="Gwapo ako?"
-        android:gravity="center"
-        android:layout_marginTop="50dp" />
-
-    <RadioGroup
-        android:id="@+id/radio_group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/question_text"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp">
-
-        <RadioButton
-            android:id="@+id/option_a"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Oo"
-            android:textSize="20sp"
-            android:textColor="@android:color/black" />
-
-        <RadioButton
-            android:id="@+id/option_b"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Dili"
-            android:textSize="20sp"
-            android:textColor="@android:color/black" />
-
-        <RadioButton
-            android:id="@+id/option_c"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Medyo"
-            android:textSize="20sp"
-            android:textColor="@android:color/black" />
-
-        <RadioButton
-            android:id="@+id/option_d"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="None of the Above"
-            android:textSize="20sp"
-            android:textColor="@android:color/black" />
-    </RadioGroup>
-
-    <Button
-        android:id="@+id/submit_btn"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="Submit"
-        android:elevation="10dp"
-        android:textSize="20sp"
-        android:layout_below="@id/radio_group"
-        android:layout_marginTop="20dp" />
-
-
-</RelativeLayout>
+</ScrollView>

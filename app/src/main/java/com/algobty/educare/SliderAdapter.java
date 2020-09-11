@@ -22,7 +22,7 @@ public class SliderAdapter extends PagerAdapter {
         this.context = context;
     }
 
-    int images[] = {
+    int[] images = {
 
             R.drawable.welcome,
             R.drawable.donate,
@@ -31,7 +31,7 @@ public class SliderAdapter extends PagerAdapter {
 
     };
 
-    int headings[] = {
+    int[] headings = {
 
             R.string.wel_user,
             R.string.donation_header,
@@ -40,7 +40,7 @@ public class SliderAdapter extends PagerAdapter {
 
     };
 
-    int descriptions[] = {
+    int[] descriptions = {
 
             R.string.wel_user_desc,
             R.string.donate_desc,
@@ -56,14 +56,14 @@ public class SliderAdapter extends PagerAdapter {
 
     @Override
     public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
-        return view == (ConstraintLayout)object;
+        return view == object;
     }
 
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
 
-        layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
+        layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(R.layout.slides_layout, container, false);
 
         //Hooks

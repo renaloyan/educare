@@ -1,5 +1,6 @@
 package com.algobty.educare;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.algobty.educare.recyclerviews.SpacingItemDecorator;
+import com.algobty.educare.recyclerviews.gradecard.GradeCardAdapter;
 import com.algobty.educare.recyclerviews.subjectcard.SubjectCardAdapter;
 import com.algobty.educare.recyclerviews.subjectcard.SubjectCardModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -24,8 +26,17 @@ public class SubjectCardActivity extends AppCompatActivity {
     SubjectCardAdapter subjectCardAdapter;
     TextView gradeChosen;
     TextView quarterChosen;
-    int gradeClicked;
-    int quarterClicked;
+
+    public static int gradeClicked;
+    public static int quarterClicked;
+
+    public int getGradeClicked() {
+        return gradeClicked;
+    }
+
+    public int getQuarterClicked() {
+        return quarterClicked;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +47,8 @@ public class SubjectCardActivity extends AppCompatActivity {
         Intent intent = getIntent();
         gradeClicked = intent.getIntExtra("gradeClicked", 7);
         quarterClicked = intent.getIntExtra("quarterClicked", 1);
+        intent.removeExtra("gradeClicked");
+        intent.removeExtra("quarterClicked");
 
         List<Integer> images;
 
@@ -76,7 +89,8 @@ public class SubjectCardActivity extends AppCompatActivity {
 
         //setup recycler view
         subjectRecyclerView = findViewById(R.id.subject_card_recycler_view);
-        subjectCardAdapter = new SubjectCardAdapter(this, getSubjectCardModels(), images);
+        Activity thisActivity = this;
+        subjectCardAdapter = new SubjectCardAdapter(this, getSubjectCardModels(), images, thisActivity);
         subjectRecyclerView.setLayoutManager(new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false));
         subjectRecyclerView.setAdapter(subjectCardAdapter);
         SpacingItemDecorator spacingItemDecorator = new SpacingItemDecorator(10);
