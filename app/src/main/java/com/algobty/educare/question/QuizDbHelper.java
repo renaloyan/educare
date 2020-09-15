@@ -3232,38 +3232,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         cv.put(QuestionTable.COLUMN_CORRECT_ANS, question.getCorrectAns());
         db.insert(QuestionTable.TABLE_NAME, null, cv);
     }
-
-    public List<Question> getAllQuestion() {
-
-        List<Question> questionList = new ArrayList<>();
-        db = getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT * FROM " + QuestionTable.TABLE_NAME, null);
-
-        if (c.moveToFirst()) {
-
-            do{
-
-                Question question = new Question();
-                question.setGrade(c.getInt(c.getColumnIndex(QuestionTable.COLUMN_GRADE)));
-                question.setQuarter(c.getInt(c.getColumnIndex(QuestionTable.COLUMN_QUARTER)));
-                question.setSubject(c.getInt(c.getColumnIndex(QuestionTable.COLUMN_SUBJECT)));
-                question.setQuestion(c.getString(c.getColumnIndex(QuestionTable.COLUMN_QUESTIONS)));
-                question.setOptionA(c.getString(c.getColumnIndex(QuestionTable.COLUMN_OPTION_A)));
-                question.setOptionB(c.getString(c.getColumnIndex(QuestionTable.COLUMN_OPTION_B)));
-                question.setOptionC(c.getString(c.getColumnIndex(QuestionTable.COLUMN_OPTION_C)));
-                question.setOptionD(c.getString(c.getColumnIndex(QuestionTable.COLUMN_OPTION_D)));
-                question.setCorrectAns(c.getInt(c.getColumnIndex(QuestionTable.COLUMN_CORRECT_ANS)));
-                questionList.add(question);
-
-            } while (c.moveToNext());
-
-        }
-
-        c.close();
-        return questionList;
-
-    }
-
+    
     public List<Question> getQuestion(int grade, int quarter, int subject) {
 
         List<Question> questionList = new ArrayList<>();
