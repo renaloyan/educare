@@ -10,7 +10,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-80dp"
+        android:layout_marginTop="-100dp"
         android:src="@drawable/slogan" />
 
     <EditText
@@ -26,7 +26,7 @@
         android:background="@drawable/input"
         android:drawableStart="@drawable/custom_account"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="220dp"
         android:layout_marginLeft="45dp"
         android:drawablePadding="12dp"
         android:layout_marginRight="45dp"
@@ -96,13 +96,12 @@
         android:paddingStart="12dp"
         android:paddingEnd="12dp" />
 
-
     <Button
         android:id="@+id/create_account_button"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_below="@+id/confirm_password_input"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:textSize="16sp"
         android:ems="10"
         android:text="Create Account"
@@ -112,7 +111,7 @@
 
     <TextView
         android:id="@+id/login_text"
-        android:layout_width="160dp"
+        android:layout_width="165dp"
         android:layout_height="wrap_content"
         android:textSize="14sp"
         android:ems="10"
@@ -121,7 +120,75 @@
         android:layout_centerInParent="true"
         android:layout_below="@id/create_account_button"
         android:layout_marginLeft="45dp"
+        android:clickable="true"
         android:layout_marginTop="15dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="45dp"
+        android:layout_marginStart="45dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/line1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="By clicking Create Account, you agree to our"
+            android:textSize="14sp"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/privacy_policy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="Privacy Policy"
+            android:layout_toRightOf="@id/line1"
+            android:textSize="14sp"
+            android:layout_below="@id/line1"
+            android:layout_alignParentStart="true"
+            android:textColor="@color/colorPrimary"
+            android:clickable="true" />
+
+        <TextView
+            android:id="@+id/line2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="and"
+            android:layout_below="@id/line1"
+            android:layout_toRightOf="@id/privacy_policy"
+            android:textSize="14sp"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/terms_conditions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="Terms and Conditions"
+            android:layout_below="@id/line1"
+            android:textSize="14sp"
+            android:layout_toRightOf="@id/line2"
+            android:textColor="@color/colorPrimary"
+            android:clickable="true" />
+
+        <TextView
+            android:id="@+id/line3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="and that you have read our Privacy Policy."
+            android:layout_below="@id/terms_conditions"
+            android:textSize="14sp"
+            android:textColor="@android:color/black" />
+
+    </RelativeLayout>
 
         <ProgressBar
             android:id="@+id/create_progressBar"

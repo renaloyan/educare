@@ -66,6 +66,7 @@
         android:layout_below="@id/password_input"
         android:layout_marginLeft="45dp"
         android:layout_marginTop="15dp"
+        android:clickable="true"
         android:layout_alignEnd="@id/password_input"/>
 
     <Button
@@ -92,6 +93,7 @@
         android:layout_centerInParent="true"
         android:layout_below="@id/login_button"
         android:layout_marginLeft="45dp"
+        android:clickable="true"
         android:layout_marginTop="15dp" />
 
     <!--KEEP for next Update

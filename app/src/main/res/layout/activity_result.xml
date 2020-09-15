@@ -8,6 +8,17 @@
     android:padding="20dp"
     tools:context=".Result">
 
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-7228366808257832/4833340968"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" >
+    </com.google.android.gms.ads.AdView>
+
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,7 +28,7 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="330dp">
+            android:layout_height="500dp">
 
             <TextView
                 android:id="@+id/result_text"
@@ -28,7 +39,7 @@
                 android:gravity="center_horizontal"
                 android:text="RESULT"
                 android:textColor="@android:color/white"
-                android:textSize="36sp"/>
+                android:textSize="36sp" />
 
 
             <ImageView
@@ -39,43 +50,99 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp" />
 
-
             <TextView
                 android:id="@+id/passed_failed_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif"
                 android:layout_below="@id/image_result"
-                android:textSize="26sp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif"
                 android:gravity="center"
-                android:layout_marginTop="20dp" />
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/result_grade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/passed_failed_text"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/result_subject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/result_grade"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/result_quarter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/result_subject"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/result_score"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/result_quarter"
+                android:layout_marginTop="10dp"
                 android:fontFamily="sans-serif"
                 android:gravity="center"
                 android:textColor="@android:color/black"
-                android:layout_below="@id/passed_failed_text"
-                android:textSize="22sp"
-                android:layout_marginTop="10dp" />
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/result_retry_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="10dp"
+                android:text="Try Again"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/result_score"
+                android:textColor="@android:color/white"
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/result_finish_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/result_score"
-                android:text="FINISH"
-                android:textColor="@android:color/white"
-                android:layout_marginLeft="30dp"
+                android:layout_below="@id/result_retry_button"
+                android:elevation="10dp"
                 android:layout_marginRight="30dp"
-                android:layout_marginTop="20dp"
-                android:textSize="22sp"
-                android:elevation="10dp" />
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:text="Finish"
+                android:textColor="@android:color/white"
+                android:textSize="22sp" />
 
         </RelativeLayout>
 
     </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-7228366808257832/6413521107"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" >
+    </com.google.android.gms.ads.AdView>
 
 </RelativeLayout>

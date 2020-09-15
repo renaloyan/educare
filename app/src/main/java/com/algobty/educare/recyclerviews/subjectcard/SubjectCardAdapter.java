@@ -19,6 +19,9 @@ import com.algobty.educare.QuarterCardActivity;
 import com.algobty.educare.Quiz;
 import com.algobty.educare.R;
 import com.algobty.educare.SubjectCardActivity;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -33,6 +36,7 @@ public class SubjectCardAdapter extends RecyclerView.Adapter<SubjectCardAdapter.
     Context context;
     ArrayList<SubjectCardModel> subjectCardModels;
     List<Integer> images;
+    InterstitialAd interstitialAd;
 
     public SubjectCardAdapter(Context context, ArrayList<SubjectCardModel> subjectCardModels, List<Integer> images, Activity mActivity) {
         this.context = context;
@@ -78,6 +82,15 @@ public class SubjectCardAdapter extends RecyclerView.Adapter<SubjectCardAdapter.
         @Override
         public void onClick(View v) {
             final Intent intent;
+
+            //interstitialAd
+            interstitialAd = new InterstitialAd(context);
+            interstitialAd.setAdUnitId("ca-app-pub-7228366808257832/5967594705");
+            interstitialAd.loadAd(new AdRequest.Builder().build());
+            if (interstitialAd.isLoaded()){
+                interstitialAd.show();
+            }
+
             switch (getAdapterPosition()) {
                 case 0:
                     intent = new Intent(context, Quiz.class);

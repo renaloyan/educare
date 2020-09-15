@@ -14,6 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.algobty.educare.recyclerviews.SpacingItemDecorator;
 import com.algobty.educare.recyclerviews.quartercard.QuarterCardAdapter;
 import com.algobty.educare.recyclerviews.quartercard.QuarterCardModel;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -29,10 +34,24 @@ public class QuarterCardActivity extends AppCompatActivity {
         return gradeClicked;
     }
 
+    AdView adView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quarter_card);
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
+        //ads
+        adView = findViewById(R.id.quarter_ad1);
+        //request an ads
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
 
         //gets the grade clicked
         Intent intent = getIntent();

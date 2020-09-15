@@ -17,6 +17,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,7 +35,7 @@ public class CreateAccount extends AppCompatActivity {
     //instance
     private Button createAccountButton;
     private EditText emailInput, usernameInput;
-    private TextView loginText;
+    private TextView loginText, privacyPolicy, termsConditions;
     private ProgressBar progressBar;
 
     private ShowHidePasswordEditText passwordInput, confirmPasswordInput;
@@ -56,6 +57,8 @@ public class CreateAccount extends AppCompatActivity {
         progressBar = findViewById(R.id.create_progressBar);
         passwordInput = findViewById(R.id.create_password_input);
         confirmPasswordInput = findViewById(R.id.confirm_password_input);
+        privacyPolicy = findViewById(R.id.privacy_policy);
+        termsConditions = findViewById(R.id.terms_conditions);
 
         //get the instance of firebase auth
         auth = FirebaseAuth.getInstance();
@@ -97,6 +100,19 @@ public class CreateAccount extends AppCompatActivity {
             }
         });
 
+        privacyPolicy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        termsConditions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
     }
 
@@ -117,6 +133,8 @@ public class CreateAccount extends AppCompatActivity {
         password = passwordInput.getText().toString().trim();
         confirmPassword = confirmPasswordInput.getText().toString().trim();
 
+        String emailPattern = "[a-zA-z0-9._-]+@[a-z]+\\.+[a-z]+";
+
         if (TextUtils.isEmpty(username)){
             //hide progressbar
             progressBar.setVisibility(View.GONE);
@@ -127,6 +145,16 @@ public class CreateAccount extends AppCompatActivity {
             //Toast or Alert the user
             Toast.makeText(this, "Please enter your username", Toast.LENGTH_SHORT).show();
         }
+        else if (username.length() >= 15) {
+            //hide progressbar
+            progressBar.setVisibility(View.GONE);
+
+            //touchable
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+
+            //Toast or Alert the user
+            Toast.makeText(this, "Username too long", Toast.LENGTH_SHORT).show();
+        }
         else if (TextUtils.isEmpty(email)){
             //hide progressbar
             progressBar.setVisibility(View.GONE);
@@ -136,6 +164,16 @@ public class CreateAccount extends AppCompatActivity {
 
             //Toast or alert the user
             Toast.makeText(this, "Please enter your email", Toast.LENGTH_SHORT).show();
+        }
+        else if (!TextUtils.equals(email, emailPattern)) {
+            //hide progressbar
+            progressBar.setVisibility(View.GONE);
+
+            //touchable
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+
+            //Toast or Alert the user
+            Toast.makeText(this, "Invalid email address", Toast.LENGTH_SHORT).show();
         }
         else if (password.length() < 6){
             //hide progressbar

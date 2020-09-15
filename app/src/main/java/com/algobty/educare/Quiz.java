@@ -25,6 +25,11 @@ import android.widget.Toast;
 
 import com.algobty.educare.question.Question;
 import com.algobty.educare.question.QuizDbHelper;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 import java.util.Collections;
 import java.util.List;
@@ -48,11 +53,19 @@ public class Quiz extends AppCompatActivity {
     private boolean answered;
     private long backPressedTime;
 
-    private static final long COUNTDOWN_IN_MILLIS = 120000;
+    private static final long COUNTDOWN_IN_MILLIS_DEFAULT = 120000;
+    private static final long COUNTDOWN_IN_MILLIS_MATH = 600000;
     private ColorStateList textColorDefaultCd;
 
     private CountDownTimer countDownTimer;
-    private long timeLeftMillis;
+    private long timeLeftMillisMath;
+    private long timeLeftMillisDefault;
+
+    public static int gradeClicked;
+    public static int quarterClicked;
+    public static int subjectClicked;
+
+    AdView adView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,12 +82,13 @@ public class Quiz extends AppCompatActivity {
         optionC = findViewById(R.id.option_c);
         optionD = findViewById(R.id.option_d);
         submitBtn = findViewById(R.id.submit_btn);
+        adView = findViewById(R.id.adView);
 
         //gets the chosen grade and quarter
         Intent intent = getIntent();
-        int gradeClicked = intent.getIntExtra("gradeClicked", 7);
-        int quarterClicked = intent.getIntExtra("quarterClicked", 1);
-        int subjectClicked = intent.getIntExtra("subjectClicked", 1);
+        gradeClicked = intent.getIntExtra("gradeClicked", 7);
+        quarterClicked = intent.getIntExtra("quarterClicked", 1);
+        subjectClicked = intent.getIntExtra("subjectClicked", 1);
         intent.removeExtra("gradeClicked");
         intent.removeExtra("quarterClicked");
         intent.removeExtra("subjectClicked");
@@ -89,6 +103,16 @@ public class Quiz extends AppCompatActivity {
 
         alertDialogStart();
         showNextQuestion();
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
+        //request an ads
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
 
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -215,7 +239,8 @@ public class Quiz extends AppCompatActivity {
             answered = false;
             submitBtn.setText("Submit");
 
-            timeLeftMillis = COUNTDOWN_IN_MILLIS;
+            timeLeftMillisDefault = COUNTDOWN_IN_MILLIS_DEFAULT;
+            timeLeftMillisMath = COUNTDOWN_IN_MILLIS_MATH;
             startCountDown();
 
         } else {
@@ -226,6 +251,9 @@ public class Quiz extends AppCompatActivity {
             editor.apply();
             Intent intent = new Intent(getApplicationContext(), Result.class);
             intent.putExtra("score", score);
+            intent.putExtra("gradeClicked", gradeClicked);
+            intent.putExtra("quarterClicked", quarterClicked);
+            intent.putExtra("subjectClicked", subjectClicked);
             startActivity(intent);
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             finish();
@@ -236,36 +264,82 @@ public class Quiz extends AppCompatActivity {
 
     private void startCountDown() {
 
-        countDownTimer = new CountDownTimer(timeLeftMillis, 1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
+        if (subjectClicked == 5){
 
-                timeLeftMillis = millisUntilFinished;
-                updateCountDownText();
+            countDownTimer = new CountDownTimer(timeLeftMillisMath, 1000) {
+                @Override
+                public void onTick(long millisUntilFinished) {
 
-            }
+                    timeLeftMillisMath = millisUntilFinished;
+                    updateCountDownMath();
 
-            @Override
-            public void onFinish() {
+                }
 
-                timeLeftMillis = 0;
-                updateCountDownText();
-                checkAnswer();
+                @Override
+                public void onFinish() {
 
-            }
-        }.start();
+                    timeLeftMillisMath = 0;
+                    updateCountDownMath();
+                    checkAnswer();
+
+                }
+            }.start();
+
+        }
+        else {
+
+            countDownTimer = new CountDownTimer(timeLeftMillisDefault, 1000) {
+                @Override
+                public void onTick(long millisUntilFinished) {
+
+                    timeLeftMillisDefault = millisUntilFinished;
+                    updateCountDownDefault();
+
+                }
+
+                @Override
+                public void onFinish() {
+
+                    timeLeftMillisDefault = 0;
+                    updateCountDownDefault();
+                    checkAnswer();
+
+                }
+            }.start();
+        }
 
     }
 
-    private void updateCountDownText(){
+    private void updateCountDownMath(){
 
-        int minutes = (int) (timeLeftMillis / 1000) / 60;
-        int seconds = (int) (timeLeftMillis / 1000) % 60;
+        int minutes = (int) (timeLeftMillisMath / 1000) / 60;
+        int seconds = (int) (timeLeftMillisMath / 1000) % 60;
 
         String timeFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
         timeTxt.setText(timeFormatted);
 
-        if (timeLeftMillis < 10000){
+        if (timeLeftMillisMath < 10000){
+
+            timeTxt.setTextColor(Color.RED);
+
+        }
+        else {
+
+            timeTxt.setTextColor(textColorDefaultCd);
+
+        }
+
+    }
+
+    private void updateCountDownDefault(){
+
+        int minutes = (int) (timeLeftMillisDefault / 1000) / 60;
+        int seconds = (int) (timeLeftMillisDefault / 1000) % 60;
+
+        String timeFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
+        timeTxt.setText(timeFormatted);
+
+        if (timeLeftMillisDefault < 10000){
 
             timeTxt.setTextColor(Color.RED);
 
@@ -286,6 +360,9 @@ public class Quiz extends AppCompatActivity {
         editor.apply();
         Intent intent = new Intent(getApplicationContext(), Result.class);
         intent.putExtra("score", score);
+        intent.putExtra("gradeClicked", gradeClicked);
+        intent.putExtra("quarterClicked", quarterClicked);
+        intent.putExtra("subjectClicked", subjectClicked);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         finish();
@@ -309,7 +386,7 @@ public class Quiz extends AppCompatActivity {
 
         builder.setTitle("Read Me")
                 .setMessage("1. This activity is scrollable, " +
-                        "2. Passing score is 85%, " +
+                        "2. Passing score is 75%, " +
                         "3. Time limit for each questions is 2 minutes, " +
                         "4. To save the test and continue and answering later. Just press your phone menu or home button. To end quiz right away. Just press your phone's back button twice")
                 .setCancelable(false)

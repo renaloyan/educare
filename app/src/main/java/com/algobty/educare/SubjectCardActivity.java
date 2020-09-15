@@ -15,6 +15,13 @@ import com.algobty.educare.recyclerviews.SpacingItemDecorator;
 import com.algobty.educare.recyclerviews.gradecard.GradeCardAdapter;
 import com.algobty.educare.recyclerviews.subjectcard.SubjectCardAdapter;
 import com.algobty.educare.recyclerviews.subjectcard.SubjectCardModel;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -38,10 +45,25 @@ public class SubjectCardActivity extends AppCompatActivity {
         return quarterClicked;
     }
 
+    AdView adView;
+    InterstitialAd interstitialAd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subject_card);
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
+        //ads
+        adView = findViewById(R.id.sub_ad1);
+        //request an ads
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
 
         //gets the chosen grade and quarter
         Intent intent = getIntent();
@@ -100,7 +122,9 @@ public class SubjectCardActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(getApplicationContext(), QuarterCardActivity.class));
+        Intent intent = new Intent(getApplicationContext(), QuarterCardActivity.class);
+        intent.putExtra("gradeClicked", gradeClicked);
+        startActivity(intent);
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
         finish();
     }

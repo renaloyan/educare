@@ -51,6 +51,17 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/details_card"
         android:padding="10dp"
-        />
+        android:layout_above="@id/quarter_ad1" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/quarter_ad1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-7228366808257832/8980577339"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" >
+    </com.google.android.gms.ads.AdView>
 
 </RelativeLayout>
