@@ -9,7 +9,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_navigation">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -161,10 +162,10 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_centerHorizontal="true"
-                            android:src="@drawable/ic_average" />
+                            android:src="@drawable/ic_baseline_attach_money_24" />
 
                         <TextView
-                            android:id="@+id/average_text"
+                            android:id="@+id/total_money"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
@@ -177,10 +178,10 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@id/average_text"
+                            android:layout_below="@id/total_money"
                             android:layout_centerInParent="true"
                             android:includeFontPadding="false"
-                            android:text="Average"
+                            android:text="Coins"
                             android:textColor="@android:color/black"
                             android:textSize="14sp" />
 
@@ -194,6 +195,50 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/reward_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true">
+
+                    <ImageView
+                        android:id="@+id/icon_reward"
+                        android:layout_width="30dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:foregroundGravity="center"
+                        android:src="@drawable/ic_baseline_monetization_on_24" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="16dp"
+                        android:layout_toRightOf="@id/icon_reward"
+                        android:fontFamily="sans-serif-black"
+                        android:text="Reward"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_arrow_forward" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/icon_reward"
+                        android:layout_marginTop="30dp"
+                        android:background="#000000" />
+
+                </RelativeLayout>
 
                 <RelativeLayout
                     android:id="@+id/about_button"

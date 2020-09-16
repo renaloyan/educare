@@ -133,8 +133,6 @@ public class CreateAccount extends AppCompatActivity {
         password = passwordInput.getText().toString().trim();
         confirmPassword = confirmPasswordInput.getText().toString().trim();
 
-        String emailPattern = "[a-zA-z0-9._-]+@[a-z]+\\.+[a-z]+";
-
         if (TextUtils.isEmpty(username)){
             //hide progressbar
             progressBar.setVisibility(View.GONE);
@@ -164,16 +162,6 @@ public class CreateAccount extends AppCompatActivity {
 
             //Toast or alert the user
             Toast.makeText(this, "Please enter your email", Toast.LENGTH_SHORT).show();
-        }
-        else if (!TextUtils.equals(email, emailPattern)) {
-            //hide progressbar
-            progressBar.setVisibility(View.GONE);
-
-            //touchable
-            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-
-            //Toast or Alert the user
-            Toast.makeText(this, "Invalid email address", Toast.LENGTH_SHORT).show();
         }
         else if (password.length() < 6){
             //hide progressbar

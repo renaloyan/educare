@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4DAAAAAA"
+    tools:context=".Reward">
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/rewardAd1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="ca-app-pub-7228366808257832/8491075448">
+
+    </com.google.android.gms.ads.AdView>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/rewardAd2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="ca-app-pub-7228366808257832/9421013734">
+
+    </com.google.android.gms.ads.AdView>
+
+</RelativeLayout>

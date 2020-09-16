@@ -16,7 +16,7 @@ import java.util.List;
 public class QuizDbHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "Quiz.db";
-    private static final int DATABASE_VERSION = 7;
+    private static final int DATABASE_VERSION = 9;
 
     private SQLiteDatabase db;
 
@@ -57,7 +57,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
     private void fillQuestionsTable() {
 
         //FIRST QUARTER
-        //GRADE 9 START
+        //GRADE 9 FIRST START
 
         //English 9
 
@@ -2000,7 +2000,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 1);
         addQuestion(q160);
 
-        //GRADE 7 START
+        //GRADE 7 FIRST START
 
         //Araling Panlipunan 7
         Question q181 = new Question (
@@ -3216,6 +3216,3148 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 4);
         addQuestion(q280);
 
+        //MAPEH 7
+        Question q281 = new Question (
+                7,
+                1,
+                4,
+                "What is the structure of a musical composition called?",
+                "A. Tempo",
+                "B. Texture",
+                "C. Timbre",
+                "D. Form",
+                4);
+        addQuestion(q281);
+
+        Question q282 = new Question (
+                7,
+                1,
+                4,
+                "It it is the quality or color of tone of an instrument or voice.",
+                "A. Rhythm",
+                "B. Timbre",
+                "C. Tonality",
+                "D. Form",
+                2);
+        addQuestion(q282);
+
+        Question q283 = new Question (
+                7,
+                1,
+                4,
+                "It refers to the flow, the breathing pattern or simply the pulse in music.",
+                "A. Melody",
+                "B. Dynamics",
+                "C. Rhythm",
+                "D. Beat",
+                3);
+        addQuestion(q283);
+
+        Question q284 = new Question (
+                7,
+                1,
+                4,
+                "It refers to the rate of speed in a composition.",
+                "A. Tempo",
+                "B. Melody",
+                "C. Harmony",
+                "D. Timbre",
+                1);
+        addQuestion(q284);
+
+        Question q285 = new Question (
+                7,
+                1,
+                4,
+                "How many beats does a half note have?",
+                "A. 1 beat",
+                "B. 2 beats",
+                "C. 3 beats",
+                "D. 4 beats",
+                2);
+        addQuestion(q285);
+
+        Question q286 = new Question (
+                7,
+                1,
+                4,
+                "What is the term for an art originating among the common people of a nation or region and usually reflecting their traditional culture and history?",
+                "A. Literary Art",
+                "B. Folk Art",
+                "C. Culinary Art",
+                "D. Painting",
+                2);
+        addQuestion(q286);
+
+        Question q287 = new Question (
+                7,
+                1,
+                4,
+                "They are known for their iloco or inabel fabric",
+                "A. Ilocos Region",
+                "B. Cordillera",
+                "C. Davao",
+                "D. Pangasinan",
+                1);
+        addQuestion(q287);
+
+        Question q288 = new Question (
+                7,
+                1,
+                4,
+                "The Ifugaos weave a loincloth called ikat. From what country did the term ikat originated",
+                "A. Malaysia",
+                "B. Vietnam",
+                "C. Indonesia",
+                "D. Singapore",
+                3);
+        addQuestion(q288);
+
+        Question q289 = new Question (
+                7,
+                1,
+                4,
+                "They are known for their different types of baskets such as the bobo and suklang",
+                "A. Ifugaos",
+                "B. Bontocs",
+                "C. Igorots",
+                "D. Ilocanos",
+                2);
+        addQuestion(q289);
+
+        Question q290 = new Question (
+                7,
+                1,
+                4,
+                "What is the Ivatan's head gear for women called?",
+                "A. Ikat",
+                "B. Lufid",
+                "C. Lingling-o",
+                "D. Vakul",
+                4);
+        addQuestion(q290);
+
+        Question q291 = new Question (
+                7,
+                1,
+                4,
+                "It is the condition of being physically fit and healthy, especially as a result of exercise and proper nutrition.",
+                "A. Fitness",
+                "B. Skill",
+                "C. Wellness",
+                "D. Agility",
+                1);
+        addQuestion(q291);
+
+        Question q292 = new Question (
+                7,
+                1,
+                4,
+                "It enhances one's performance athletic or sports events.",
+                "A. Health-Related Fitness",
+                "B. Skill-Related Fitness",
+                "C. Wellness",
+                "D. Flexibility",
+                2);
+        addQuestion(q292);
+
+        Question q293 = new Question (
+                7,
+                1,
+                4,
+                "What is the ability of the muscle to work over an extended period of time without fatigue?",
+                "A. Muscular Strength",
+                "B. Muscular Endurance",
+                "C. Flexibility",
+                "D. Body Composition",
+                2);
+        addQuestion(q293);
+
+        Question q294 = new Question (
+                7,
+                1,
+                4,
+                "It focus on factors that promote optimum health and prevent the onset of disease and problems aassociated with inactivity.",
+                "A. Skill-Related Fitness",
+                "B. Health-Related Fitness",
+                "C. Wellness",
+                "D. Fitness",
+                2);
+        addQuestion(q294);
+
+        Question q295 = new Question (
+                7,
+                1,
+                4,
+                "Which of the following is not a part of the components of skill-related fitness?",
+                "A. Agility",
+                "B. Speed",
+                "C. Flexibility",
+                "D. Balance",
+                3);
+        addQuestion(q295);
+
+        Question q296 = new Question (
+                7,
+                1,
+                4,
+                "It is the physiological and emotional responses to a significant or unexpected change or disruption in one's life.",
+                "A. Stress",
+                "B. Depression",
+                "C. Mental Health",
+                "D. Stressor",
+                1);
+        addQuestion(q296);
+
+        Question q297 = new Question (
+                7,
+                1,
+                4,
+                "It referss to the positive response of the body from a stressor",
+                "A. Distress",
+                "B. Eustress",
+                "C. Mental Health",
+                "D. Emotional Health",
+                2);
+        addQuestion(q297);
+
+        Question q298 = new Question (
+                7,
+                1,
+                4,
+                "It refers to the negative reaction of the body towards a given stressor.",
+                "A. Mental Health",
+                "B. Distress",
+                "C. Eustress",
+                "D. Emotional Health",
+                2);
+        addQuestion(q298);
+
+        Question q299 = new Question (
+                7,
+                1,
+                4,
+                "It refers to the things that makes a person stressed",
+                "A. Distress",
+                "B. Eustress",
+                "C. Stressors",
+                "D. General Adaptation Syndrome",
+                3);
+        addQuestion(q299);
+
+        Question q300 = new Question (
+                7,
+                1,
+                4,
+                "Which of the following is not a cause of distress?",
+                "A. Arguing with a classmate",
+                "B. Losing your money",
+                "C. Getting a failing mark",
+                "D. Getting a birthday surprise",
+                4);
+        addQuestion(q300);
+
+        //FILIPINO 7
+        Question q301 = new Question (
+                7,
+                1,
+                7,
+                "Anong elemento ng kuwento ang nagpapahiwatig kung saan at kailan naganap ang pangyayari?",
+                "A. Banghay",
+                "B. Simula",
+                "C. Tagpuan",
+                "D. Tauhan",
+                3);
+        addQuestion(q301);
+
+        Question q302 = new Question (
+                7,
+                1,
+                7,
+                "Ano ang pahayag ang nagbibigay ng patunay?",
+                "A. Hindi kapani-paniwala",
+                "B. Kasinungalingan",
+                "C. May dokumentaryong ebidensya",
+                "D. Walang matibay na ebidensya",
+                3);
+        addQuestion(q302);
+
+        Question q303 = new Question (
+                7,
+                1,
+                7,
+                "Anong element ng kuwento kung saan sila maaring mabuti o masama?",
+                "A. Banghay",
+                "B. Simula",
+                "C. Tagpuan",
+                "D. Tauhan",
+                4);
+        addQuestion(q303);
+
+        Question q304 = new Question (
+                7,
+                1,
+                7,
+                "Anong element ng kuwento kung saan ang kawilihan ng mga mambabasa ay nakasalalay dito>",
+                "A. Banghay",
+                "B. Simula",
+                "C. Tunggalian",
+                "D. Kasukdulan",
+                2);
+        addQuestion(q304);
+
+        Question q305 = new Question (
+                7,
+                1,
+                7,
+                "Anong elemento ng kuwento kung saan ito ang pinakamataas na bahagi ng kuwento?",
+                "A. Kakalasan",
+                "B. Kaskdulan",
+                "C. Banghay",
+                "D. Kasukdulan",
+                4);
+        addQuestion(q305);
+
+        Question q306 = new Question (
+                7,
+                1,
+                7,
+                "Anong elemento ang kahinatnan o resolusyon ng kuwentong maaring masaya o malungkot?",
+                "A. Tunggalian",
+                "B. Kakalasan",
+                "C. Wakas",
+                "D. Kasukdulan",
+                3);
+        addQuestion(q306);
+
+        Question q307 = new Question (
+                7,
+                1,
+                7,
+                "Anong elemento ang nagpapakita ng maayos na pagkasunod-sunod ng pangyayari?",
+                "A. Banghay",
+                "B. Tunggalian",
+                "C. Kakalasan",
+                "D. Simula",
+                1);
+        addQuestion(q307);
+
+        Question q308 = new Question (
+                7,
+                1,
+                7,
+                "Anong elemento ang nagbibigay daan sa wakas?",
+                "A. Kasukdulan",
+                "B. Kakalasan",
+                "C. Tunggalian",
+                "D. Wakas",
+                2);
+        addQuestion(q308);
+
+        Question q309 = new Question (
+                7,
+                1,
+                7,
+                "Anong elemento kung saan bumababa ang takbo ng kuwento?",
+                "A. Kalakasan",
+                "B. Kasukdulan",
+                "C. Banghay",
+                "D. Wakas",
+                1);
+        addQuestion(q309);
+
+        Question q310 = new Question (
+                7,
+                1,
+                7,
+                "Anong elemento ang pakikitunggali ng pangunahing tauhan",
+                "A. Tunggalian",
+                "B. Banghay",
+                "C. Tagpuan",
+                "D. Simula",
+                1);
+        addQuestion(q310);
+
+        Question q311 = new Question (
+                7,
+                1,
+                7,
+                "Anong elemento ang tumutukoy sa ipinakilala ang tauhan at ang tagpuang iikutan?",
+                "A. Banghay",
+                "B. Tagpuan",
+                "C. Simula",
+                "D. Kakalasan",
+                3);
+        addQuestion(q311);
+
+        Question q312 = new Question (
+                7,
+                1,
+                7,
+                "Anong elemento ang nagbibigay buhay sa kuwento?",
+                "A. Tagpuan",
+                "B. Simula",
+                "C. Tauhan",
+                "D. Wakas",
+                3);
+        addQuestion(q312);
+
+        Question q313 = new Question (
+                7,
+                1,
+                7,
+                "Anong elemento ang nagbibigay aksyon?",
+                "A. Kakalasan",
+                "B. Banghay",
+                "C. Tunggalian",
+                "D. Kasukdulan",
+                4);
+        addQuestion(q313);
+
+        Question q314 = new Question (
+                7,
+                1,
+                7,
+                "Ano ang pang-ugnay na ginagamit sa pagbibigay ng sanhi?",
+                "A. Dahil",
+                "B. Hindi",
+                "C. Dahil dito",
+                "D. A at C",
+                1);
+        addQuestion(q314);
+
+        Question q315 = new Question (
+                7,
+                1,
+                7,
+                "Ano ang pang-ugnay na ginagamit sa pagbibigay ng bunga?",
+                "A. Sapagkat",
+                "B. Kaya",
+                "C. Dahil",
+                "D. Kapag",
+                2);
+        addQuestion(q315);
+
+        Question q316 = new Question (
+                7,
+                1,
+                7,
+                "Anong pang-ugnay ang ginagamit sa pagbibigay ng pagpapahayag ng saloobin",
+                "A. Pagkat",
+                "B. Oo",
+                "C. Totoo",
+                "D. Hinuhako",
+                4);
+        addQuestion(q316);
+
+        Question q317 = new Question (
+                7,
+                1,
+                7,
+                "Anong pang-ugnay ang ginagamit sa pagbibigay ng pagtutol?",
+                "A. Bagamat",
+                "B. Basta",
+                "C. Kung gayon",
+                "D. Sana",
+                1);
+        addQuestion(q317);
+
+        Question q318 = new Question (
+                7,
+                1,
+                7,
+                "Anong pang-ugnay ang ginagamit sa pagbibiga ng panghihikayat?",
+                "A. Sapagkat",
+                "B. Dahil",
+                "C. Mabuti",
+                "D. Basta",
+                3);
+        addQuestion(q318);
+
+        Question q319 = new Question (
+                7,
+                1,
+                7,
+                "Anong pang-ugnay ang ginagamit sa pagbibigay ng pag sang-ayon?",
+                "A. Naging",
+                "B. Sigurado",
+                "C. Hindi",
+                "D. Subalit",
+                2);
+        addQuestion(q319);
+
+        Question q320 = new Question (
+                7,
+                1,
+                7,
+                "Ano ang saktong pagkasunod ng elemento ng kuwento?",
+                "A. Simula - Kakalasan - Tunggalian - Kasukdulan - Wakas",
+                "B. Simula - Kasukdulan - Tunggalian - Wakas",
+                "C. Simula - Kasukdulan - Kakalasan - Wakas",
+                "D. Simula - Tunggalian -Kasukdulan - Wakas",
+                4);
+        addQuestion(q320);
+
+        //MATH 7
+        Question q321 = new Question (
+                7,
+                1,
+                5,
+                "Is a collection of well-defined objects.",
+                "A. Set",
+                "B. Null Set",
+                "C. Venn Diagram",
+                "D. Number Line",
+                1);
+        addQuestion(q321);
+
+        Question q322 = new Question (
+                7,
+                1,
+                5,
+                "It is a set without an element",
+                "A. Set",
+                "B. Number Line",
+                "C. Null Set",
+                "D. Venn Diagram",
+                3);
+        addQuestion(q322);
+
+        Question q323 = new Question (
+                7,
+                1,
+                5,
+                "Given the set of days in a week that starts with letter S, then what is the cardinality?",
+                "A. 4",
+                "B. 2",
+                "C. 1",
+                "D. 3",
+                2);
+        addQuestion(q323);
+
+        Question q324 = new Question (
+                7,
+                1,
+                5,
+                "How many elements are in the power set of A = {Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday}?",
+                "A. 2",
+                "B. 128",
+                "C. 64",
+                "D. Sunday",
+                2);
+        addQuestion(q324);
+
+        Question q325 = new Question (
+                7,
+                1,
+                5,
+                "Is an illustration of sets using circles",
+                "A. Venn Diagram",
+                "B. Set",
+                "C. Number Line",
+                "D. Subset",
+                1);
+        addQuestion(q325);
+
+        Question q326 = new Question (
+                7,
+                1,
+                5,
+                "If the absolute value of |15| is 15, then what is the absolute value of |-15|?",
+                "A. -15",
+                "B. 0",
+                "C. 15",
+                "D. 225",
+                3);
+        addQuestion(q326);
+
+        Question q327 = new Question (
+                7,
+                1,
+                5,
+                "If you are asked to find the distance using the number line, then how far is 12 to the right from 3 to the left?",
+                "A. 9",
+                "B. -9",
+                "C. 15",
+                "D. -15",
+                3);
+        addQuestion(q327);
+
+        Question q328 = new Question (
+                7,
+                1,
+                5,
+                "In plotting the number line, what is the number between the negative and positive number?",
+                "A. Null",
+                "B. 0",
+                "C. Null set",
+                "D. Infinity Symbol",
+                2);
+        addQuestion(q328);
+
+        Question q329 = new Question (
+                7,
+                1,
+                5,
+                "Given the 3(5) = 5(3), then which property multiplication is being illustrated?",
+                "A. Commutative Property",
+                "B. Inverse Property",
+                "C. Multiplicative Identity Property",
+                "D. Distributive Property",
+                1);
+        addQuestion(q329);
+
+        Question q330 = new Question (
+                7,
+                1,
+                5,
+                "Given 10+(-10) = 0 then which property of addition is being illustrated?",
+                "A. Commutative Property",
+                "B. Inverse Property",
+                "C. Associative Property",
+                "D. Additive Identity Property",
+                2);
+        addQuestion(q330);
+
+        Question q331 = new Question (
+                7,
+                1,
+                5,
+                "Given -3, -1, 0, -2, -5, -4 Arrange the rational numbers in ascending order.",
+                "A. 0, -1, -2, -3, -4, -5",
+                "B. -1, -2, -3, -4, -5, 0",
+                "C. -5, -4, -3, -2, -1, 0",
+                "D. 0, -5, -1, -4, -2, -3",
+                3);
+        addQuestion(q331);
+
+        Question q332 = new Question (
+                7,
+                1,
+                5,
+                "What is the square root of 16",
+                "A. 8",
+                "B. 2",
+                "C. 4",
+                "D. 16",
+                3);
+        addQuestion(q332);
+
+        Question q333 = new Question (
+                7,
+                1,
+                5,
+                "What is the 2nd root of 64?",
+                "A. -6",
+                "B. -32",
+                "C. -16",
+                "D. -8",
+                4);
+        addQuestion(q333);
+
+        Question q334 = new Question (
+                7,
+                1,
+                5,
+                "Given the square root of 15, then between which two consecutive integers does the square root lie?",
+                "A. 4 and 5",
+                "B. 3 and 4",
+                "C. 5 and 6",
+                "D. 2 and 3",
+                2);
+        addQuestion(q334);
+
+        Question q335 = new Question (
+                7,
+                1,
+                5,
+                "Given the square root of 100 then 10 is",
+                "A. A perfect root",
+                "B. Perfect square root",
+                "C. Principal root",
+                "D. Imaginary root",
+                3);
+        addQuestion(q335);
+
+        Question q336 = new Question (
+                7,
+                1,
+                5,
+                "In adding the integers, what is the answer of -5 + 5?",
+                "A. -10",
+                "B. 10",
+                "C. 5",
+                "D. 0",
+                4);
+        addQuestion(q336);
+
+        Question q337 = new Question (
+                7,
+                1,
+                5,
+                "In subracting integers, what is the answer of -15 - 3?",
+                "A. -18",
+                "B. -12",
+                "C. 12",
+                "D. 18",
+                1);
+        addQuestion(q337);
+
+        Question q338 = new Question (
+                7,
+                1,
+                5,
+                "In multiplying integers, what is the answer of (-5)(-4)?",
+                "A. -20",
+                "B. 20",
+                "C. -9",
+                "D. 9",
+                2);
+        addQuestion(q338);
+
+        Question q339 = new Question (
+                7,
+                1,
+                5,
+                "Jake has twenty-five 10-peso coins in his coin purse. If he gave 10 coins to his little sister, then how much does he have left?",
+                "A. 190",
+                "B. 100",
+                "C. 150",
+                "D. 290",
+                1);
+        addQuestion(q339);
+
+        Question q340 = new Question (
+                7,
+                1,
+                5,
+                "If Harry owes his best friend Php1500. And each day he earns Php150 in tutoring, then how many days does he need to tutor someone to earn Php 1500?",
+                "A. 100",
+                "B. 1000",
+                "C. 10",
+                "D. 0",
+                3);
+        addQuestion(q340);
+
+        //RESEARCH 7
+        Question q341 = new Question (
+                7,
+                1,
+                9,
+                "It is a laboratory apparatus used to measure, store, mix and heat liquids.",
+                "A. Pipet",
+                "B. Funnel",
+                "C. Crucibles",
+                "D. Beaker",
+                4);
+        addQuestion(q341);
+
+        Question q342 = new Question (
+                7,
+                1,
+                9,
+                "Where does the Alcohol Lamp belong in the following group?",
+                "A. Measuring",
+                "B. Heating",
+                "C. Auxiliary",
+                "D. None of the above7",
+                2);
+        addQuestion(q342);
+
+        Question q343 = new Question (
+                7,
+                1,
+                9,
+                "What laboratory apparatus is used to measure the temperature?",
+                "A. Thermometer",
+                "B. Barometer",
+                "C. Stethoscope",
+                "D. Richter Scale",
+                1);
+        addQuestion(q343);
+
+        Question q344 = new Question (
+                7,
+                1,
+                9,
+                "Which of the following apparatus isn't used for heating?",
+                "A. Funnel",
+                "B. Wire gauze",
+                "C. Iron clamp",
+                "D. Bunsen burner",
+                1);
+        addQuestion(q344);
+
+        Question q345 = new Question (
+                7,
+                1,
+                9,
+                "It is a laboratory apparatus designed to measure small mass in the sub-milligram range.",
+                "A. Triple beam balance",
+                "B. Spring balance",
+                "C. Analytical balance",
+                "D. Test Tube",
+                3);
+        addQuestion(q345);
+
+        Question q346 = new Question (
+                7,
+                1,
+                9,
+                "It is a laboratory apparatus used to measure mass very precisely.",
+                "A. Triple beam balance",
+                "B. Spring balance",
+                "C. Analytical Balance",
+                "D. Test tube",
+                1);
+        addQuestion(q346);
+
+        Question q347 = new Question (
+                7,
+                1,
+                9,
+                "The following are the steps of scientific method except for one:",
+                "A. Observing",
+                "B. Concluding",
+                "C. Experimenting",
+                "D. Whining",
+                4);
+        addQuestion(q347);
+
+        Question q348 = new Question (
+                7,
+                1,
+                9,
+                "It is a laboratory equipment used to measure the volume of a liquid.",
+                "A. Test tube",
+                "B. Graduated cylinder",
+                "C. Funnel",
+                "D. Florence flask",
+                2);
+        addQuestion(q348);
+
+        Question q349 = new Question (
+                7,
+                1,
+                9,
+                "The volume of a regular solid is expressed in:",
+                "A. Square units",
+                "B. Kilogram",
+                "C. Meter",
+                "D. Cubic units",
+                4);
+        addQuestion(q349);
+
+        Question q350 = new Question (
+                7,
+                1,
+                9,
+                "It is a piece of a laboratory glassware that can be heated to evaporate liquids.",
+                "A. Erlenmeyer flask",
+                "B. Funnel",
+                "C. Evaporating dish",
+                "D. Iron clamp",
+                3);
+        addQuestion(q350);
+
+        Question q351 = new Question (
+                7,
+                1,
+                9,
+                "It is a laboratory glassware used to hold and mix chemicals.",
+                "A. Crucibles",
+                "B. Funnel",
+                "C. Test tube",
+                "D. Pipet",
+                3);
+        addQuestion(q351);
+
+        Question q352 = new Question (
+                7,
+                1,
+                9,
+                "It is a process of investigation in which a problem is first identified, experiments or other relevant data are then used to construct or test hypothesis that purport to solve it.",
+                "A. Scientific Method",
+                "B. Construction Methods",
+                "C. Analysis Method",
+                "D. Quantitative Method",
+                1);
+        addQuestion(q352);
+
+        Question q353 = new Question (
+                7,
+                1,
+                9,
+                "It is one of the steps of the scientific method in which you will come up with an idea or theory that is not yet proven but that leads to further study or discussion.",
+                "A. Concluding",
+                "B. Asking questions/purpose",
+                "C. Hypothesizing",
+                "D. Experimenting",
+                3);
+        addQuestion(q353);
+
+        Question q354 = new Question (
+                7,
+                1,
+                9,
+                "It is one of the steps of the scientific method in which you perform a series of actions and carefully observe the effects in order to learn about something.",
+                "A. Experimenting",
+                "B. Hypothesizing",
+                "C. Observing",
+                "D. Concluding",
+                1);
+        addQuestion(q354);
+
+        Question q355 = new Question (
+                7,
+                1,
+                9,
+                "It is one of the steps of the scientific method in which an opinion or decision is formed after a period of thought or research.",
+                "A. Experimenting",
+                "B. Observing",
+                "C. Concluding",
+                "D. Hypothesizing",
+                3);
+        addQuestion(q355);
+
+        Question q356 = new Question (
+                7,
+                1,
+                9,
+                "What do you call the act or process of reaching a conclusion about something from known facts or evidence?",
+                "A. Observation",
+                "B. Speculation",
+                "C. Inference",
+                "D. All of the above",
+                3);
+        addQuestion(q356);
+
+        Question q357 = new Question (
+                7,
+                1,
+                9,
+                "It refers to a statement about something that you have noticed.",
+                "A. Observation",
+                "B. Speculation",
+                "C. Inference",
+                "D. All of the above",
+                1);
+        addQuestion(q357);
+
+        Question q358 = new Question (
+                7,
+                1,
+                9,
+                "'There's a rainbow in the sky'. Tell whether the statement is a/an",
+                "A. Observation",
+                "B. Speculation",
+                "C. Inference",
+                "D. None of the above",
+                1);
+        addQuestion(q358);
+
+        Question q359 = new Question (
+                7,
+                1,
+                9,
+                "‘She is in a deep forlorn'. Tell whether the statement is a/ an:",
+                "A. Observation",
+                "B. Speculation",
+                "C. Inference",
+                "D. None of the above",
+                3);
+        addQuestion(q359);
+
+        Question q360 = new Question (
+                7,
+                1,
+                9,
+                "'The baby is sick'. Tell whether the statement is a/an:",
+                "A. Observation",
+                "B. Speculation",
+                "C. Inference",
+                "D. None of the above",
+                3);
+        addQuestion(q360);
+
+        //GRADE 8 FIRST START
+
+        //GRADE 10 FIRST START
+
+        //AP 10
+        Question q361 = new Question(
+                10,
+                1,
+                1,
+                "Mayroong dalwang uri ng social group. Alin ditto ang tumutukoy sa malapit at impormal na ugnayan ng mga indibidwal at kadalasan ito ay maroon lamang maliit na bilang?",
+                "A. Primary group",
+                "B. Secondary Group",
+                "C. Real group",
+                "D. Trusted group",
+                1);
+        addQuestion(q361);
+
+        Question q362 = new Question(
+                10,
+                1,
+                1,
+                "Ito ang tumutukoy sa mga karapatan, obligasyon at mga inaasahan ng lipunan na kaakibat ng posisyon ng indibidwal. Anong istraktura to ng lipunan?",
+                "A. Institusyon",
+                "B. Social Group",
+                "C. gampanin",
+                "D. status",
+                3);
+        addQuestion(q362);
+
+        Question q363 = new Question(
+                10,
+                1,
+                1,
+                "Ano ang tawag sa isang kumplikadong sistema ng ugnayan na nagbibigay-kahulugan sa paraan ng pamumuhay ng isang lipunan?",
+                "A. Istrukturang panlipunan",
+                "B. Paniniwala ng lipunan",
+                "C. Kaugalian at tradisyon",
+                "D. Kultura ng lipunan",
+                4);
+        addQuestion(q363);
+
+        Question q364 = new Question(
+                10,
+                1,
+                1,
+                "Sa ating lipunan ito ang bumubuo sa mga asal, kilos o gawi na binubuo at nagsisilbing pamantayan sa isang lipunan. Nagiging batayan ito ng mga ugali, aksyon at pakikitungo ng isang indibiduwal sa lipunang kaniyang kinabibilangan. Ano ang tawag ditto?",
+                "A. Pagpapahalaga",
+                "B. Simbolo",
+                "C. Paniniwala",
+                "D. Norms",
+                4);
+        addQuestion(q364);
+
+        Question q365 = new Question(
+                10,
+                1,
+                1,
+                "Ang kultura sa isang lipunan ay nahahati sa dalawa. Ano ang kinabibilangan ng mga batas, gawi, ideya, paniniwala at norms ng isang grupo ng tao?",
+                "A. Hindi Materyal",
+                "B. Materyal",
+                "C. Mga kaugalian",
+                "D. Semi material",
+                1);
+        addQuestion(q365);
+
+        Question q366 = new Question(
+                10,
+                1,
+                1,
+                "Ito ang tumutukoy sa pagsusuri sa lawak, sakop at pinsala na maaring danasin ng isang lugar kung ito ay mahaharap sa isang sakuna o kalamidad sa isang particular na panahon. Sa pamamagitan nito natutukoy kung ano-ano ang mga hazard ba gawa ng kalikasan o gwa ng tao na maaaring maganap sa isang lugar. Ano ang gawiing ito na makakatulong sa paghahanda sa komunidad sa isang sakuna?",
+                "A. Hazard assessment",
+                "B. Risk assessment",
+                "C. Vulnerability assessment",
+                "D. Hazard mapping",
+                1);
+        addQuestion(q366);
+
+        Question q367 = new Question(
+                10,
+                1,
+                1,
+                "Ito ang pagkakaroon ng kaalaman tungkol sa iba’t ibang hazard at kung paano ito umusbong sa isang lugar.",
+                "A. Katangian",
+                "B. Lawak",
+                "C. Manageability",
+                "D. Pagkakilanlan",
+                4);
+        addQuestion(q367);
+
+        Question q368 = new Question(
+                10,
+                1,
+                1,
+                "Tumutukoy sa panahon o oras sa pagitan ng pagtukoy ng hazard at oras ng pagtama nito sa isang komunidad.",
+                "A. Duration",
+                "B. Frequency",
+                "C. Forewarning",
+                "D. Speed of onset",
+                3);
+        addQuestion(q368);
+
+        Question q369 = new Question(
+                10,
+                1,
+                1,
+                "Ano ang tawag sa pagtataya ng kakayahan ng komunidad na harapin ang iba’t ibang uri ng hazard at pagsusuri ng kapasidad ng komunidad na harapin ang anoamng hazard?",
+                "A. Capacity assessment",
+                "B. Hazard assessment",
+                "C. Hazard mapping",
+                "D. Historical profiling",
+                1);
+        addQuestion(q369);
+
+        Question q370 = new Question(
+                10,
+                1,
+                1,
+                "Ayon kina Ondiz at Redito tumutukoy ito sa mga hakbang na dapat gawin bago ang pagtama ng sakuna, kalamidad at hazard na may layuning maiwasan o mapigilan ang malawakang pinsala sa tao at kalikasan. Ano ang tawag dito?",
+                "A. Capacity assessment",
+                "B. Hazard assessment",
+                "C. Risk assessment",
+                "D. Vulnerability assessment",
+                3);
+        addQuestion(q370);
+
+        Question q371 = new Question(
+                10,
+                1,
+                1,
+                "Ano ang tumutukoy sa mga banta na maaaring dulot ng kalikasan o ng gawa ng tao?",
+                "A. Resilience",
+                "B. Hazard",
+                "C. Vulnerability",
+                "D. Risk",
+                2);
+        addQuestion(q371);
+
+        Question q372 = new Question(
+                10,
+                1,
+                1,
+                "Ito ay tumutukoy sa inaasahang pinsala sa tao, ari-arian at buhay dulot ng pagtama ng isang kalamidad.",
+                "A. Resilience",
+                "B. Hazard",
+                "C. Vulnerability",
+                "D. Risk",
+                4);
+        addQuestion(q372);
+
+        Question q373 = new Question(
+                10,
+                1,
+                1,
+                "Sa paggawa ng disaster management plan maaring pagpilian ang mga approach para pagbasehan nito. Alin sa mga sumusunod ang katangian ng top down approach?",
+                "A. Ang mga mamamayan ay may kakayahang simulan at panatilihin ang kaunlaran ng kanilang komunidad",
+                "B. Ang responsibilidad sa pagbabago ay nasa kamay ng mga mamamayang naninirahan sa pamayanan",
+                "C. Ang mga mamamayan ay walang partisipasyon sa pagbuo ng disaster management plan, tagatanggap lamang sila nito at taga sunod ng nakaplano na",
+                "D. Ang iba’t ibang grupo sa isang pamayanan ay maaaring may magkakaibang pananaw sa mga banta at vulnerabilities na nararanasan sa kanilang lugar",
+                3);
+        addQuestion(q373);
+
+        Question q374 = new Question(
+                10,
+                1,
+                1,
+                "Alin sa mga approach ang nagsisimula sa mga mamamayan at iba pang sektor ng lipunan ang mga hakbang sa pagtukoy, pag-aanalisa at paglutas sa mga suliranin at hamong pangkapaligiran na nararanasan sa kanilang pamayanan?",
+                "A. Active-top approach",
+                "B. Bottom-down approach",
+                "C. Bottom-up approach",
+                "D. Top-down approach",
+                3);
+        addQuestion(q374);
+
+        Question q375 = new Question(
+                10,
+                1,
+                1,
+                "Ano ang tawag sa proseso ng pagbuo ng isang disaster management plan na kinakailangang produkto ng pagkakaisa at agtutulungan ng iba’t ibang sektor ng lipunan tulad ng pamahalaan, private sector, business sector, Nongovernmental Organizations (NGOs), at higit sa lahat ng mga mamamayang naninirahan sa partikular na komunidad?",
+                "A. Community-Based Disaster and Risk Management (CBDRM)",
+                "B. Disaster Risk Reduction and Management Framework",
+                "C. Community-Based Disaster and Risk Management Approach",
+                "D. Disaster Management",
+                1);
+        addQuestion(q375);
+
+        Question q376 = new Question(
+                10,
+                1,
+                1,
+                "Ilang tonelada ng basura ang nalilikha ng Pilipinas bawat araw ng taong 2015 ayon sap ag-aaral ni Oliviera?",
+                "A. 39, 422 tonelada",
+                "B. 39, 224 tonelada",
+                "C. 39, 442 tonelada",
+                "D. 39, 242 tonelada",
+                1);
+        addQuestion(q376);
+
+        Question q377 = new Question(
+                10,
+                1,
+                1,
+                "Anong organisasyon ang kabahagi ng programang tulad ng Orchidarium and Butterfly Pavilion, Gift of Trees, Green Choice Philippines, Piso Para sa Pasig at Trees for Life Philippines",
+                "A. Bantay Kalikasan",
+                "B. Greenpeace",
+                "C. Clean ang Green Foundation",
+                "D. Mother Earth Foundation",
+                3);
+        addQuestion(q377);
+
+        Question q378 = new Question(
+                10,
+                1,
+                1,
+                "Anong organisasyon ang naglalayong baguhin ang kaugalian at pananaw ng tao sa pagtrato at pangangalaga sa kalikasan at pagsusulong ng kapayapaan?",
+                "A. Bantay Kalikasan",
+                "B. Greenpeace",
+                "C. Clean ang Green Foundation",
+                "D. Mother Earth Foundation",
+                2);
+        addQuestion(q378);
+
+        Question q379 = new Question(
+                10,
+                1,
+                1,
+                "Anong batas ang ipinatupad ng pamahalaan ng Pilipinas upang magkaroon ng legal na batayan sa iba’t ibang desisyon at proseso ng pamamahala ng solid waste sa bansa?",
+                "A. Republic Act 0039 o Ecological Solid Waste Management Act of 2000",
+                "B. Republic Act 9003 o Ecological Solid Waste Management Act of 2000",
+                "C. Republic Act 9030 o Ecological Solid Waste Management Act of 2000",
+                "D. Republic Act 3009 o Ecological Solid Waste Management Act of 2000",
+                2);
+        addQuestion(q379);
+
+        Question q380 = new Question(
+                10,
+                1,
+                1,
+                "Ano ang tawag sa paggamit ng puno bilang panggatong?",
+                "A. Migration",
+                "B. Illegal logging",
+                "C. Fuel wood harvesting",
+                "D. Ilegal na pagmimina",
+                3);
+        addQuestion(q380);
+
+        //ENGLISH 10
+        Question q381 = new Question(
+                10,
+                1,
+                9,
+                "What is an ancient story created to explain natural events that have gods, goddesses, and heroes as characters?",
+                "A. Legend",
+                "B. Myth",
+                "C. Fable",
+                "D. Anecdote",
+                2);
+        addQuestion(q381);
+
+        Question q382 = new Question(
+                10,
+                1,
+                9,
+                "In the story Daedalus and Icarus, why did Icarus fall down and die while trying to escape Crete with his wings?",
+                "A. Because he ascended too high into the sky and it melted the adhesive in his wings.",
+                "B. Because King Minos, who was enraged with the loss of his daughter, ordered his men to shoot his wings.",
+                "C. Because the gods punished them for flying too high up into the sky, which was forbidden to mortals.",
+                "D. None of the above",
+                1);
+        addQuestion(q382);
+
+        Question q383 = new Question(
+                10,
+                1,
+                9,
+                "In the story Daedalus and Icarus, what did Daedalus construct to contain the dreadful and monstrous half-human, half-bull Minotaur?",
+                "A. Propylaea",
+                "B. Parthenon",
+                "C. Labyrinth",
+                "D. Crete",
+                3);
+        addQuestion(q383);
+
+        Question q384 = new Question(
+                10,
+                1,
+                9,
+                "What refers to any deliberate, repetitive, and aggressive social behavior intended to hurt others or to belittle another individual or group?",
+                "A. Prejudicial bullying",
+                "B. Cyberbullying",
+                "C. Social bullying",
+                "D. Gender-based bullying",
+                3);
+        addQuestion(q384);
+
+        Question q385 = new Question(
+                10,
+                1,
+                9,
+                "What is the manner in which information is passed from one generation to the next in the absence of writing or a recording medium?",
+                "A. Obsolete Tradition",
+                "B. Speech Tradition",
+                "C. Oral Tradition",
+                "D. Oratory Tradition",
+                3);
+        addQuestion(q385);
+
+        Question q386 = new Question(
+                10,
+                1,
+                9,
+                "In presenting an oral report, which of the following is not included under the Non-verbal skills?",
+                "A. body language",
+                "B. elocution",
+                "C. eye contact",
+                "D. poise",
+                2);
+        addQuestion(q386);
+
+        Question q387 = new Question(
+                10,
+                1,
+                9,
+                "Which of the following is included in oral reporting under the verbal skills?",
+                "A. body language",
+                "B. enthusiasm",
+                "C. eye contact",
+                "D. poise",
+                2);
+        addQuestion(q387);
+
+        Question q388 = new Question(
+                10,
+                1,
+                9,
+                "What is the ‘tone’ of a literary work?",
+                "A. It is he feeling created in a reader by a literary work",
+                "B. It refers to the attitude of the writer towards his subject",
+                "C. It is the central idea of a work of literature.",
+                "D. It contains the body of evidence used to support a point of view.",
+                2);
+        addQuestion(q388);
+
+        Question q389 = new Question(
+                10,
+                1,
+                9,
+                "Drew decided to treat himself to a fancy dinner. What type of pronoun is the word ‘himself’ in the sentence?",
+                "A. Intrinsic Pronoun",
+                "B. Extrinsic Pronoun",
+                "C. Intensive Pronoun",
+                "D. Reflexive Pronoun",
+                4);
+        addQuestion(q389);
+
+        Question q390 = new Question(
+                10,
+                1,
+                9,
+                "Jonathan built the shed in the backyard all by himself. What type of pronoun is the word ‘himself’ in the sentence?",
+                "A. Intrinsic Pronoun",
+                "B. Extrinsic Pronoun",
+                "C. Intensive Pronoun",
+                "D. Reflexive Pronoun",
+                3);
+        addQuestion(q390);
+
+        Question q391 = new Question(
+                10,
+                1,
+                9,
+                "Which of the following sentences makes use of intensive pronoun?",
+                "A. Anna Rose promised herself a reward for her hard work.",
+                "B. Have you asked yourselves why you are here?",
+                "C. The basketball players prepared themselves by staying in shape.",
+                "D. We cooked the whole meal ourselves.",
+                4);
+        addQuestion(q391);
+
+        Question q392 = new Question(
+                10,
+                1,
+                9,
+                "I must eat healthy and balance diet. What does the underlined modal indicate?",
+                "A. ability",
+                "B. obligation",
+                "C. permission",
+                "D. possibility",
+                2);
+        addQuestion(q392);
+
+        Question q393 = new Question(
+                10,
+                1,
+                9,
+                "Linux and Windows are both operating systems. Computers use them to run programs. Linux is totally free and open source, so users can improve or otherwise modify the source code. Windows is proprietary, so it costs money to use and users are prohibited from altering the source code. If we will compare and contrast the two operating systems, what is the most appropriate graphic organizer we can utilize?",
+                "A. Diagram",
+                "B. Flow chart",
+                "C. Venn Diagram",
+                "D. Tree diagram",
+                3);
+        addQuestion(q393);
+
+        Question q394 = new Question(
+                10,
+                1,
+                9,
+                "Which of the following is NOT included in the Steps in Writing Persuasive Essay?",
+                "A. Addressing the audience you are trying to persuade.",
+                "B. Choosing a subject",
+                "C. Clarifying your purpose",
+                "D. Writing the final draft.",
+                4);
+        addQuestion(q394);
+
+        Question q395 = new Question(
+                10,
+                1,
+                9,
+                "In the story The Gorgon’s Head, who was the son of Zeus and a mortal named Danae that beheaded Medusa and saved Andromeda from the sea monster Cetus?",
+                "A. Heracles",
+                "B. Perseus",
+                "C. Amphion",
+                "D. Achilles",
+                2);
+        addQuestion(q395);
+
+        Question q396 = new Question(
+                10,
+                1,
+                9,
+                "In the story of Orpheus, what instrument did he play to convince Hades and Persephone to give Eurydice a second chance to live?",
+                "A. Zither",
+                "B. Viola",
+                "C. Harp",
+                "D. Lyre",
+                4);
+        addQuestion(q396);
+
+        Question q397 = new Question(
+                10,
+                1,
+                9,
+                "What condition did Hades give them to let Eurydice go back with Orpheus to the living world?",
+                "A. That Orpheus and Eurydice must not make a sound until they reach Earth.",
+                "B. That Orpheus must not look back at Eurydice until they reach Earth.",
+                "C. That Orpheus must not touch Eurydice until they reach Earth.",
+                "D. That Orpheus and Eurydice must cross the river of Styx without paying the ferryman Charon.",
+                2);
+        addQuestion(q397);
+
+        Question q398 = new Question(
+                10,
+                1,
+                9,
+                "In the story of Arachne, why did Athene turn Arachne into a spider?",
+                "A. Because Arachne’s skills in weaving tapestry was a lot better than Athene’s.",
+                "B. Because Arachne had beauty that was greater than Athene.",
+                "C. Because Arachne’s artwork portrayed the evil or unworthy actions of Gods.",
+                "D. Because Arachne’s artwork depicted Athene’s rival, Poseidon, as the truthful ruler of Athens.",
+                3);
+        addQuestion(q398);
+
+        Question q399 = new Question(
+                10,
+                1,
+                9,
+                "My pet 'may' pass away soon so we talked about it and decided to euthanize him. What does the qouted modal of the sentence indicate?",
+                "A. Ability",
+                "B. Obligation",
+                "C. Permission",
+                "D. Possibility",
+                4);
+        addQuestion(q399);
+
+        Question q400 = new Question(
+                10,
+                1,
+                9,
+                "Which of the following qouted pronouns is NOT an example of a reflexive pronoun?",
+                "A. Adam e-mailed 'himself' a copy of the report.",
+                "B. Christine poured 'herself' a glass of milk.",
+                "C. Maria knew she 'herself' could make a positive impact on the world, if only she put her mind to it.",
+                "D. The students are able to monitor 'themselves'.",
+                3);
+        addQuestion(q400);
+
+        //FILIPINO 10
+        Question q401 = new Question(
+                10,
+                1,
+                7,
+                "Ito ay mga kuwento o istorya tungkol sa mga diyos at diyosa?",
+                "A. Alamat",
+                "B. Mitolohiya",
+                "C. Epiko",
+                "D. Nobela",
+                2);
+        addQuestion(q401);
+
+        Question q402 = new Question(
+                10,
+                1,
+                7,
+                "Ang salitamg mito/myth ay galing sa salitang _______  na mythos at salitang ______ na muthos?",
+                "A. Latin, Greek",
+                "B. Greek, Latin",
+                "C. Greek, Greek",
+                "D. Wala sa nabanggit",
+                1);
+        addQuestion(q402);
+
+        Question q403 = new Question(
+                10,
+                1,
+                7,
+                "Ang kanilang mitolohiya ay hinalaw Mula sa  Greece na kanilang sinakop?",
+                "A. Mitolohiya Ng taga Greece",
+                "B. Mitolohiya Ng taga Spain",
+                "C. Mitolohiya Ng taga Rome",
+                "D. Wala sa nabanggit",
+                3);
+        addQuestion(q403);
+
+        Question q404 = new Question(
+                10,
+                1,
+                7,
+                "Alin dito sa mga pinagpipilian ay Hindi  kabilang sa  mitolohiya?",
+                "A. Bathala ",
+                "B. Cupid at Psyche",
+                "C. Pandora’s Box",
+                "D. Ang alamat Ng Piña",
+                4);
+        addQuestion(q404);
+
+        Question q405 = new Question(
+                10,
+                1,
+                7,
+                "Sino sa mga Diyos at Diyosa sa mitolohiya Ng Greek ang nag dadala Ng sandata na kulog at kidlat?",
+                "A. Poseidon",
+                "B. Hephaestus",
+                "C. Zeus",
+                "D. Hestia",
+                3);
+        addQuestion(q405);
+
+        Question q406 = new Question(
+                10,
+                1,
+                7,
+                "Ano Ang pangalan ni Hades sa Mitolohiya Ng Rome?",
+                "A. Pluto",
+                "B. Jupiter",
+                "C. Juno",
+                "D. Mars",
+                1);
+        addQuestion(q406);
+
+        Question q407 = new Question(
+                10,
+                1,
+                7,
+                "Sa mitolohiya Ng Cupid at Psyche Sino Ang pangalan Ng kaakit akit na babae na Ang kagandahan ay mas mataas pa daw Kay Venus?",
+                "A. Cupid",
+                "B. Rama",
+                "C. Psyche",
+                "D. Wala sa nabanggit",
+                3);
+        addQuestion(q407);
+
+        Question q408 = new Question(
+                10,
+                1,
+                7,
+                "Bakit nagalit si Venus Kay Psyche?",
+                "A. Dahil sa sobra niyang kagandahan",
+                "B. Nakalimutan na Ng mga kalalakihan na mag alay sa kaniya",
+                "C. Dahil si Psyche Ang sanhi Ng pagkasira at pagkadumi Ng kanyang templo",
+                "D. Lahat sa nabanggit",
+                4);
+        addQuestion(q408);
+
+        Question q409 = new Question(
+                10,
+                1,
+                7,
+                "Bakit nabahala Ang mga magulang ni Psyche?",
+                "A. Dahil sa galit ni Venus",
+                "B. Dahil maraming lalaki Ang gusting umibig sa kaniya",
+                "C. Dahil walang umibig na lalaki sa kaniya",
+                "D. Lahat Ng nabanggit",
+                3);
+        addQuestion(q409);
+
+        Question q410 = new Question(
+                10,
+                1,
+                7,
+                "Ito ay nangangahulugang walang kamatayan o katapusan?",
+                "A. Imortal",
+                "B. Ambrosia",
+                "C. Mortal",
+                "D. Wala sa nabanggit",
+                1);
+        addQuestion(q410);
+
+        Question q411 = new Question(
+                10,
+                1,
+                7,
+                "Ito ay tinaguriang pagkain Ng mga Diyos at Diyosa?",
+                "A. Imortal",
+                "B. Alin",
+                "C. Ambrosia",
+                "D. Wala sa nabanggit",
+                3);
+        addQuestion(q411);
+
+        Question q412 = new Question(
+                10,
+                1,
+                7,
+                "Anong epiko Ang tungkol sa mag Asawa na Hindi magkaroon Ng anak?",
+                "A. Nagkaroon Ng anak Sina Wigan at Bugan",
+                "B. Ibalon",
+                "C. Ulalim ",
+                "D. Maragtas",
+                1);
+        addQuestion(q412);
+
+        Question q413 = new Question(
+                10,
+                1,
+                7,
+                "Sino Ang nag salin ng epikong \"Nagkaroon Ng anak si Wigan at Bugan\"?",
+                "A. Vilma C. Ambat",
+                "B. Willita A. Enrijo",
+                "C. Emilio Jacinto",
+                "D. Wala sa nabanggit",
+                1);
+        addQuestion(q413);
+
+        Question q414 = new Question(
+                10,
+                1,
+                7,
+                "Sa pagdating ni Bugan sa lawa Ng Lagud, Sino/ Ano Ang kanyang unang Nakita?",
+                "A. Buwaya",
+                "B. Pating",
+                "C. Ngilin",
+                "D. Wala sa nabanggit",
+                1);
+        addQuestion(q414);
+
+        Question q415 = new Question(
+                10,
+                1,
+                7,
+                "Bakit naglakbay si Bugan sa tahanan Ng mga Diyos?",
+                "A. Dahil intirisado siya",
+                "B. Dahil nagkaroon siya Ng anak",
+                "C. Dahil nagalit siya sa kanila",
+                "D. Wala sa nabanggit",
+                4);
+        addQuestion(q415);
+
+        Question q416 = new Question(
+                10,
+                1,
+                7,
+                "Ito ay isang anyo Ng sulating naglalahad na minsan ay may layuning makakuha Ng anumang pagbabago na bagaman ay makakalibang din?",
+                "A. Tula",
+                "B. Dagli",
+                "C. Pangungusao",
+                "D. Sanaysay",
+                4);
+        addQuestion(q416);
+
+        Question q417 = new Question(
+                10,
+                1,
+                7,
+                "Ito ay Isa sa mga  tatlong mahalagang bahagi Ng sanaysay na madalas na inilahad Ang pangunahing kaisipan?",
+                "A. Gitna",
+                "B. Panimula",
+                "C. Wakas",
+                "D. Tema",
+                2);
+        addQuestion(q417);
+
+        Question q418 = new Question(
+                10,
+                1,
+                7,
+                "Ito ay mga ideyang nabanggit na ugnayan o nagpapalinaw  sa tema?",
+                "A. Kaisipan",
+                "B. Tema",
+                "C. Antas",
+                "D. Estilo",
+                1);
+        addQuestion(q418);
+
+        Question q419 = new Question(
+                10,
+                1,
+                7,
+                "Sino Ang may akda Ng alegorya Ng Yungib?",
+                "A. Plato",
+                "B. Aristotle",
+                "C. Shakespeare",
+                "D. Wala sa nabanggit",
+                1);
+        addQuestion(q419);
+
+        Question q420 = new Question(
+                10,
+                1,
+                7,
+                "Sino Ang may akda Ng \"Ang Ningning at Ang liwanag\"?",
+                "A. Emilio Jacinto",
+                "B. Plato",
+                "C. Vilma C. Ambat",
+                "D. Wala sa nabanggit",
+                1);
+        addQuestion(q420);
+
+        //ICT 10
+        Question q421 = new Question(
+                10,
+                1,
+                6,
+                "In making a new Photoshop file to be used for digital purposes such as in websites, social media posts, and other non-print media, which of the following color modes is optimal to use?",
+                "A. CMYK color",
+                "B. Lab color",
+                "C. RGB color",
+                "D. Bitmap color",
+                3);
+        addQuestion(q421);
+
+        Question q422 = new Question(
+                10,
+                1,
+                6,
+                "It is an important feature of Photoshop that allows you to separate different parts of an image and editing them without affecting other parts of the image.",
+                "A. Artboards",
+                "B. Slices",
+                "C. Layers",
+                "D. Glyphs",
+                3);
+        addQuestion(q422);
+
+        Question q423 = new Question(
+                10,
+                1,
+                6,
+                "What type of computer graphics is Photoshop based on?",
+                "A. Scalar Graphics",
+                "B. Vector Graphics",
+                "C. Raster Graphics",
+                "D. Visual Graphics",
+                3);
+        addQuestion(q423);
+
+        Question q424 = new Question(
+                10,
+                1,
+                6,
+                "Adobe Photoshop is entirely written in what programming language?",
+                "A. C++",
+                "B. C#",
+                "C. JavaScript",
+                "D. Python",
+                1);
+        addQuestion(q424);
+
+        Question q425 = new Question(
+                10,
+                1,
+                6,
+                "The following are some of the many uses of Adobe Photoshop, except?",
+                "A. Animation",
+                "B. Website Development",
+                "C. Making 3D objects",
+                "D. None of the Above",
+                4);
+        addQuestion(q425);
+
+        Question q426 = new Question(
+                10,
+                1,
+                6,
+                "Adobe Photoshop, or Display as it was called back then, was developed by two brothers in 1987. Who are they?",
+                "A. John and Charles Warnock",
+                "B. Orville and Wilbur Wright",
+                "C. Thomas and John Knoll",
+                "D. Henry and Karl Marx",
+                3);
+        addQuestion(q426);
+
+        Question q427 = new Question(
+                10,
+                1,
+                6,
+                "What file extension is a Photoshop file saved in?",
+                "A. .psr",
+                "B. .psf",
+                "C. .psd",
+                "D. .pfx",
+                3);
+        addQuestion(q427);
+
+        Question q428 = new Question(
+                10,
+                1,
+                6,
+                "It is a Photoshop feature that allows you to organize different design elements and print or save them separately.",
+                "A. Artboards",
+                "B. Slices",
+                "C. Layers",
+                "D. Pixels",
+                1);
+        addQuestion(q428);
+
+        Question q429 = new Question(
+                10,
+                1,
+                6,
+                "What does the CC in Adobe Photoshop CC stand for?",
+                "A. Creating Content",
+                "B. Crony Capitalism",
+                "C. Creative Cloud",
+                "D. Creative Commons",
+                3);
+        addQuestion(q429);
+
+        Question q430 = new Question(
+                10,
+                1,
+                6,
+                "What Photoshop tool allows you to select a part of an image by snapping into image edges?",
+                "A. Lasso tool",
+                "B. Polygonal Lasso tool",
+                "C. Magnetic Lasso tool",
+                "D. Magic Wand tool",
+                3);
+        addQuestion(q430);
+
+        Question q431 = new Question(
+                10,
+                1,
+                6,
+                "What Photoshop tool allows you to pan to different parts of an image?",
+                "A. Hand tool",
+                "B. Move tool",
+                "C. Pan tool",
+                "D. View Tool",
+                1);
+        addQuestion(q431);
+
+        Question q432 = new Question(
+                10,
+                1,
+                6,
+                "What Photoshop tool allows you to create placeholder frames for images?",
+                "A. Placeholder tool",
+                "B. Frame tool",
+                "C. Crop tool",
+                "D. Slice Tool",
+                2);
+        addQuestion(q432);
+
+        Question q433 = new Question(
+                10,
+                1,
+                6,
+                "What Photoshop tool allows you to sample colors from an image to use it in putting color to text, shapes, etc.?",
+                "A. Eyedropper tool",
+                "B. Color tool",
+                "C. Color Sampler tool",
+                "D. Magic Wand tool",
+                1);
+        addQuestion(q433);
+
+        Question q434 = new Question(
+                10,
+                1,
+                6,
+                "If you want to fix an imperfection or blemish in an image, the following tools can be used except?",
+                "A. Healing tool",
+                "B. Patch tool",
+                "C. Content-aware Move tool",
+                "D. Dodge tool",
+                4);
+        addQuestion(q434);
+
+        Question q435 = new Question(
+                10,
+                1,
+                6,
+                "What Photoshop tool allows you to cut an image into smaller sections suitable for web development?",
+                "A. Artboard tool",
+                "B. Slice tool",
+                "C. Glyph tool",
+                "D. Cut tool",
+                2);
+        addQuestion(q435);
+
+        Question q436 = new Question(
+                10,
+                1,
+                6,
+                "Darken, Multiply, Luminosity, and Color dodge are some examples of ______ that allows you to allow graphics to interact with the background.",
+                "A. Adjusting Options",
+                "B. Filters",
+                "C. Blending Options",
+                "D. Interactive Modes",
+                3);
+        addQuestion(q436);
+
+        Question q437 = new Question(
+                10,
+                1,
+                6,
+                "What Photoshop tool allows you to create a gradual blend between two colors?",
+                "A. Blend tool",
+                "B. Gradient tool",
+                "C. Color tool",
+                "D. Swatch tool",
+                2);
+        addQuestion(q437);
+
+        Question q438 = new Question(
+                10,
+                1,
+                6,
+                "What category of color in Photoshop is the color you apply with the eraser that replaces the color being erased?",
+                "A. Background color",
+                "B. Shadow color",
+                "C. Foreground color",
+                "D. Highlight color",
+                1);
+        addQuestion(q438);
+
+        Question q439 = new Question(
+                10,
+                1,
+                6,
+                "What keyboard key do you need to press while resizing a picture so that the original aspect ratio doesn’t change or the image will not be distorted?",
+                "A. Ctrl key",
+                "B. Alt key",
+                "C. Shift key",
+                "D. Tab key",
+                3);
+        addQuestion(q439);
+
+        Question q440 = new Question(
+                10,
+                1,
+                6,
+                "Most programs in the Adobe Creative Cloud collection have shortcut keys used to access different tools efficiently. What is the default key in the Adobe Photoshop application that lets you access the Move tool?",
+                "A. M",
+                "B. V",
+                "C. N",
+                "D. O",
+                2);
+        addQuestion(q440);
+
+        //MATH 10
+        Question q441 = new Question(
+                10,
+                1,
+                5,
+                "Which is a finite arithmetic sequence?",
+                "A. 1, 2, 4, 8, 16,…, n",
+                "B. 1, 2, 3, 4, 5, 6, 7, 8",
+                "C. 2, 2, 2, 2, 2, 2,…,n",
+                "D. ½, 1/3, ¼, 1/5, 1/6, 1/7, 1/8",
+                2);
+        addQuestion(q441);
+
+        Question q442 = new Question(
+                10,
+                1,
+                5,
+                "Which is the nth term of the sequence 6, 18, 30, 42,…, n? ",
+                "A. An = 6n + 6",
+                "B. An = 5n² + n + 2",
+                "C. An = 12n - 6",
+                "D. An = 6 + 12n",
+                3);
+        addQuestion(q442);
+
+        Question q443 = new Question(
+                10,
+                1,
+                5,
+                "Karl Friedrich Gauss was asked about the sum of the first hundred natural numbers and answered it correctly in seconds only, which formula can be used to answer the problem?",
+                "A. An = n/2(A1 + An)",
+                "B. An = n(n + 1)/2",
+                "C. Both a & b",
+                "D. None of these",
+                3);
+        addQuestion(q443);
+
+        Question q444 = new Question(
+                10,
+                1,
+                5,
+                "(Use the formula for nth term An = A1 +(n - 1)d where A1 is the first term, n as the number of terms and d as the common difference.) How many blocks are there in row 100 if row 1: 3, row 2: 5, row 3: 7?",
+                "A. 199",
+                "B. 201",
+                "C. 197",
+                "D. 100",
+                2);
+        addQuestion(q444);
+
+        Question q445 = new Question(
+                10,
+                1,
+                5,
+                "A pyramid is formed by 1m × 1m × 1m cubes, looking at one face of the pyramid, you can see that the number of cubes in a row diminishes by 2 each time it gets higher. Given that there are 225 cubes seen on that face and only one cube at the topmost, how high is the pyramid?",
+                "A. 1500 cm",
+                "B. 14 m",
+                "C. 1.4 dm",
+                "D. 0.15 km",
+                1);
+        addQuestion(q445);
+
+        Question q446 = new Question(
+                10,
+                1,
+                5,
+                "Find the missing terms: 6, 12, __, __, 30",
+                "A. 18, 24",
+                "B. 24, 18",
+                "C. 18, 30",
+                "D. Both a & b",
+                1);
+        addQuestion(q446);
+
+        Question q447 = new Question(
+                10,
+                1,
+                5,
+                "Given that the formula for geometric sequences is  An = A1(r)^(n-1) where A1 is the first term, r is the common ratio and n is the number of terms. Find the 7th term of the sequence with A1 = r = 2.",
+                "A. 128",
+                "B. 32",
+                "C. 64",
+                "D. 256",
+                1);
+        addQuestion(q447);
+
+        Question q448 = new Question(
+                10,
+                1,
+                5,
+                "The geometric series is defined by Sn = [A1 (1 - r^n)]/(1 - r). Find the sum of the sequence from no.7",
+                "A. -126",
+                "B. 126",
+                "C. 256",
+                "D. 254",
+                4);
+        addQuestion(q448);
+
+        Question q449 = new Question(
+                10,
+                1,
+                5,
+                "In a geometric series, what happens if the common ratio is equal to 1?",
+                "A. Both b &c",
+                "B. The formula for geometric series will yield i (undefined/imaginary)",
+                "C. The sum will be equal to n(A1)",
+                "D. All of the above",
+                4);
+        addQuestion(q449);
+
+        Question q450 = new Question(
+                10,
+                1,
+                5,
+                "In a harmonic sequence, the elements are the reciprocals of an arithmetic sequence or vice-versa. Find the nth term of the corresponding arithmetic sequence of 3, 3/2, 1, ¾, 3/5,…,n.",
+                "A. An = 3n/4",
+                "B. An = 3+ (n+1)/3",
+                "C. An = n/3",
+                "D. None of these",
+                3);
+        addQuestion(q450);
+
+        Question q451 = new Question(
+                10,
+                1,
+                5,
+                "In a bar, an infinite number of mathematicians order a wine filling up 1 cup, 1/3, 1/9, 1/27 and so on. If you were the bartender, how many cups would you give all in all? (S_○○= A_1 /(1-r))",
+                "A. 1 2/3",
+                "B. 2",
+                "C. 2 2/3",
+                "D. 3",
+                4);
+        addQuestion(q451);
+
+        Question q452 = new Question(
+                10,
+                1,
+                5,
+                "Fibonacci sequence has the following terms: 0,1,1,2,3,5,8,…, n. Which of the following cannot be one of the following terms?",
+                "A. 13",
+                "B. 55",
+                "C. 34",
+                "D. 56",
+                4);
+        addQuestion(q452);
+
+        Question q453 = new Question(
+                10,
+                1,
+                5,
+                "If 2, a, b, 2/27. Find a and b.",
+                "A. a = 2, b = 3",
+                "B. a = 1, b = 2/9",
+                "C. a = 2/3, b = 2/9",
+                "D. a = 2/9, b = 1/9",
+                3);
+        addQuestion(q453);
+
+        Question q454 = new Question(
+                10,
+                1,
+                5,
+                "Evaluate P(x)/D(x) = (3x³ - 6x² + 7x - 48)/(x - 3)",
+                "A. 3x + 3 + (16/x-3)",
+                "B. 3x² + 3x + 16",
+                "C. 3x² + 16x + 3",
+                "D. 3x + 16 + (3/x-3)",
+                2);
+        addQuestion(q454);
+
+        Question q455 = new Question(
+                10,
+                1,
+                5,
+                "Find the remainder of x⁶ + 7x⁵ + 6x³ - 3x² + 2x - 1 divided by x-2",
+                "A. 328",
+                "B. 327",
+                "C. 329",
+                "D. 326",
+                2);
+        addQuestion(q455);
+
+        Question q456 = new Question(
+                10,
+                1,
+                5,
+                "It states that (x-r) is a factor of P(x) if P(r) = 0.",
+                "A. Rational Root Theorem",
+                "B. Remainder Theorem",
+                "C. Factor Theorem",
+                "D. Both b & c",
+                3);
+        addQuestion(q456);
+
+        Question q457 = new Question(
+                10,
+                1,
+                5,
+                "Given that P(r) is the remainder, find P(r) if P(x) = x²⁰²⁰ - 1 is divided by x + 1.",
+                "A. -1",
+                "B. 1",
+                "C. 0",
+                "D. None of these",
+                3);
+        addQuestion(q457);
+
+        Question q458 = new Question(
+                10,
+                1,
+                5,
+                "If P(2) = P(3) = P(0) = 0, find the 3rd degree polynomial P(x).",
+                "A. P(x) = x(x - 2)(x - 3)",
+                "B. P(x) = x(x + 2)(x + 3)",
+                "C. P(x) = x(x - 2)(x + 3)",
+                "D. P(x) = x(x + 2)(x - 3)",
+                1);
+        addQuestion(q458);
+
+        Question q459 = new Question(
+                10,
+                1,
+                5,
+                "P(x) has three factors (2, -3, 5) and P(x) = 2x³ + bx² - 60x + d. Find b.",
+                "A. b = 2",
+                "B. b = -30",
+                "C. b = 4",
+                "D. b = -4",
+                3);
+        addQuestion(q459);
+
+        Question q460 = new Question(
+                10,
+                1,
+                5,
+                "What is the degree of the polynomial 7x⁵ + 6x² + 5x³ + x⁷ = 4x⁵ - 7x⁶ + 2x⁷ - x⁷",
+                "A. 5",
+                "B. 6",
+                "C. 7",
+                "D. 3",
+                2);
+        addQuestion(q460);
+
+        //SCIENCE 10
+        Question q461 = new Question(
+                10,
+                1,
+                2,
+                "The following are indications of where to find edges of crustal plates except__.",
+                "A. Volcanism",
+                "B. Mountain Formation",
+                "C. Sea level",
+                "D. Earthquakes",
+                3);
+        addQuestion(q461);
+
+        Question q462 = new Question(
+                10,
+                1,
+                2,
+                "The location of the focus is a determining factor of how an earthquake affects an area. Which of the following is true?",
+                "A. Shallow focus earthquakes are the least destructive",
+                "B. Intermediate focus earthquakes are likely the most destructive",
+                "C. Deep focus earthquakes are stronger because they occur at greater pressure than both shallow and intermediate",
+                "D. The intensity of an earthquake is determined by how deep the focus of an earthquake is located",
+                4);
+        addQuestion(q462);
+
+        Question q463 = new Question(
+                10,
+                1,
+                2,
+                "Active volcanoes are usually found in what plate boundary?",
+                "A. Convergent",
+                "B. Divergent",
+                "C. Transform",
+                "D. Both b & c",
+                1);
+        addQuestion(q463);
+
+        Question q464 = new Question(
+                10,
+                1,
+                2,
+                "Which of the following is true?",
+                "A. Convergent-conservative",
+                "B. Divergent-destructive",
+                "C. Transform-conservative",
+                "D. Transform-constructive",
+                3);
+        addQuestion(q464);
+
+        Question q465 = new Question(
+                10,
+                1,
+                2,
+                "Which of the following do you expect to find in transform-fault boundaries?",
+                "A. Mountains",
+                "B. Faults",
+                "C. Trenches",
+                "D. Rift valleys",
+                2);
+        addQuestion(q465);
+
+        Question q466 = new Question(
+                10,
+                1,
+                2,
+                "Who proposed the theory of Tectonic Plates?",
+                "A. Alfred Wegener",
+                "B. Charles Darwin",
+                "C. Isaac Newton",
+                "D. Jacques Charles",
+                1);
+        addQuestion(q466);
+
+        Question q467 = new Question(
+                10,
+                1,
+                2,
+                "Which of the following is not an evidence of the Continental Drift Theory?",
+                "A. Continental Jigsaw Puzzle",
+                "B. Rock Formation",
+                "C. Oceanic depth",
+                "D. Evidence from Fossils",
+                3);
+        addQuestion(q467);
+
+        Question q468 = new Question(
+                10,
+                1,
+                2,
+                "The Philippine Islands are formed due to a/an _________ collision of the Eurasian and Philippine Plate.",
+                "A. Oceanic-oceanic",
+                "B. Oceanic-continental",
+                "C. Continental-continental",
+                "D. All except c",
+                1);
+        addQuestion(q468);
+
+        Question q469 = new Question(
+                10,
+                1,
+                2,
+                "It is a process of locating earthquakes by the use of 3 surrounding recording stations.",
+                "A. Triangulation",
+                "B. Time difference of P and S wave arrival",
+                "C. Earthquake plotting",
+                "D. Seismic waves",
+                1);
+        addQuestion(q469);
+
+        Question q470 = new Question(
+                10,
+                1,
+                2,
+                "What drives plate tectonics?",
+                "A. Thermal conduction",
+                "B. Thermal convection",
+                "C. Solar energy",
+                "D. Erosion",
+                2);
+        addQuestion(q470);
+
+        Question q471 = new Question(
+                10,
+                1,
+                2,
+                "The mantle is liquid, Is this true?",
+                "A. Yes, because thermal convection takes place in the mantle.",
+                "B. Yes, because it facilitates the movement of plates.",
+                "C. No, because shear waves can pass through the mantle.",
+                "D. No, because earth is a compacted solid planet.",
+                3);
+        addQuestion(q471);
+
+        Question q472 = new Question(
+                10,
+                1,
+                2,
+                "Which wave is the most destructive?",
+                "A. P-wave",
+                "B. S-wave",
+                "C. Rayleigh Wave",
+                "D. Love wave",
+                4);
+        addQuestion(q472);
+
+        Question q473 = new Question(
+                10,
+                1,
+                2,
+                "Which of the following are surface waves?",
+                "A. P-wave and S-wave",
+                "B. Rayleigh and Love Waves",
+                "C. P-wave and Rayleigh",
+                "D. Love waves and S-waves",
+                2);
+        addQuestion(q473);
+
+        Question q474 = new Question(
+                10,
+                1,
+                2,
+                "The difference in the traveled distance of P and S-waves is 100 km in every 8 seconds. How far is an earthquake’s epicenter if the P-wave arrived 2 minutes earlier than the S-wave?",
+                "A. 25 km",
+                "B. 25 m",
+                "C. 400 m",
+                "D. 1500 m",
+                4);
+        addQuestion(q474);
+
+        Question q475 = new Question(
+                10,
+                1,
+                2,
+                "Where is the earth’s magnetic field generated?",
+                "A. In the crust",
+                "B. In the mantle",
+                "C. In the outer core",
+                "D. In the inner core",
+                3);
+        addQuestion(q475);
+
+        Question q476 = new Question(
+                10,
+                1,
+                2,
+                "Which layer facilitates crustal movement?",
+                "A. Crust",
+                "B. Asthenosphere",
+                "C. Mantle ",
+                "D. Core",
+                2);
+        addQuestion(q476);
+
+        Question q477 = new Question(
+                10,
+                1,
+                2,
+                "Scientists found clues on what the earth’s interior look like through p and s waves. What’s the effect of the earth’s interior on P and S waves?",
+                "A. It can send them into seismic gaps",
+                "B. It virtually has no effect",
+                "C. It can absorb P waves, but not S waves",
+                "D. It can affect the speed and direction of the waves",
+                4);
+        addQuestion(q477);
+
+        Question q478 = new Question(
+                10,
+                1,
+                2,
+                "Which of the following is true?",
+                "A. P waves and S waves are both refracted in the outer core",
+                "B. P-wave shadow zone is smaller than S-wave shadow zone",
+                "C. S-waves are absorbed in the outer core",
+                "D. P and S waves can travel through different medium",
+                3);
+        addQuestion(q478);
+
+        Question q479 = new Question(
+                10,
+                1,
+                2,
+                "In a deep mine, temperatures increase at the rate of ___________.",
+                "A. 3°C per kilometer",
+                "B. 30°C per kilometer",
+                "C. 300°C per kilometer",
+                "D. 1°C per kilometer",
+                2);
+        addQuestion(q479);
+
+        Question q480 = new Question(
+                10,
+                1,
+                2,
+                "Why is the density of the core the highest?",
+                "A. Due to heavy pressure of overlying rocks",
+                "B. Due to high temperature of overlying rocks",
+                "C. Due to high density of overlying rocks",
+                "D. All of the above",
+                1);
+        addQuestion(q480);
+
+        //MAPEH 10
+        Question q481 = new Question(
+                10,
+                1,
+                4,
+                "One of the earlier but concrete forms declaring the entry of 20th century where the sentimental melodies and dramatic emotionalism of the preceding Romantic Period were being replaced in favor of moods and impressions.",
+                "A. Primitivism",
+                "B. Impressionism",
+                "C. Expressionism",
+                "D. None of the above",
+                2);
+        addQuestion(q481);
+
+        Question q482 = new Question(
+                10,
+                1,
+                4,
+                "His compositional style is mainly characterized by its uniquely innovative but not atonal style of harmonic treatment.",
+                "A. Claude Debussy ",
+                "B. Joseph Maurice Ravel",
+                "C. Bela Bartok",
+                "D. None of the above",
+                2);
+        addQuestion(q482);
+
+        Question q483 = new Question(
+                10,
+                1,
+                4,
+                "He was a concert pianist as he travelled, exploring the music of Hungarian peasants.",
+                "A. Claude Debussy",
+                "B. Joseph Maurice Ravel",
+                "C. Bela Bartok",
+                "D. None of the above",
+                3);
+        addQuestion(q483);
+
+        Question q484 = new Question(
+                10,
+                1,
+                4,
+                "He was the primary exponent of the impressionist movement and the focal point for other impressionist composers.",
+                "A. Claude Debussy",
+                "B. Joseph Maurice Ravel",
+                "C. Bela Bartok",
+                "D. None of the above",
+                1);
+        addQuestion(q484);
+
+        Question q485 = new Question(
+                10,
+                1,
+                4,
+                "This style was associated with electronic music and dealt with the parameters or dimensions of sound in space.",
+                "A. Primitivism",
+                "B. Avant Grande",
+                "C. Atonal Style",
+                "D. None of the above",
+                2);
+        addQuestion(q485);
+
+        Question q486 = new Question(
+                10,
+                1,
+                4,
+                "These artists created works with more emotional force or imagination than with realistic or natural images.",
+                "A. Expressionists",
+                "B. Impressionists",
+                "C. Imaginists",
+                "D. None of the above",
+                1);
+        addQuestion(q486);
+
+        Question q487 = new Question(
+                10,
+                1,
+                4,
+                "He is best known for his landscape paintings, particularly those depicting his beloved flower garden and water lily ponds at his home in Giverny.",
+                "A. Claude Monet",
+                "B. Edouard Manet",
+                "C. Vincent Van Gogh",
+                "D. None of the above",
+                1);
+        addQuestion(q487);
+
+        Question q488 = new Question(
+                10,
+                1,
+                4,
+                "He was a key figure in the transition of realism to impressionism with a number of works considered as marking the birth of modern art.",
+                "A. Claude Monet",
+                "B. Edouard Manet",
+                "C. Vincent Van Gogh",
+                "D. None of the above",
+                2);
+        addQuestion(q488);
+
+        Question q489 = new Question(
+                10,
+                1,
+                4,
+                "It was an art movement that emerged and had a tremendous impact and influence on the painting style that followed, such as neo-impressionism, post-it impressionism, fauvism ans cubism even the artistic style and movement of today.",
+                "A. Expressionism ",
+                "B. Neo-classicism",
+                "C. Impressionism",
+                "D. None of the above",
+                3);
+        addQuestion(q489);
+
+        Question q490 = new Question(
+                10,
+                1,
+                4,
+                "One of the first 19th century artists which his striking style was to have a far-reaching influence on 20th century art, with his works becoming the most recognizable in the world.",
+                "A. Claude Monet",
+                "B. Edouard Manet",
+                "C. Vincent Van Gogh",
+                "D. None of the above",
+                3);
+        addQuestion(q490);
+
+        Question q491 = new Question(
+                10,
+                1,
+                4,
+                "The way in which an individual lives.",
+                "A. Habits",
+                "B. Lifestyle",
+                "C. Exercise",
+                "D. None of the above",
+                2);
+        addQuestion(q491);
+
+        Question q492 = new Question(
+                10,
+                1,
+                4,
+                "Patterns of behavior regards to eating.",
+                "A. Eating Habits",
+                "B. Lifestyle",
+                "C. Exercise",
+                "D. None of the above",
+                1);
+        addQuestion(q492);
+
+        Question q493 = new Question(
+                10,
+                1,
+                4,
+                "These are tests that gauge your fitness level, may be health-related or skilled-related.",
+                "A. Physical Fitness Tests",
+                "B. Mass Tests",
+                "C. Exercise Tests",
+                "D. None of the above",
+                1);
+        addQuestion(q493);
+
+        Question q494 = new Question(
+                10,
+                1,
+                4,
+                "It is calculated by dividing your body weight in kilograms by the square of your height in meters.",
+                "A. Body Index Mass",
+                "B. Body Mass Index",
+                "C. Index Body Mass",
+                "D. None of the above",
+                2);
+        addQuestion(q494);
+
+        Question q495 = new Question(
+                10,
+                1,
+                4,
+                "Preliminary activity done to prepare the body for actual physical activity or sports-related specific.",
+                "A. Warm up",
+                "B. Cool down",
+                "C. Meditation",
+                "D. None of the above",
+                1);
+        addQuestion(q495);
+
+        Question q496 = new Question(
+                10,
+                1,
+                4,
+                "It aims to develop a person's ability to evaluate and utilized health information, products, services, wisely and effectively.",
+                "A. Consumer Health",
+                "B. Good Health",
+                "C. Special Health",
+                "D. None of the above",
+                1);
+        addQuestion(q496);
+
+        Question q497 = new Question(
+                10,
+                1,
+                4,
+                "Any concept, step or advice that various sources give to aid the health status of an individual.",
+                "A. Health services",
+                "B. Health information ",
+                "C. Health products",
+                "D. None of the above",
+                2);
+        addQuestion(q497);
+
+        Question q498 = new Question(
+                10,
+                1,
+                4,
+                "These programs aim to appraise the health conditions of individuals through examinations, cure and treat disorders and such.",
+                "A. Health services",
+                "B. Health information ",
+                "C. Health products",
+                "D. None of the above",
+                1);
+        addQuestion(q498);
+
+        Question q499 = new Question(
+                10,
+                1,
+                4,
+                "These are food, drugs, cosmetics, devices, biological, vaccines and many more products which consumers buy for their health.",
+                "A. Health services",
+                "B. Health information ",
+                "C. Health products",
+                "D. None of the above",
+                3);
+        addQuestion(q499);
+
+        Question q500 = new Question(
+                10,
+                1,
+                4,
+                "It is a financial agreement between an insurance company and an individual or group for the payment of healthcare costs.",
+                "A. Health security",
+                "B. Health insurance",
+                "C. Health payment",
+                "D. None of the above",
+                2);
+        addQuestion(q500);
+
+        //RESEARCH 10
+        Question q501 = new Question(
+                10,
+                1,
+                8,
+                "According to Good and Scates (1997), what is the purpose of Research?",
+                "A. To serve mankind",
+                "B. To make things easier",
+                "C. For future advantages",
+                "D. None of the above",
+                1);
+        addQuestion(q501);
+
+        Question q502 = new Question(
+                10,
+                1,
+                8,
+                "Which of the following is not the characteristics of a researcher?",
+                "A. Empirical",
+                "B. Logical",
+                "C. Economical",
+                "D. None of the above",
+                3);
+        addQuestion(q502);
+
+        Question q503 = new Question(
+                10,
+                1,
+                8,
+                "Which of the following is not the characteristics of a researcher?",
+                "A. Cyclical",
+                "B. Analytical",
+                "C. Resourceful",
+                "D. None of the above",
+                3);
+        addQuestion(q503);
+
+        Question q504 = new Question(
+                10,
+                1,
+                8,
+                "Which of the following is one of the qualities of a researcher?",
+                "A. Religious",
+                "B. Sympathetic",
+                "C. Cyclical",
+                "D. None of the above",
+                1);
+        addQuestion(q504);
+
+        Question q505 = new Question(
+                10,
+                1,
+                8,
+                "What do you call the variable that is the cause of the study?",
+                "A. Controlled Variable",
+                "B. Independent Variable",
+                "C. Dependent Variable",
+                "D. None of the above",
+                2);
+        addQuestion(q505);
+
+        Question q506 = new Question(
+                10,
+                1,
+                8,
+                "What do you call the variable that is the effect of the study?",
+                "A. Controlled Variable",
+                "B. Independent Variable",
+                "C. Dependent Variable",
+                "D. None of the above",
+                3);
+        addQuestion(q506);
+
+        Question q507 = new Question(
+                10,
+                1,
+                8,
+                "What do you call the variable that is chosen by the researcher to determine if it changes the relationship of 2 variables?",
+                "A. Intervening Variable",
+                "B. Moderator",
+                "C. Dependent Variable",
+                "D. None of the above",
+                2);
+        addQuestion(q507);
+
+        Question q508 = new Question(
+                10,
+                1,
+                8,
+                "Are Historical books a primary source?",
+                "A. Yes",
+                "B. No",
+                "C. Depends",
+                "D. None of the above",
+                2);
+        addQuestion(q508);
+
+        Question q509 = new Question(
+                10,
+                1,
+                8,
+                "Are video records of an interview a primary source?",
+                "A. Yes",
+                "B. No",
+                "C. Depends",
+                "D. None of the above",
+                1);
+        addQuestion(q509);
+
+        Question q510 = new Question(
+                10,
+                1,
+                8,
+                "What is the classification of research wherein studies are conducted artificially?",
+                "A. Library",
+                "B. Laboratory",
+                "C. Field",
+                "D. None of the above",
+                2);
+        addQuestion(q510);
+
+        Question q511 = new Question(
+                10,
+                1,
+                8,
+                "What is the classification of research wherein studies are either descriptive or historical?",
+                "A. Library",
+                "B. Laboratory ",
+                "C. Field  ",
+                "D. None of the above",
+                1);
+        addQuestion(q511);
+
+        Question q512 = new Question(
+                10,
+                1,
+                8,
+                "What is the classification of research wherein studies are conducted in natural environment?",
+                "A. Library",
+                "B. Laboratory",
+                "C. Field",
+                "D. None of the above",
+                3);
+        addQuestion(q512);
+
+        Question q513 = new Question(
+                10,
+                1,
+                8,
+                "What is the intervening variable in the study \"Effectiveness of teaching Mathematics as perceived by BSHS student\"?",
+                "A. Teaching Mathematics",
+                "B. Efficiency of Teaching",
+                "C. Mean Score",
+                "D. None of the above",
+                2);
+        addQuestion(q513);
+
+        Question q514 = new Question(
+                10,
+                1,
+                8,
+                "What is the independent variable in the study \"Effectiveness of teaching Mathematics as perceived by BSHS student\"?",
+                "A. Teaching Mathematics",
+                "B. Efficiency of Teaching",
+                "C. Mean Score",
+                "D. None of the above",
+                1);
+        addQuestion(q514);
+
+        Question q515 = new Question(
+                10,
+                1,
+                8,
+                "What is the dependent variable in the study \"Effectiveness of teaching Mathematics as perceived by BSHS student\"?",
+                "A. Teaching Mathematics",
+                "B. Efficiency of Teaching ",
+                "C. Mean Score",
+                "D. None of the above",
+                3);
+        addQuestion(q515);
+
+        Question q516 = new Question(
+                10,
+                1,
+                8,
+                "In the study of How does sunlight affect the growth of plant? What is the dependent variable in the study?",
+                "A. Plant",
+                "B. Plant growth",
+                "C. Exposure to sunlight",
+                "D. None of the above",
+                2);
+        addQuestion(q516);
+
+        Question q517 = new Question(
+                10,
+                1,
+                8,
+                "In the study of How does sunlight affect the growth of plant? What is the independent variable in the study?",
+                "A. Plant",
+                "B. Plant growth",
+                "C. Exposure to sunlight",
+                "D. None of the above",
+                3);
+        addQuestion(q517);
+
+        Question q518 = new Question(
+                10,
+                1,
+                8,
+                "In the study of the effectiveness of pineapple peeling as a paper bag. What Kind of research is the study?",
+                "A. Developmental",
+                "B. Applied",
+                "C. Basic",
+                "D. None of the above",
+                2);
+        addQuestion(q518);
+
+        Question q519 = new Question(
+                10,
+                1,
+                8,
+                "What kind of Research revolves around fundamental research with laws and principles?",
+                "A. Developmental",
+                "B. Applied",
+                "C. Basic",
+                "D. None of the above",
+                3);
+        addQuestion(q519);
+
+        Question q520 = new Question(
+                10,
+                1,
+                8,
+                "What kind of Research revolves around developing new method to solve a problem?",
+                "A. Developmental",
+                "B. Applied",
+                "C. Basic",
+                "D. None of the above",
+                1);
+        addQuestion(q520);
+
+        //ESP 10
+
+        //GRADE 8 FIRST START
+
+        //FILIPINO 8
+        Question q541 = new Question(
+                8,
+                1,
+                7,
+                "Ang official kenkoy ng klase.",
+                "A. Spice Girls",
+                "B. Geeks",
+                "C. Clowns",
+                "D. Wala sa nabanggit",
+                3);
+        addQuestion(q541);
+
+        Question q542 = new Question(
+                8,
+                1,
+                7,
+                "Mga walang pakialam sa mundo.",
+                "A. Clowns",
+                "B. Geeks",
+                "C. Spice Girls",
+                "D. Wala sa nabanggit",
+                2);
+        addQuestion(q542);
+
+        Question q543 = new Question(
+                8,
+                1,
+                7,
+                "Barkadahan ng mga babaeng mahilig gumimik, sabay sabay pero late na pumasok ng room pagkatapos ng recess at lunch break.",
+                "A. Geeks",
+                "B. Spice Girls",
+                "C. Gwapings",
+                "D. Wala sa nabanggit",
+                2);
+        addQuestion(q543);
+
+        Question q544 = new Question(
+                8,
+                1,
+                7,
+                "Ang male counterpart ng SG.",
+                "A. Da Gwapings",
+                "B. Clowns",
+                "C. Celebrities",
+                "D. Wala sa nabanggit",
+                1);
+        addQuestion(q544);
+
+        Question q545 = new Question(
+                8,
+                1,
+                7,
+                "Mga record holders pagdating sa persistence.",
+                "A. Celebrities",
+                "B. Guinness",
+                "C. Bob Ongs",
+                "D. Wala sa nabanggit",
+                2);
+        addQuestion(q545);
+
+        Question q546 = new Question(
+                8,
+                1,
+                7,
+                "Si Impeng Negro ay isang?",
+                "A. Artista",
+                "B. Agwador",
+                "C. MAgsasaka",
+                "D. Wala sa nabanggit",
+                2);
+        addQuestion(q546);
+
+        Question q547 = new Question(
+                8,
+                1,
+                7,
+                "Sino ang hari ng gripo?",
+                "A. Kano",
+                "B. Agor",
+                "C. Bremancor",
+                "D. Wala sa nabanggit",
+                2);
+        addQuestion(q547);
+
+        Question q548 = new Question(
+                8,
+                1,
+                7,
+                "Sino ang mga kapatid ni Impen?",
+                "A. Kano at Kanin",
+                "B. Kano at Bob",
+                "C. Kano at Boy",
+                "D. Wala sa nabanggit",
+                3);
+        addQuestion(q548);
+
+        Question q549 = new Question(
+                8,
+                1,
+                7,
+                "Sino ang makatarungang datu sa Alamat ng Daragang Mayon?",
+                "A. Lapu-lapu",
+                "B. Makusog",
+                "C. Mar Roxas",
+                "D. Wala sa nabanggit",
+                2);
+        addQuestion(q549);
+
+        Question q550 = new Question(
+                8,
+                1,
+                7,
+                "Anak ni Datu Makusog at Dawani. Isang babaeng walang kapares sa kagandahan at kabaitan.",
+                "A. Catriona Gray",
+                "B. Daragang Magayon",
+                "C. Daragang Mayon",
+                "D. Wala sa nabanggit",
+                3);
+        addQuestion(q550);
+
+        Question q551 = new Question(
+                8,
+                1,
+                7,
+                "Ang dakilang mangangaso.",
+                "A. Datung Aruga",
+                "B. Datung Iraga",
+                "C. Pobreng Iraga",
+                "D. Wala sa nabanggit",
+                2);
+        addQuestion(q551);
+
+        Question q552 = new Question(
+                8,
+                1,
+                7,
+                "Mga generic na miyembro ng klase.",
+                "A. Commoners",
+                "B. Celebrities",
+                "C. Bob Ongs",
+                "D. Wala sa nabanggit",
+                1);
+        addQuestion(q552);
+
+        Question q553 = new Question(
+                8,
+                1,
+                7,
+                "Dalawang uri ng Asimilasyon?",
+                "A. Di-ganap at Ganap",
+                "B. Di-ganap at Kasalungat",
+                "C. Pang-abay at Pang-uri",
+                "D. Wala sa nabanggit",
+                1);
+        addQuestion(q553);
+
+        Question q554 = new Question(
+                8,
+                1,
+                7,
+                "Ano ang parsyal na uri ng Asimilasyon?",
+                "A. Ganap",
+                "B. Di-ganap",
+                "C. Both",
+                "D. Wala sa nabanggit",
+                2);
+        addQuestion(q554);
+
+        Question q555 = new Question(
+                8,
+                1,
+                7,
+                "Kinakaltas ang unang titik",
+                "A. Ganap",
+                "B. Di-ganap",
+                "C. Both",
+                "D. Wala sa nabanggit",
+                1);
+        addQuestion(q555);
+
+        Question q556 = new Question(
+                8,
+                1,
+                7,
+                "Poticians, Athletes, at Performers",
+                "A. Celebrities",
+                "B. Da Gwapings",
+                "C. Hollow Man",
+                "D. Wala sa nabanggit",
+                1);
+        addQuestion(q556);
+
+        Question q557 = new Question(
+                8,
+                1,
+                7,
+                "Asawa ni Datu Makusog",
+                "A. Daragang Magayon",
+                "B. Dawani",
+                "C. Laura",
+                "D. Wala sa nabanggit",
+                2);
+        addQuestion(q557);
+
+        Question q558 = new Question(
+                8,
+                1,
+                7,
+                "Mga medyo matalino na medyo may sayod",
+                "A. Bob Ongs",
+                "B. Hollow Man",
+                "C. Commoners",
+                "D. Wala sa nabanggit",
+                1);
+        addQuestion(q558);
+
+        Question q559 = new Question(
+                8,
+                1,
+                7,
+                "Binase sa anog bundok ang Alamat ng Daragang Mayon?",
+                "A. Mt. Apo",
+                "B. Mt. Kanlaon",
+                "C. Mt. Mayon",
+                "D. Wala sa nabanggit",
+                3);
+        addQuestion(q559);
+
+        Question q560 = new Question(
+                8,
+                1,
+                7,
+                "Sino ang tahimik ngunit matapang na anak ni Datu?",
+                "A. Ulap",
+                "B. Florante",
+                "C. Boy",
+                "D. Wala sa nabanggit",
+                1);
+        addQuestion(q560);
+
+
     }
 
     private void addQuestion(Question question){
@@ -3232,7 +6374,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         cv.put(QuestionTable.COLUMN_CORRECT_ANS, question.getCorrectAns());
         db.insert(QuestionTable.TABLE_NAME, null, cv);
     }
-    
+
     public List<Question> getQuestion(int grade, int quarter, int subject) {
 
         List<Question> questionList = new ArrayList<>();

@@ -26,6 +26,7 @@ public class Result extends AppCompatActivity {
     private ImageView resultImg;
     private Button finishBtn, tryAgainBtn;
     static int passingScore = 15;
+    static int perfectScore = 20;
 
     public static int gradeClicked;
     public static int quarterClicked;
@@ -33,6 +34,8 @@ public class Result extends AppCompatActivity {
 
     AdView adView1, adView2;
     InterstitialAd interstitialAd1, interstitialAd2;
+
+    public MediaPlayer perfectAudio, passedAudio, failedAudio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,23 +86,22 @@ public class Result extends AppCompatActivity {
         interstitialAd2.setAdUnitId("ca-app-pub-7228366808257832/6130751393");
         interstitialAd2.loadAd(new AdRequest.Builder().build());
 
-
-        if (score >= passingScore){
-
-            resultImg.setImageResource(R.drawable.passed);
-            passedFailedTxt.setText("Passed");
-            passedFailedTxt.setTextColor(Color.GREEN);
-            MediaPlayer passedAudio = MediaPlayer.create(getApplicationContext(), R.raw.passed);
-            passedAudio.start();
-
-        }
-        else if(score == 20){
+       if(score == perfectScore){
 
             resultImg.setImageResource(R.drawable.perfect);
             passedFailedTxt.setText("Perfect");
             passedFailedTxt.setTextColor(Color.GREEN);
-            MediaPlayer perfectAudio = MediaPlayer.create(getApplicationContext(), R.raw.perfect);
+            perfectAudio = MediaPlayer.create(getApplicationContext(), R.raw.perfect);
             perfectAudio.start();
+
+        }
+        else if (score >= passingScore){
+
+            resultImg.setImageResource(R.drawable.passed);
+            passedFailedTxt.setText("Passed");
+            passedFailedTxt.setTextColor(Color.GREEN);
+            passedAudio = MediaPlayer.create(getApplicationContext(), R.raw.passed);
+            passedAudio.start();
 
         }
         else {
@@ -107,7 +109,7 @@ public class Result extends AppCompatActivity {
             resultImg.setImageResource(R.drawable.failed);
             passedFailedTxt.setText("Failed");
             passedFailedTxt.setTextColor(Color.RED);
-            MediaPlayer failedAudio = MediaPlayer.create(getApplicationContext(), R.raw.failed);
+            failedAudio = MediaPlayer.create(getApplicationContext(), R.raw.failed);
             failedAudio.start();
 
         }
@@ -255,5 +257,13 @@ public class Result extends AppCompatActivity {
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
         finish();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        perfectAudio.stop();
+        passedAudio.stop();
+        failedAudio.stop();
     }
 }

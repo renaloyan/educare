@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     if (auth.getCurrentUser() != null) {
                         //if user logged in intent to home activity
-                        sleep(1 * 1000);
+                        sleep(1 * 2000);
                         startActivity(new Intent(getApplicationContext(), Home.class));
                         overridePendingTransition(R.anim.anim_up_in, R.anim.slide_up_out);
                         finish();

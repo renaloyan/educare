@@ -70,7 +70,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         xmlns:ads="http://schemas.android.com/apk/res-auto"
-        ads:adSize="BANNER"
+        ads:adSize="SMART_BANNER"
         ads:adUnitId="ca-app-pub-7228366808257832/9910515626"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" >
