@@ -91,6 +91,13 @@ public class SubjectCardAdapter extends RecyclerView.Adapter<SubjectCardAdapter.
                 interstitialAd.show();
             }
 
+            interstitialAd.setAdListener(new AdListener(){
+                @Override
+                public void onAdClosed(){
+                    interstitialAd.loadAd(new AdRequest.Builder().build());
+                }
+            });
+
             switch (getAdapterPosition()) {
                 case 0:
                     intent = new Intent(context, Quiz.class);

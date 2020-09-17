@@ -173,6 +173,7 @@ public class Result extends AppCompatActivity {
         interstitialAd1.setAdListener(new AdListener(){
             @Override
             public void onAdClosed(){
+                interstitialAd1.loadAd(new AdRequest.Builder().build());
                 gotoSubject();
             }
         });
@@ -199,6 +200,7 @@ public class Result extends AppCompatActivity {
         interstitialAd2.setAdListener(new AdListener(){
             @Override
             public void onAdClosed(){
+                interstitialAd2.loadAd(new AdRequest.Builder().build());
                 gotoQuiz();
             }
         });
@@ -259,11 +261,4 @@ public class Result extends AppCompatActivity {
         finish();
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        perfectAudio.stop();
-        passedAudio.stop();
-        failedAudio.stop();
-    }
 }

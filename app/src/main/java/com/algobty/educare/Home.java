@@ -13,6 +13,7 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -56,8 +57,13 @@ public class Home extends AppCompatActivity {
         gradeCardAdapter = new GradeCardAdapter(this, getGradeCardModels(), images,thisActivity);
         gradeCardRecyclerView.setLayoutManager(new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false));
         gradeCardRecyclerView.setAdapter(gradeCardAdapter);
-        SpacingItemDecorator itemDecorator = new SpacingItemDecorator(10);
+        gradeCardRecyclerView.setHasFixedSize(true);
+        gradeCardRecyclerView.setItemViewCacheSize(20);
+        gradeCardRecyclerView.setDrawingCacheEnabled(true);
+        gradeCardRecyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
+        SpacingItemDecorator itemDecorator = new SpacingItemDecorator(2, 15, true);
         gradeCardRecyclerView.addItemDecoration(itemDecorator);
+
 
         //bottom nav
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);

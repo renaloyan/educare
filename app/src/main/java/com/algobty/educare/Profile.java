@@ -42,9 +42,9 @@ import java.io.File;
 
 public class Profile extends AppCompatActivity {
 
-    private TextView username, emailText, highScoreTxt;
+    private TextView username, emailText, highScoreTxt, coinsTxt;
     private ImageView settingsBtn;
-    private RelativeLayout shareBtn, aboutBtn, feedbackBtn, logoutBtn, exitBtn;
+    private RelativeLayout shareBtn, aboutBtn, feedbackBtn, logoutBtn, exitBtn, rewardBtn;
     private ProgressBar progressBar;
 
     private FirebaseAuth auth;
@@ -69,6 +69,8 @@ public class Profile extends AppCompatActivity {
         progressBar = findViewById(R.id.profile_progressBar);
         feedbackBtn = findViewById(R.id.feedback_button);
         highScoreTxt = findViewById(R.id.highscore_text);
+        rewardBtn = findViewById(R.id.reward_button);
+        coinsTxt = findViewById(R.id.total_money);
 
         //get the instance of firebase auth
         auth = FirebaseAuth.getInstance();
@@ -90,6 +92,11 @@ public class Profile extends AppCompatActivity {
 
         SharedPreferences myPrefs = getSharedPreferences("sharedPref", MODE_PRIVATE);
         int score = myPrefs.getInt("SCORE", 0);
+
+        SharedPreferences myPrefsCoins = getSharedPreferences("sharedPrefCoins", MODE_PRIVATE);
+        int coins = myPrefsCoins.getInt("COINS", 0);
+
+        coinsTxt.setText(String.valueOf(coins));
 
         if (score > highScore){
             updateHighScore(score);
@@ -126,6 +133,17 @@ public class Profile extends AppCompatActivity {
                 getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
                 Toast.makeText(Profile.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        rewardBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(getApplicationContext(), Reward.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                finish();
+
             }
         });
 
@@ -248,7 +266,6 @@ public class Profile extends AppCompatActivity {
 
         highScore = highscoreNew;
         highScoreTxt.setText(String.valueOf(highScore));
-
         SharedPreferences prefs = getSharedPreferences("SHARED_PREFS", MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putInt("HIGHSCORE", highScore);

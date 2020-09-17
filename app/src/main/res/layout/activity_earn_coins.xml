@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4DAAAAAA"
+    android:gravity="center"
+    tools:context=".EarnCoins">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Available Coins"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/coins_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/colorPrimary"
+        android:textSize="50sp"
+        android:drawableEnd="@drawable/ic_baseline_attach_money_24"
+        android:drawableTint="@color/colorPrimary"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/show_rewarded_ads_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:text="Earn Coins by Watching Ads"
+        android:textSize="20sp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

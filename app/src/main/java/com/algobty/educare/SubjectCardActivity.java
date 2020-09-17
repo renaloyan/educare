@@ -3,6 +3,7 @@ package com.algobty.educare;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -115,8 +116,12 @@ public class SubjectCardActivity extends AppCompatActivity {
         subjectCardAdapter = new SubjectCardAdapter(this, getSubjectCardModels(), images, thisActivity);
         subjectRecyclerView.setLayoutManager(new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false));
         subjectRecyclerView.setAdapter(subjectCardAdapter);
-        SpacingItemDecorator spacingItemDecorator = new SpacingItemDecorator(10);
-        subjectRecyclerView.addItemDecoration(spacingItemDecorator);
+        subjectRecyclerView.setHasFixedSize(true);
+        subjectRecyclerView.setItemViewCacheSize(20);
+        subjectRecyclerView.setDrawingCacheEnabled(true);
+        subjectRecyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
+        SpacingItemDecorator itemDecorator = new SpacingItemDecorator(2, 15, true);
+        subjectRecyclerView.addItemDecoration(itemDecorator);
 
     }
 

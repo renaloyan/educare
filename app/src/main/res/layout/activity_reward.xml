@@ -1,32 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4DAAAAAA"
+    android:background="@drawable/background_gradient"
+    android:gravity="center"
     tools:context=".Reward">
 
-    <com.google.android.gms.ads.AdView
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/rewardAd1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
         ads:adSize="SMART_BANNER"
-        ads:adUnitId="ca-app-pub-7228366808257832/8491075448">
+        ads:adUnitId="ca-app-pub-7228366808257832/8491075448"></com.google.android.gms.ads.AdView>
 
-    </com.google.android.gms.ads.AdView>
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/rewardAd2"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/rewardAd1">
 
-    <com.google.android.gms.ads.AdView
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:cardCornerRadius="10dp"
+            android:layout_marginTop="20dp"
+            app:cardElevation="10dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/result_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fece2f"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center_horizontal"
+                    android:text="REWARD"
+                    android:textColor="@android:color/white"
+                    android:textSize="36sp" />
+
+                <ImageView
+                    android:id="@+id/image_tshirt1"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_below="@id/result_text"
+                    android:layout_marginLeft="25dp"
+                    android:src="@drawable/frontshirt"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:layout_marginTop="20dp" />
+
+                <ImageView
+                    android:id="@+id/image_tshirt2"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_below="@id/result_text"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/backshirt"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:layout_toRightOf="@id/image_tshirt1" />
+
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/image_tshirt1"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Once you already reach 1,000,000 coins, you should email us your full name and a selfie with Educare app 1,000,000 coins must be visible. The email is algobtybantayan@gmail.con or feel free to message us in our Facebook Page: Algobty. More rewards to come."
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/earn_coins_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/description"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="30dp"
+                    android:elevation="10dp"
+                    android:text="Earn coins"
+                    android:textColor="@android:color/white"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="22sp" />
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </ScrollView>
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/rewardAd2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
         ads:adSize="SMART_BANNER"
         ads:adUnitId="ca-app-pub-7228366808257832/9421013734">
 

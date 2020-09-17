@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
@@ -68,7 +69,11 @@ public class QuarterCardActivity extends AppCompatActivity {
         quarterCardAdapter = new QuarterCardAdapter(this, getQuarterCardModels(), thisActivity);
         quarterCardRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         quarterCardRecyclerView.setAdapter(quarterCardAdapter);
-        SpacingItemDecorator itemDecorator = new SpacingItemDecorator(10);
+        quarterCardRecyclerView.setHasFixedSize(true);
+        quarterCardRecyclerView.setItemViewCacheSize(20);
+        quarterCardRecyclerView.setDrawingCacheEnabled(true);
+        quarterCardRecyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
+        SpacingItemDecorator itemDecorator = new SpacingItemDecorator(2, 15, true);
         quarterCardRecyclerView.addItemDecoration(itemDecorator);
 
     }
